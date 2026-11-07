@@ -1,0 +1,14 @@
+# Public repository allowlist. Personal submission material remains local.
+/*
+!/.gitignore
+!/requirements.md
+!/chat.txt
+!/lab2/
+
+**/.DS_Store
+**/__pycache__/
+*.pyc
+*.pdf
+*.zip
+*.bundle
+/lab2/local-build/
