@@ -1,0 +1,27 @@
+{
+  "stage": 1,
+  "source_commit": "9e8d1ab8f5590a8a56c517fc7d3691d96c9e79ca",
+  "source_time": "2026-11-07T11:11:54+08:00",
+  "source_subject": "lab2: preserve requirements baseline and AI session proposal",
+  "source_tags_local_only": [
+    "lab2-session-proposal"
+  ],
+  "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+  "files": [
+    {
+      "public_path": "lab2/assignment.md",
+      "source_blob": "ce23bbdc37560cb2cc80c2a9fb90c4e7a6742454",
+      "imported_sha256": "4f45931e55dae0eb27b503a4af298ca73c4203a1ac1f94b6e05a457d1b4315de"
+    },
+    {
+      "public_path": "lab2/process/设计决策.txt",
+      "source_blob": "39f23859308acf5bd78c59f9591f72f067d507c6",
+      "imported_sha256": "e3dd8cb635b84828acaa4fe1b3a161db19f2145d549d2e733dd4f1cd2c6aa279"
+    },
+    {
+      "public_path": "lab2/process/baseline/requirements-v1.2.md",
+      "source_blob": "941745931d19cb14328b84849bf985c6171d5164",
+      "imported_sha256": "eb445eae6023a392c343b72a74d25476a8a74a520a49411fe593bbd8437b73d4"
+    }
+  ]
+}
