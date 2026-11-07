@@ -1,0 +1,103 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 类图：交易领域与版本历史
+left to right direction
+class "账号 Account" as A {
+  +id: UUID
+  +role: USER | ADMIN
+  +status: NORMAL | BANNED
+}
+class "商品 Product" as P {
+  +id: UUID
+  +sellerId: UUID
+  +state: ProductState
+  +currentVersion: int
+  +rowVersion: int
+  +activeRestriction: bool
+  +saveDraft(expectedVersion)
+  +submitForReview()
+}
+class "私人草稿 PrivateDraft" as D {
+  +productId: UUID
+  +title, category, condition
+  +price: Decimal
+  +description, imageRefs
+  +validateBasic()
+}
+class "已提交版本 SubmittedVersion" as V {
+  +id: UUID
+  +contentVersion: int
+  +title, category, condition
+  +price: Decimal
+  +description, imageRefs
+  +submittedAt: Instant
+  {static} immutable
+}
+class "审核批次 ReviewSubmission" as R {
+  +id: UUID
+  +versionId: UUID
+  +status: PENDING | WITHDRAWN
+APPROVED | REJECTED
+  +reviewerId: UUID?
+  +reason: String?
+  +reviewedAt: Instant?
+  +review(expectedBatch, reason)
+}
+class "预约 Reservation" as B {
+  +id: UUID
+  +buyerId, sellerId, productId
+  +state: ReservationState
+  +createdAt, confirmedAt
+  +closedAt, completedAt
+  +closedBy, closeReason
+  +confirm() / reject(reason?)
+  +cancel(reason) / complete()
+}
+class "预约快照 ReservationSnapshot" as S {
+  +title, condition, description
+  +price: Decimal
+  +imageRefs, buyerMessage
+  {static} immutable
+}
+A "1" -- "0..*" P : 卖家
+A "1" -- "0..*" B : 买家
+P "1" *-- "0..1" D : 当前私人内容
+P "1" *-- "0..*" V : 留存正式提交版本
+P "1" *-- "0..*" R : 留存审核批次
+R "0..*" --> "1" V : 审核此版本
+R "0..*" --> "0..1" A : 审核人（管理员）
+P "1" -- "0..*" B : 历史预约
+B "1" *-- "1" S
+note bottom of P
+  一条商品是一件物品；标题可重复。
+  每商品至多一条有效预约、至多一笔完成交易。
+  有效预约状态：待确认、已确认。
+  预约 sellerId 必须等于商品 sellerId。
+end note
+note bottom of D
+  当前草稿仅本人可读。
+  管理员只读取已提交版本与审核历史。
+  仅从未提交的纯草稿可删除。
+end note
+note bottom of S
+  历史快照及引用图片不可被后续修改覆盖。
+  邮箱不放入无条件返回的快照；
+  由权限层按预约状态决定是否返回。
+end note
+@enduml

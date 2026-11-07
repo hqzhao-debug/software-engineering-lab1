@@ -1,0 +1,74 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 用例图：功能模块与参与者
+left to right direction
+actor "游客" as G
+actor "普通用户
+（同一账号兼任买卖双方）" as U
+actor "管理员" as A
+actor "邮件服务" as M
+rectangle "校园二手交易系统" {
+  usecase "查询在售商品
+组合筛选／排序／分页" as UC1
+  usecase "注册／邮箱验证
+登录／退出" as UC2
+  usecase "管理本人商品
+草稿／送审／撤回／下架／重审" as UC3
+  usecase "预约他人商品
+确认标题价格／填写留言" as UC4
+  usecase "处理本人商品预约
+确认／拒绝／完成" as UC5
+  usecase "按阶段取消预约
+检查角色与原因" as UC6
+  usecase "查看本人记录与成交统计" as UC7
+  usecase "审核当前提交批次
+通过与驳回均填原因" as UC8
+  usecase "违规处理与账号封禁／解封
+按规则联动业务" as UC9
+  usecase "后台创建新管理员
+完成邮箱验证后可登录" as UC10
+  usecase "查询管理日志与平台统计" as UC11
+}
+G --> UC1
+G --> UC2
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC4
+U --> UC5
+U --> UC6
+U --> UC7
+A --> UC2
+A --> UC8
+A --> UC9
+A --> UC10
+A --> UC11
+M --> UC2
+M --> UC10
+note bottom of UC5
+  只有卖家可确认、拒绝和标记完成。
+  待确认时卖家使用拒绝；
+  已确认时交易双方可取消，原因必填。
+end note
+note bottom of UC10
+  首个启动管理员由课程方预设。
+  既有管理员创建新账号，不能提升普通账号。
+  管理员不参与交易，不代卖家完成交易。
+end note
+@enduml

@@ -1,9 +1,11 @@
 {
-  "stage": 4,
-  "source_commit": "1ef31de2d369b0e398ad13d01db48a1bc1885603",
-  "source_time": "2026-11-07T12:48:09+08:00",
-  "source_subject": "lab2: revise UI rules and add report design source",
-  "source_tags_local_only": [],
+  "stage": 5,
+  "source_commit": "270c916aecdf67ef66773305ed0ffe3a2f75cd17",
+  "source_time": "2026-11-07T12:48:59+08:00",
+  "source_subject": "lab2: preserve initial PlantUML models",
+  "source_tags_local_only": [
+    "lab2-uml-ai-draft"
+  ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
     {
@@ -160,6 +162,41 @@
       "public_path": "lab2/UI/界面14_管理操作日志.svg",
       "source_blob": "589b5d4447d048799b45f043340233fd720ac655",
       "imported_sha256": "697ffc3efcc660e70690176ddfbda7ab7e92535b23321d4a6e4a3ff30028f601"
+    },
+    {
+      "public_path": "lab2/UML/UML商品状态图.puml",
+      "source_blob": "5fa04621163238786dcd28346114f40eaba73841",
+      "imported_sha256": "f52d2500cb191518e082fcf8933396034b5a14a4d140f9e659bd1efe7b8b5864"
+    },
+    {
+      "public_path": "lab2/UML/UML安全与审计类图.puml",
+      "source_blob": "317ed0373348502c9d3b961b10b3d3970b4037ce",
+      "imported_sha256": "91d9f8fb0b530d523e0ef04b0b1d64634a9283f6c15862df245fc8ca14b1149b"
+    },
+    {
+      "public_path": "lab2/UML/UML用例图.puml",
+      "source_blob": "92f7e59ca1f78e4a8b041d3b2ecf540e70c07d61",
+      "imported_sha256": "904befbf07c62d6707bafc1100b55ddd15acd0415a1e84bf81e839d0b96b3dfe"
+    },
+    {
+      "public_path": "lab2/UML/UML类图.puml",
+      "source_blob": "34a8f3a2f41c14419b9f452cc0f4dd182ec63365",
+      "imported_sha256": "b96b83d6528be7dc6f0bf4196193fe47f341834b1111605197e4d4cdf8560f7a"
+    },
+    {
+      "public_path": "lab2/UML/UML组件图.puml",
+      "source_blob": "05d0a2b139e8d5c1b5d31d32a5edeb02328cc82c",
+      "imported_sha256": "eb2b4eb6672ebb24033cc166f37c743533f1b93370cb117b50793a778e0e27ba"
+    },
+    {
+      "public_path": "lab2/UML/UML预约时序图.puml",
+      "source_blob": "a9ba8eb611090a43daaa2bd1384a509acd32f0b9",
+      "imported_sha256": "5c5993c28e404349cedb013f3e98689d8107349f0aa781e22c2bbc576c864890"
+    },
+    {
+      "public_path": "lab2/UML/UML预约活动图.puml",
+      "source_blob": "86328404cbbbd373c1ec127c9457994d5aa362d6",
+      "imported_sha256": "0c6b81dae5dd00ebfe8559930468eb1399c60d89a48214678eecc0914623f1f0"
     },
     {
       "public_path": "lab2/process/UI总览.png",

@@ -1,0 +1,76 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 状态图：商品主生命周期
+hide empty description
+state "草稿" as D
+state "待审核" as R
+state "审核驳回" as X
+state "在售" as S
+state "待确认" as P
+state "已确认
+（待面交）" as C
+state "已下架" as O
+state "违规下架" as V
+state "已成交" as F
+[*] --> D : 创建本人草稿
+D --> R : 完整校验通过／提交新批次
+R --> D : 未处理时撤回／保留历史
+R --> X : 管理员驳回／原因必填
+R --> S : 管理员通过／原因必填
+当前版本批次一致、卖家正常
+X --> D : 本人修改并保存
+S --> D : 无有效预约时修改保存
+S --> O : 本人主动下架／无有效预约
+O --> D : 修改保存
+O --> R : 资料合法且无当前违规限制
+直接重提新批次
+S --> P : 新预约成功／同事务占用
+P --> C : 本人卖家确认／两对象状态一致
+P --> S : 买家取消或卖家拒绝
+仍满足发布条件
+C --> S : 买家或卖家取消／原因必填
+仍满足发布条件
+C --> F : 本人卖家完成／同事务保存
+S --> V : 违规处理／原因必填
+P --> V : 违规处理／同步取消预约
+C --> V : 违规处理／同步取消预约
+V --> D : 修改保存／当前限制仍保留
+F --> F : 成交后违规／仅加标记与原因
+note right of R
+  审核通过才解除当前违规发布限制。
+  待审核不能直接编辑，须先撤回。
+  旧版本或旧批次审核不覆盖当前结果。
+end note
+note bottom of V
+  管理规则补充：管理员可对有权管理的其他
+  未成交商品（待审核／审核驳回／已下架）违规下架。
+  当前私人草稿内容不进入管理员管理视图。
+  普通取消不能使当前受限商品重新在售。
+end note
+note bottom of O
+  封禁规则：该卖家的全部未成交非草稿商品
+  进入已下架并受封禁限制，全部有效预约取消。
+  草稿保留原状态但禁操作；已成交状态不变。
+  解封不自动上架、不恢复预约，须重新审核。
+end note
+note right of F
+  不可修改、取消、再次发布。
+  完成仅记录卖家声明，不核验付款。
+end note
+@enduml

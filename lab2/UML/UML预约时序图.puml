@@ -1,0 +1,73 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 时序图：并发预约、事务与幂等重试
+skinparam linetype polyline
+actor "普通买家" as U
+boundary "预约页面" as UI
+control "认证与权限层" as AUTH
+control "交易服务" as T
+database "PostgreSQL" as DB
+U -> UI : 确认当前标题和价格，填写留言
+UI -> AUTH : reserve(productId, contentVersion,
+message, requestKey)
+AUTH -> AUTH : 校验当前会话、账号正常及普通角色
+alt 鉴权失败
+  AUTH -> DB : 追加失败日志（无业务变化）
+  AUTH --> UI : 拒绝
+else 当前身份有效
+  AUTH -> T : 带服务端身份的预约命令
+  T -> DB : BEGIN；按固定顺序锁双方账号和商品
+  T -> DB : 查询操作者的幂等记录／本人有效预约
+  alt 同次操作已成功，或本人已有该商品有效预约
+    DB --> T : 原预约编号及当前状态
+    T -> DB : 保存本次请求与原结果关联（需要时）
+追加重复请求日志；COMMIT
+    T --> UI : 返回原预约当前状态，不新增、不复活
+  else 未成功的新操作
+    T -> DB : 重验双方状态、对象归属、当前内容版本
+在售、非本人商品、无有效预约、留言非空
+    alt 条件不成立或被其他买家占用
+      T -> DB : ROLLBACK；另存失败日志
+      T --> UI : 明确拒绝，提示刷新或重新确认
+    else 条件全部成立
+      T -> DB : INSERT 待确认预约及不可变快照
+      T -> DB : UPDATE 商品为待确认
+      T -> DB : INSERT 成功日志和幂等成功记录
+      note over T, DB
+        数据库兜底约束：
+        每商品最多一条有效预约，最多一笔完成交易。
+        商品、预约、快照、成功日志、幂等记录共同提交。
+      end note
+      alt 保存失败
+        T -> DB : ROLLBACK；另存失败日志（存储可用时）
+        T --> UI : 未成功，原业务状态不变
+      else 保存成功
+        T -> DB : COMMIT
+        T --> UI : 预约编号＋当前状态＝待确认
+      end
+    end
+  end
+end
+note over U, DB
+  两个买家竞争同一商品：先合法提交者占用，另一方明确拒绝。
+  已提交后响应丢失：同次重试重新鉴权并返回原记录当前状态。
+  新预约必须用新请求键；同键不同请求内容拒绝。
+  对同账号换设备的重复预约也按商品关联返回本人有效预约。
+end note
+@enduml

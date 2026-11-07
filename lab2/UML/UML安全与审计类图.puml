@@ -1,0 +1,94 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 类图补充：身份、安全与审计
+left to right direction
+class "账号 Account" as A {
+  +id: UUID
+  +username, email, campusId: unique
+  -passwordHash: String
+  +role: USER | ADMIN
+  +emailVerifiedAt: Instant?
+  +status: NORMAL | BANNED
+  +failedCount: int
+  +lockedUntil: Instant?
+}
+class "会话 Session" as S {
+  +sessionId: UUID
+  +accountId: UUID
+  +lastUserActivityAt: Instant
+  +revokedAt: Instant?
+  +isValid(now): bool
+}
+class "幂等记录 IdempotencyRecord" as I {
+  +actorId, operation, requestKey
+  +requestDigest
+  +resourceId: UUID
+  +succeededAt: Instant
+  +resolveCurrentResult()
+}
+class "违规记录 ViolationRecord" as V {
+  +id, productId, adminId
+  +reason, createdAt
+  +activeRestriction: bool
+}
+class "封禁记录 BanRecord" as B {
+  +id, accountId, adminId
+  +reason, bannedAt
+  +liftedBy, liftedAt
+}
+class "审计日志 AuditLog" as L {
+  +id, actorId?, actorRole?
+  +objectId?, operation, time
+  +beforeState, afterState
+  +result, reason?
+  +authorizedBeforeAfterValues
+  {static} append-only
+}
+A "1" -- "0..*" S
+A "1" -- "0..*" I : 操作者
+A "1" -- "0..*" B : 被封禁普通用户
+A "0..1" -- "0..*" L : 实际可识别操作者
+V ..> L : 处理留痕
+B ..> L : 封禁／解封留痕
+I ..> L : 重复请求另记日志
+note bottom of S
+  用户已确认：每个会话独立计时。
+  30 分钟无用户主动请求失效。
+  后台自动刷新不续期；封禁撤销全部会话。
+  主动退出撤销当前会话为本次设计建议。
+end note
+note bottom of A
+  第 5 次连续密码错误固定锁定 15 分钟；
+  锁内尝试不延时、不累计，成功／到期清零。
+  校园邮箱验证通过才可登录。
+  普通注册不可取得管理员角色。
+end note
+note bottom of I
+  唯一键：(actorId, operation, requestKey)。
+  同键不同请求内容拒绝，不复用成功结果。
+  重试重新鉴权，读取原对象当前状态；终态不复活。
+  换设备且本人已有有效预约时返回该预约。
+end note
+note bottom of L
+  成功日志与业务同事务保存；失败／重复单独留痕。
+  无密码、密码哈希或未提交草稿正文。
+  改价前后值按草稿隐私规则隔离显示。
+  至少保留到课程结束，无改删入口。
+end note
+@enduml

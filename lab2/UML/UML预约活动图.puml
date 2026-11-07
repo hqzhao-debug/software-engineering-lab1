@@ -1,0 +1,81 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title UML 活动图：预约取消与当前状态校验
+start
+:接收取消请求
+（预约编号、原因、请求键）;
+:校验当前会话、普通账号状态
+及预约归属;
+if (当前身份与访问权限有效？) then (否)
+  :拒绝并记录失败日志
+不改变目标业务;
+  stop
+else (是)
+endif
+if (该取消操作曾成功？) then (是)
+  :记录重复请求日志
+返回原预约当前状态，不重新取消;
+  stop
+else (否)
+endif
+:开始事务
+锁定关联账号、商品、预约
+重新核验权限与当前状态;
+if (当前待确认且操作者为买家？) then (是)
+  :允许取消，原因选填;
+else (否)
+  if (当前已确认且操作者为交易方？) then (是)
+    if (原因非空？) then (是)
+      :允许取消;
+    else (否)
+      :回滚并记录失败日志
+提示补填原因，保留已确认;
+      stop
+    endif
+  else (否)
+    :回滚并记录失败日志
+拒绝越权、终态或不允许的阶段;
+    stop
+  endif
+endif
+if (商品与预约关联及状态一致？) then (否)
+  :回滚并记录失败日志
+不自动修复或放宽条件;
+  stop
+else (是)
+endif
+:预约改为已取消
+保存操作者、时间和实际原因;
+if (卖家正常、审核发布条件有效
+且无当前违规／封禁限制？) then (是)
+  :商品恢复在售;
+else (否)
+  :商品保持不可预约
+按实际限制记录状态;
+endif
+:同事务写成功日志与幂等记录
+提交后返回最新结果;
+stop
+note right
+  确认先成功：有原因的买家取消仍可成功。
+  取消先成功：后到确认失败。
+  完成／违规／封禁先形成终态：新的取消失败。
+  成功取消的重试仅返回当前状态。
+end note
+@enduml
