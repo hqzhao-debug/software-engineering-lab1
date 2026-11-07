@@ -23,15 +23,15 @@ class Canvas:
         self.rect(25,30,36,36,C['green'],r=9);self.text(34,35,'循',22,'#FFFFFF')
         self.text(73,28,'校园循物',23,'#FFFFFF');self.text(73,60,'CAMPUS REUSE',10,'#99BBC4')
         self.text(28,112,'管理工作台' if admin else '让闲置继续发光',14,'#99BBC4')
-        labels=['商品审核','违规与账号','创建管理员','平台统计','管理日志'] if admin else ['商品广场','发布商品','我的商品','我预约的','收到的预约','我的统计','操作历史']
+        labels=['商品审核','违规与账号','创建管理员','平台统计','管理日志'] if admin else (['商品广场','登录与注册'] if num==1 else ['商品广场','发布商品','我的商品','我预约的','收到的预约','我的统计','操作历史'])
         for i,label in enumerate(labels):
             yy=165+i*57
             if label==nav:self.rect(16,yy-8,188,44,'#224A55',r=8);self.rect(16,yy-2,4,32,'#6ED1B7',r=2)
             self.rect(30,yy+5,13,13,'#6ED1B7' if label==nav else '#718F98',r=3)
             self.text(57,yy,label,16,'#FFFFFF' if label==nav else '#AAC1C8')
         self.line(25,884,195,884,'#31505A')
-        self.text(28,907,'管理员 · 示例账号' if admin else '普通用户 · 示例账号',13,'#AAC1C8')
-        self.text(28,944,'退出登录',14,'#FFFFFF')
+        self.text(28,907,'管理员 · 示例账号' if admin else ('访客 · 尚未登录' if num==1 else '普通用户 · 示例账号'),13,'#AAC1C8')
+        self.text(28,944,'返回商品广场' if num==1 else '退出登录',14,'#FFFFFF')
         self.rect(220,0,1220,84,C['white']);self.text(258,27,'校园二手交易系统',17,C['ink'])
         self.tag(1162,27,'管理员后台' if admin else '校园面交',C['mint'],C['green'],116)
         self.text(1300,33,'帮助说明',13,C['muted'])
@@ -44,7 +44,7 @@ class Canvas:
         self.svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}"/>')
         self.objs.append(('rect',x,y,w,h,fill,stroke,r,''))
     def text(self,x,y,t,size=16,color=None,bold=False):
-        color=color or C['ink'];t=str(t)
+        color=color or C['ink'];t=str(t).replace('▾','v').replace('‹','<').replace('›','>')
         self.d.text((int(x*S),int(y*S)),t,font=font(size),fill=color,stroke_width=0)
         self.svg.append(f'<text x="{x}" y="{y+size}" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="{size}" fill="{color}">{html.escape(t)}</text>')
         tw=self.d.textlength(t,font=font(size))/S+12
@@ -102,18 +102,18 @@ p.text(284,260,'登录后查看你的商品与预约',15,C['muted'])
 p.input(284,310,412,'用户名或邮箱','请输入用户名或已验证邮箱')
 p.input(284,420,412,'密码','••••••••')
 p.btn(284,530,412,'登录',True)
-p.banner(284,606,412,'登录状态说明',['密码错误与账号不存在均显示相同提示。','连续第 5 次密码错误，固定锁定 15 分钟。','30 分钟没有用户操作请求后需重新登录。'])
-p.text(284,772,'浏览公开商品无需登录',15,C['green'])
+p.banner(284,606,412,'登录状态说明',['密码错误与账号不存在均显示相同提示。','连续第 5 次密码错误，固定锁定 15 分钟。','每个会话独立计时，30 分钟无主动请求失效。','后台自动刷新不延长登录有效时间。'])
+p.text(284,796,'浏览公开商品无需登录',15,C['green'])
 p.card(748,208,650,694,'注册普通账号')
 p.input(774,267,286,'用户名 *','请输入用户名')
 p.input(1082,267,290,'学号 / 工号 *','请输入学号或工号')
-p.input(774,369,598,'本校官方邮箱 *','请输入本校官方邮箱','实际允许的学校邮箱域名以部署配置为准')
+p.input(774,369,598,'本校官方邮箱 *','请输入本校官方邮箱','请使用学校提供的官方邮箱地址')
 p.input(774,481,598,'密码 *','请输入密码')
 p.btn(774,587,598,'提交并发送验证邮件',True)
 p.banner(774,659,598,'待验证：请检查校园邮箱',['完成邮件中的验证后，才可登录。','邮箱、用户名、学号 / 工号须各自唯一。'])
 p.text(774,790,'注册仅验证邮箱归属，不接入校方学籍核验。',14,C['muted'])
 p.text(774,824,'管理员账号由已有管理员在后台创建。',14,C['muted'])
-p.finish(['REQ-002','REQ-003','REQ-004','REQ-029','REQ-030'],'账号入口展示登录与普通用户注册，注册提交后显示待验证状态，不提供角色切换或公开管理员注册。','覆盖缺项、重复字段、错误凭据、邮箱未验证、固定临时锁定与会话失效。额外密码长度和验证时效尚待确定。')
+p.finish(['REQ-002','REQ-003','REQ-004','REQ-029','REQ-030'],'账号入口展示登录与普通用户注册，注册提交后显示待验证状态，不提供角色切换或公开管理员注册。','覆盖缺项、重复字段、错误凭据、邮箱未验证、固定临时锁定与会话失效。用户本次确认每个会话独立计时，30分钟无用户主动请求失效，后台自动刷新不续期。额外密码长度和验证时效尚待确定。')
 
 # 02 public catalog
 p=Canvas(2,'发现校园里的好物','仅展示当前在售的单件商品；线下面交，交易进度在个人记录中查看。')
@@ -139,7 +139,7 @@ p=Canvas(3,'商品详情与预约','请确认当前商品信息，并在留言�
 p.card(258,208,540,526);p.mini(282,232,492,337,'book');p.text(282,596,'数据结构与算法',25);p.text(282,644,'教材书籍  /  九成新',15,C['muted']);p.text(282,682,'页面整洁，少量铅笔标记。',15)
 p.card(822,208,576,526);p.tag(848,232,'在售');p.text(848,284,'¥ 36.00',37,C['green']);p.text(848,345,'卖家  晨光',16);p.text(848,382,'预约成功后，双方可在预约记录查看对方邮箱。',13,C['muted'])
 p.input(848,433,524,'面交留言 *','明天下午在图书馆门口面交，方便吗？',h=78)
-p.text(848,557,'☑  我已确认「数据结构与算法」及价格 ¥ 36.00',14)
+p.rect(848,559,17,17,C['green'],r=3);p.text(851,558,'√',13,C['white']);p.text(876,557,'我已确认「数据结构与算法」及价格 ¥ 36.00',14)
 p.btn(848,611,524,'提交预约',True);p.text(848,679,'提交成功后为待确认，等待卖家处理。',14,C['muted'])
 p.banner(258,760,1140,'提交时发现商品信息已变化',['此次未创建预约，请重新加载商品并确认最新标题和价格。已填写的面交留言保留。'],kind='amber')
 p.btn(1160,865,214,'重新加载商品',True);p.text(278,876,'上方为正常详情；此处展示旧页面提交时的冲突反馈。',13,C['muted'])
@@ -161,7 +161,7 @@ p.finish(['REQ-005','REQ-006','REQ-007','REQ-008','REQ-010'],'区分保存草稿
 # 05 products
 p=Canvas(5,'我的商品','管理本人全部商品；在售内容发生修改并保存后，需要重新审核。',nav='我的商品')
 p.card(258,208,1140,590)
-p.text(282,232,'全部 8',17,C['green']);p.text(402,232,'草稿 2',17);p.text(525,232,'待审核 1',17);p.text(681,232,'在售 2',17);p.text(819,232,'更多状态 ▾',17)
+p.text(282,232,'全部 5',17,C['green']);p.text(402,232,'草稿 1',17);p.text(525,232,'待审核 1',17);p.text(681,232,'在售 1',17);p.text(819,232,'更多状态 ▾',17)
 p.input(282,291,420,'关键词','输入标题或描述');p.input(722,291,248,'状态','全部状态 ▾');p.btn(992,319,160,'查询',True);p.btn(1172,319,198,'发布新商品')
 widths=[290,146,138,180,310]
 p.row(282,398,['商品','价格','状态','更新时间','可用操作'],widths,44,True)
@@ -246,8 +246,8 @@ for x,label,val,sub in [(258,'当前在售','4','不包含待确认、已确认�
     p.card(x,208,364,164);p.text(x+24,230,label,15,C['muted']);p.text(x+24,267,val,33,C['green']);p.text(x+24,330,sub,13,C['muted'])
 p.card(258,398,1140,446,'按分类查看')
 widths=[420,200,200,244];p.row(282,462,['分类','当前在售数量','已成交数量','成交金额'],widths,44,True)
-stats=[['教材书籍','2','4','¥ 112.00'],['数码电子','1','1','¥ 120.00'],['生活用品','1','2','¥ 54.00'],['体育器材 / 乐器 / 文具 / 其他','0','0','¥ 0.00']]
-for i,row in enumerate(stats):p.row(282,506+i*66,row,widths,66)
+stats=[['教材书籍','2','4','¥ 112.00'],['数码电子','1','1','¥ 120.00'],['生活用品','1','2','¥ 54.00'],['体育器材','0','0','¥ 0.00'],['乐器','0','0','¥ 0.00'],['文具','0','0','¥ 0.00'],['其他','0','0','¥ 0.00']]
+for i,row in enumerate(stats):p.row(282,506+i*46,row,widths,46)
 p.banner(258,870,1140,'统计口径',['完成后刷新即可包含新成交；取消、拒绝和未成交违规终止不计入。已成交后违规标记不冲减原统计。'])
 p.finish(['REQ-024','REQ-004','REQ-020'],'个人统计展示本人分类在售数、已成交数、成交金额，空分类显示0。统计来源是已保存的最终完成预约。','不查询其他普通用户统计；没有成交时数量金额均0并提示暂无成交；金额不是实际收付款核验。')
 
@@ -272,7 +272,7 @@ p.input(282,233,285,'开始时间','2026-11-01 00:00');p.input(585,233,285,'结�
 p.text(282,350,'按时间倒序',14,C['muted']);p.text(1223,350,'每页 50 条',13,C['muted'])
 widths=[164,145,180,120,225,230]
 p.row(282,396,['时间','对象','操作','结果','状态变化','原因 / 说明'],widths,44,True)
-data=[['11-07 10:20','P-0420','保存商品草稿','成功','在售 → 草稿','价格更新'],['11-07 09:35','R-1038','确认预约','成功','待确认 → 已确认','卖家确认'],['11-06 17:40','P-0236','审核通过','成功','待审核 → 在售','资料符合发布范围'],['11-06 16:20','R-1021','取消预约','成功','待确认 → 已取消','原因未填写'],['11-06 15:10','R-1005','标记完成','成功','已确认 → 已完成','卖家声明完成']]
+data=[['11-07 10:20','P-0420','保存商品草稿','成功','在售 → 草稿','价格 ¥ 42.00 → ¥ 36.00'],['11-07 09:35','R-1038','确认预约','成功','待确认 → 已确认','卖家确认'],['11-06 17:40','P-0236','审核通过','成功','待审核 → 在售','资料符合发布范围'],['11-06 16:20','R-1021','取消预约','成功','待确认 → 已取消','原因未填写'],['11-06 15:10','R-1005','标记完成','成功','已确认 → 已完成','卖家声明完成']]
 for i,row in enumerate(data):p.row(282,440+i*64,row,widths,64)
 p.text(282,797,'点击对象编号可追溯关联商品或预约。',14,C['green']);p.text(1260,797,'‹   1   ›',16,C['green'])
 p.banner(258,869,1140,'只读历史',['仅显示本人有权查看的记录，历史不能修改或删除；没有符合条件的记录时显示明确空状态。'])
@@ -303,7 +303,7 @@ for p in PAGES:
         cell=ET.SubElement(root,'mxCell',id=f'p{p.num}-{i+2}',value=t,style=style,vertex='1',parent='1')
         ET.SubElement(cell,'mxGeometry',x=str(x),y=str(y),width=str(w),height=str(h),**{'as':'geometry'})
 ET.ElementTree(mx).write(OUT/'校园循物_UI设计.drawio',encoding='utf-8',xml_declaration=True)
-meta={'tooling':'AI 程序化构图，生成可在 diagrams.net 打开编辑的多页原生 .drawio 源文件；以相同图元用 Pillow 渲染 PNG，另提供 SVG。未声称在 Figma 或 diagrams.net 中手工绘制。','canvas':{'width':W,'height':H,'png_scale':S},'font':FONT,'pages':[{'id':f'UI-{p.num:02d}','title':p.title,'file':p.name+'.png','requirements':p.req,'description':p.description,'states':p.states} for p in PAGES]}
+meta={'tooling':'AI 程序化构图，生成可在 diagrams.net 打开编辑的多页原生 .drawio 源文件；以相同图元用 Pillow 渲染 PNG，另提供 SVG。未声称在 Figma 或 diagrams.net 中手工绘制。','canvas':{'width':W,'height':H,'png_scale':S},'font':FONT,'pages':[{'id':f'UI-{p.num:02d}','title':p.title,'file':p.name+'.png','requirements':p.req,'description':p.description,'interaction':p.description,'error_states':p.states,'states':p.states} for p in PAGES]}
 (Path(__file__).parent/'UI说明.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
 (OUT/'源文件说明.txt').write_text('本目录含 14 张 PNG 界面设计图、对应 SVG，以及可在 diagrams.net 中打开的多页 .drawio 文件。\n所有图元（包括文字、卡片、输入框和按钮）均为可编辑对象。\n图稿由 AI 根据需求程序化生成，Pillow 按同一组图元渲染 PNG；未声称使用 Figma 手工绘制。\n打开方式：在 diagrams.net 中选择 文件 → 打开 → 从设备，选择 校园循物_UI设计.drawio。\n建议本人逐页核对，在绘图工具中修改至少一处有实质意义的设计并记录修改理由；不能将 AI 生成记录冒充人工设计操作。\n所有数据均为虚构示例，example.invalid 不是实际校园邮箱域名。1440×1000 为本稿画布尺寸，不是新增验收分辨率要求。\n',encoding='utf-8')
 thumb=Image.new('RGB',(720*2,500*7),'#FFFFFF')
