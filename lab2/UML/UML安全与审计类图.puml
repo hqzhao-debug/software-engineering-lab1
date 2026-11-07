@@ -58,7 +58,6 @@ class "审计日志 AuditLog" as L {
   +beforeState, afterState
   +result, reason?
   +authorizedBeforeAfterValues
-  {static} append-only
 }
 A "1" -- "0..*" S
 A "1" -- "0..*" I : 操作者

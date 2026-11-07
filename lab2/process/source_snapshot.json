@@ -1,10 +1,10 @@
 {
-  "stage": 5,
-  "source_commit": "270c916aecdf67ef66773305ed0ffe3a2f75cd17",
-  "source_time": "2026-11-07T12:48:59+08:00",
-  "source_subject": "lab2: preserve initial PlantUML models",
+  "stage": 6,
+  "source_commit": "a1ab846852dff343c2c4e8f8267714a73a1aeadc",
+  "source_time": "2026-11-07T12:54:48+08:00",
+  "source_subject": "lab2: resolve review findings and validate UI with offline drawio",
   "source_tags_local_only": [
-    "lab2-uml-ai-draft"
+    "lab2-ai-reviewed-design"
   ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
@@ -15,18 +15,18 @@
     },
     {
       "public_path": "lab2/UI/校园循物_UI设计.drawio",
-      "source_blob": "09f4942dd1c81f808a0eef694639cb07e6259dcb",
-      "imported_sha256": "8a10a154809f4b00fb25e202228bb08fc6b2fe4de387098d6ead53853b81851f"
+      "source_blob": "54e76d48994a131df9a9e3a51a8b00991b9ac0c6",
+      "imported_sha256": "6b44008207e5f88d7659c7eb22a8ba92e8cf6e702f94fcc71870984d024b6dc8"
     },
     {
       "public_path": "lab2/UI/源文件说明.txt",
-      "source_blob": "8f66cf577649766e2b1f549e8ef0b0d702cefd11",
-      "imported_sha256": "2a9994556c301b9377c4096915fc8c0788d376c2ad0e536fd6047c5b5b764181"
+      "source_blob": "f79ac5fd79c6beb94fc53f195f7e961729e29f5e",
+      "imported_sha256": "7d528e9f441f0f40f8d6b62b017975c307ebc3d5902136cbe96dd130dffdf889"
     },
     {
       "public_path": "lab2/UI/界面01_登录与校园邮箱注册.png",
-      "source_blob": "e4f371dbf795b24af8792d3d04b50725a2bf0bf3",
-      "imported_sha256": "695d4fdf8af20af579098bc5803f740fdb6e29ee8e6e4bdb5e851642ffb761b0"
+      "source_blob": "991ca7e8440676e641a48c9637363a0bb8abfa82",
+      "imported_sha256": "863a050432c1931b91165efec48b2436247e95234d754917ee73ade7c9036d52"
     },
     {
       "public_path": "lab2/UI/界面01_登录与校园邮箱注册.svg",
@@ -35,8 +35,8 @@
     },
     {
       "public_path": "lab2/UI/界面02_发现校园里的好物.png",
-      "source_blob": "8257d6d6d2ac48215c53f13f10c9a0e1e7656c5f",
-      "imported_sha256": "510c9d057755add0cf4874315e3bc3c0c4b54ae48257e5fd828a2cd87173a5df"
+      "source_blob": "02297f205540e1ea4587cfff4cb54d5921d35982",
+      "imported_sha256": "c0a807d67bf5d1f08bd03acbc570ce49e75380c71c69ad5798d5b3681261b309"
     },
     {
       "public_path": "lab2/UI/界面02_发现校园里的好物.svg",
@@ -45,8 +45,8 @@
     },
     {
       "public_path": "lab2/UI/界面03_商品详情与预约.png",
-      "source_blob": "95be71ff417f65be22b41f1b5d212f2f62ee5c76",
-      "imported_sha256": "21d1ddba27aba546b79e041b62c8870b9ee72e1ca2e2e2de250399e53a85da0a"
+      "source_blob": "7144dc2355363e2478713e093614be56745dc1cb",
+      "imported_sha256": "70157ea8949b2d288af33063acaaf06a6135ba5bf9dc49be93933c96523bdbe1"
     },
     {
       "public_path": "lab2/UI/界面03_商品详情与预约.svg",
@@ -55,8 +55,8 @@
     },
     {
       "public_path": "lab2/UI/界面04_编辑商品草稿.png",
-      "source_blob": "743e89bc80122b5a1bcdbdb8e7c544fde1db3f03",
-      "imported_sha256": "260e58d0de4c166c73b9e23e01403c8b04860971ad00c79fc3246718c52d6825"
+      "source_blob": "5386fd3397d8e5dce2e8269aee1f115e1854f8a3",
+      "imported_sha256": "a21d20421bb0cf86b61b92ed49149fbcd3596c4ca0e4378aa9eef483231c29b8"
     },
     {
       "public_path": "lab2/UI/界面04_编辑商品草稿.svg",
@@ -65,48 +65,48 @@
     },
     {
       "public_path": "lab2/UI/界面05_我的商品.png",
-      "source_blob": "cb24cf639aac8c034254fe1a89b264ef9bba232f",
-      "imported_sha256": "a0487f9a4cf3b98b7bfd484ba0b0bb21453a28474b16eaca1e96899f21ac44f7"
+      "source_blob": "cd733b325d05aea404d1b87e3b5295be63e32ef7",
+      "imported_sha256": "e49ee2e973aab3f8da71577438249bfe9a10ec38228d0012cffc90231d19f87c"
     },
     {
       "public_path": "lab2/UI/界面05_我的商品.svg",
-      "source_blob": "048afa664e25e3123589ac416e72320495b0e900",
-      "imported_sha256": "fcbe996751b6d3519f52c00ea43d78183362b53ca04fa5e5005248c7f45a1e69"
+      "source_blob": "ee2d04047f4a8949f4e2cbddb136ef99aa251291",
+      "imported_sha256": "de252a5815ba745132a520c87bf292670a317dee63e6ba5a6ebca8c99f5a0172"
     },
     {
       "public_path": "lab2/UI/界面06_我预约的.png",
-      "source_blob": "308263245ba890b66489f3e9ca0f08e15d5b2b71",
-      "imported_sha256": "0f3adf242936094c79102957b93d7a711cf5ae633b2bb5f266b4dd4db5df880e"
+      "source_blob": "39eb6afbcc9423d98d78160c54e68960d883d743",
+      "imported_sha256": "17cf62f1f0f5cc4f33be0a8be6376cb600393327cd52167356431808e1f4e822"
     },
     {
       "public_path": "lab2/UI/界面06_我预约的.svg",
-      "source_blob": "fdd234789f76b5c1330219f2288c881b1fb1b208",
-      "imported_sha256": "44f521e0d74e1fbfaa04218442b9df6ee86d2748c880b4fefc38642590b10c26"
+      "source_blob": "4774e45d8ac5bca3e19e4dc356b69912bcca751f",
+      "imported_sha256": "843036a3be3b884b9bd325b2ce77beacc19dd74344220b58cfecb228e2c2beea"
     },
     {
       "public_path": "lab2/UI/界面07_收到的预约.png",
-      "source_blob": "905365e1218b50e235f392b3f8dfb44f4e85b89f",
-      "imported_sha256": "f9d7a033e3785486d558b478d23ea4d936a2b35be31c3bb478747cee9c1ddc86"
+      "source_blob": "7925b7ee1a0194cbc307c94c6bf054073de05d82",
+      "imported_sha256": "16319088df2f2b88f940962636bbce337d0192567d59795bba557f4f9252ef1f"
     },
     {
       "public_path": "lab2/UI/界面07_收到的预约.svg",
-      "source_blob": "3ae97f59f6904af8204a0c7d1b94b0fedca764a7",
-      "imported_sha256": "f742b7931fc7eb6b9fb81adb8b6ec430de9a88f67419ae20e7b42222e377e691"
+      "source_blob": "97adf5466c9007bbd1aa4d9feea242fd52cb5bec",
+      "imported_sha256": "d641eccfa48452404c361354565692851bd0b98641429e90d28690f6630d3012"
     },
     {
       "public_path": "lab2/UI/界面08_商品审核.png",
-      "source_blob": "2b1eb9f3ea2dac7051bb479feb95a36a60a7127a",
-      "imported_sha256": "7cf882b466b86b2df9921c238affb414e611c6e7f535517d09f0b6e9e5f12897"
+      "source_blob": "53c1095fb6006aa8c21bbc52376eae0306c9c244",
+      "imported_sha256": "c590e897b647c04bccd5f5a8d2283e8e81efb630b0be10b3a872f8c6ca94e4df"
     },
     {
       "public_path": "lab2/UI/界面08_商品审核.svg",
-      "source_blob": "ecb39a8bf3dc9003f4fb0f2578d10c1eaac57e34",
-      "imported_sha256": "e798ac03779fc8ac0c7097b90b84cc2f04c1ce703617986da68e7ff767db7cda"
+      "source_blob": "597cceb13dcdfacb83205d5a275ef32341ac0922",
+      "imported_sha256": "bb73f7efeab3aff667c2e3249b58cd080f00c85e3ea8c1a895c9f73463fe8e21"
     },
     {
       "public_path": "lab2/UI/界面09_违规处理与账号管理.png",
-      "source_blob": "a1938fb8f25e566cf03324b29ed3a2f22675fcd3",
-      "imported_sha256": "41b58b54759916895224284b64cfca4dfcda2cc857d9b3d4ada9f231a81100cb"
+      "source_blob": "0bf2262cc1c138c5999633e32329518d659561a8",
+      "imported_sha256": "e69c18565c369ddd6514de6452a3de10871f1338be15095e2687f55dbfecc7b6"
     },
     {
       "public_path": "lab2/UI/界面09_违规处理与账号管理.svg",
@@ -115,8 +115,8 @@
     },
     {
       "public_path": "lab2/UI/界面10_创建管理员账号.png",
-      "source_blob": "a22b98a9fdaefffd9035315b9b6e32a3effb4bb5",
-      "imported_sha256": "61270a15427361df61b95714aa5a5c697cc62f68a53ebecdec1f0acd12b00412"
+      "source_blob": "5bd5701ae860a249a5499d84d9e2f0d101748cb1",
+      "imported_sha256": "04b29120b4c501d20d19a5bfdec2ce930f77df4bc1426ed70aeee344d945e8df"
     },
     {
       "public_path": "lab2/UI/界面10_创建管理员账号.svg",
@@ -125,8 +125,8 @@
     },
     {
       "public_path": "lab2/UI/界面11_我的分类统计.png",
-      "source_blob": "776038cf49922ea4ea41bcda7ec176df245793c3",
-      "imported_sha256": "d047f35fe2d1cb65d46185ba07a1dbb52a44f56d90a85d0317712b9bec735af2"
+      "source_blob": "b20d82a975218b910f095196336c520eb16a4eea",
+      "imported_sha256": "5d2addb06900c3595a772fe309801ff999775189f76414083680e4a34923fa7e"
     },
     {
       "public_path": "lab2/UI/界面11_我的分类统计.svg",
@@ -135,8 +135,8 @@
     },
     {
       "public_path": "lab2/UI/界面12_平台成交统计.png",
-      "source_blob": "73c21058824c9f1c53c7e2ad90466f97f32934f1",
-      "imported_sha256": "59291554b1ccbde891b7745fd92a17a1b48716f1bab80aef33930d08a6b4a42b"
+      "source_blob": "3ef4eeca5bc262fdc659912e07dc3b25b4870ef9",
+      "imported_sha256": "f21860e01c344b70795a0a937ed842809a90621a94954c00b40a2bc522817fb9"
     },
     {
       "public_path": "lab2/UI/界面12_平台成交统计.svg",
@@ -145,8 +145,8 @@
     },
     {
       "public_path": "lab2/UI/界面13_我的操作历史.png",
-      "source_blob": "521152fd94ff4060d9255cacfd51b3b523b1db9f",
-      "imported_sha256": "33326c12749f262a656871c0835face9b03ac649cf4bf3bc4add44b1ffab2ff2"
+      "source_blob": "aecbfdf25e4dc63dcca94a0c4bfb69e4da7b57eb",
+      "imported_sha256": "e87f1f797f9b4e8bc8f0457798e6d74ebc144fe429befbe83a867a3bd9e9ed23"
     },
     {
       "public_path": "lab2/UI/界面13_我的操作历史.svg",
@@ -155,8 +155,8 @@
     },
     {
       "public_path": "lab2/UI/界面14_管理操作日志.png",
-      "source_blob": "33e51f66d9db8b26ca4e963d29db6e596b3febe0",
-      "imported_sha256": "9b2e0970e3455a354f6bd2bf44ceafd441a604a6680d4b251e3b95b67e7e97af"
+      "source_blob": "f13f4cca23ec888e503a865217476d6558e49c28",
+      "imported_sha256": "ab9877ba7acdefd6eeca47aaf6c74526754531edd7f578bd1d688f4e9b88ab6f"
     },
     {
       "public_path": "lab2/UI/界面14_管理操作日志.svg",
@@ -164,59 +164,109 @@
       "imported_sha256": "697ffc3efcc660e70690176ddfbda7ab7e92535b23321d4a6e4a3ff30028f601"
     },
     {
+      "public_path": "lab2/UML/UML商品状态图.png",
+      "source_blob": "562dc2d65e689773cc900d340c0f393526c57696",
+      "imported_sha256": "b5d9b601378c149760a00ef4fbdc1b2b200ac4fb5ce4bf1febba4f1b3cd67fe4"
+    },
+    {
       "public_path": "lab2/UML/UML商品状态图.puml",
-      "source_blob": "5fa04621163238786dcd28346114f40eaba73841",
-      "imported_sha256": "f52d2500cb191518e082fcf8933396034b5a14a4d140f9e659bd1efe7b8b5864"
+      "source_blob": "c09a2de9ad854de8678572723ea4cd50ca896462",
+      "imported_sha256": "201c8a1a8896a075b1a83122e7781f04e85e74aab9606cdd2153d4939af130a1"
+    },
+    {
+      "public_path": "lab2/UML/UML安全与审计类图.png",
+      "source_blob": "249dd2107730db48e8d0eb76a9ac504b288164c6",
+      "imported_sha256": "ca2115642d17cbfcca06f3a38c503cafd02a8174249c7ce6382d631e16665226"
     },
     {
       "public_path": "lab2/UML/UML安全与审计类图.puml",
-      "source_blob": "317ed0373348502c9d3b961b10b3d3970b4037ce",
-      "imported_sha256": "91d9f8fb0b530d523e0ef04b0b1d64634a9283f6c15862df245fc8ca14b1149b"
+      "source_blob": "2cd4615a10e3bb3c1fedc109cf166ec1f3440b57",
+      "imported_sha256": "a607c7a3484f4971f4fc23c5c6322f215e405d5334a03091b4770bc539fd8a0a"
+    },
+    {
+      "public_path": "lab2/UML/UML用例图.png",
+      "source_blob": "9171d20cd6e93fdfede2f5c2a790a49354a1a006",
+      "imported_sha256": "34fca16c70d9d1f26d11325d699aa5a5dc78e644145aa7cba1f1b7374339e257"
     },
     {
       "public_path": "lab2/UML/UML用例图.puml",
-      "source_blob": "92f7e59ca1f78e4a8b041d3b2ecf540e70c07d61",
-      "imported_sha256": "904befbf07c62d6707bafc1100b55ddd15acd0415a1e84bf81e839d0b96b3dfe"
+      "source_blob": "34b290b5e4620efc7c6ff53ea3a7ff45f51d5d24",
+      "imported_sha256": "eaf87e3e5a740717977416d128249b120b2bca26476123b257f962b1cde9009d"
+    },
+    {
+      "public_path": "lab2/UML/UML类图.png",
+      "source_blob": "41c6abf3ac287476bfa4065bde455baaccc468db",
+      "imported_sha256": "6b419a976b07390f08877fde4faec7860f5a3dc5f9e988f34298ad280885c24a"
     },
     {
       "public_path": "lab2/UML/UML类图.puml",
-      "source_blob": "34a8f3a2f41c14419b9f452cc0f4dd182ec63365",
-      "imported_sha256": "b96b83d6528be7dc6f0bf4196193fe47f341834b1111605197e4d4cdf8560f7a"
+      "source_blob": "b61da4a37cf217df1538f1315b9cbb6063024b3b",
+      "imported_sha256": "26f3bf3c5096840e152500f9987ed4d2e14490b361cc4c9b6c5d040a45f8d698"
+    },
+    {
+      "public_path": "lab2/UML/UML组件图.png",
+      "source_blob": "a54afb4bb0ec8777420488ca128aec37c24b463d",
+      "imported_sha256": "7d320a73a73702d68dc3427673e94d298d540a74c6c346201b37d19aedd9062a"
     },
     {
       "public_path": "lab2/UML/UML组件图.puml",
-      "source_blob": "05d0a2b139e8d5c1b5d31d32a5edeb02328cc82c",
-      "imported_sha256": "eb2b4eb6672ebb24033cc166f37c743533f1b93370cb117b50793a778e0e27ba"
+      "source_blob": "f40f7fc510e547b6c8d005dc302e087d546913b0",
+      "imported_sha256": "29be0a7aaf82ef8124f679431ab1e71ca02ea83a7d1efc90f7b42559b943e3fb"
+    },
+    {
+      "public_path": "lab2/UML/UML预约时序图.png",
+      "source_blob": "bec1a0a54b43ea3a0ea73afa26faae6fadcfb047",
+      "imported_sha256": "953feeb7dddba374cb21152b2703ef49f215c7b11a6ee39e8c087cd79a925112"
     },
     {
       "public_path": "lab2/UML/UML预约时序图.puml",
-      "source_blob": "a9ba8eb611090a43daaa2bd1384a509acd32f0b9",
-      "imported_sha256": "5c5993c28e404349cedb013f3e98689d8107349f0aa781e22c2bbc576c864890"
+      "source_blob": "1e37bc026d1306d96e2ea65d602d07f287d042a3",
+      "imported_sha256": "e0a28bcedb00481e7fe1975b4ae30c31a3fc0ceb92440ff1dce524535eb581db"
+    },
+    {
+      "public_path": "lab2/UML/UML预约活动图.png",
+      "source_blob": "b8a50b56222aca1f7c39adb825dff55c93961fbf",
+      "imported_sha256": "f0d25260791d1dcce70c5b2fd4b50963bdb5d83413385fb8472ee0f3f0657050"
     },
     {
       "public_path": "lab2/UML/UML预约活动图.puml",
-      "source_blob": "86328404cbbbd373c1ec127c9457994d5aa362d6",
-      "imported_sha256": "0c6b81dae5dd00ebfe8559930468eb1399c60d89a48214678eecc0914623f1f0"
+      "source_blob": "5ddc8cab301d7bc975fa2b9134cd4345eb4ada37",
+      "imported_sha256": "861383e51402578e4bf18a416d30678fbca9242ce71fff63d8dfe498984dd924"
+    },
+    {
+      "public_path": "lab2/process/AI使用记录.json",
+      "source_blob": "ec9fe85b1201045c2ee637aaed289d3548d2568e",
+      "imported_sha256": "0b8621c521cf88a36d11847fdf73709c3b4eb2737cb921fcd27dce9a5e77ff23"
     },
     {
       "public_path": "lab2/process/UI总览.png",
-      "source_blob": "e6edb7cc253e55aa8325c0afcf99e92354a30e46",
-      "imported_sha256": "50df557d6876dcf6ed14a022451bef12267987dd7fbf8e3b71a3cdfc34816c1a"
+      "source_blob": "a12b72106ac8d6f6b38d367222609578ad591024",
+      "imported_sha256": "f8a4cf9aa50472a446391521841981a2319a6f66a4b836ec3294b10f3ee0e683"
     },
     {
       "public_path": "lab2/process/UI校验结果.json",
-      "source_blob": "e03b58863d17d3d20b8ad8d543c3d76086c06f7b",
-      "imported_sha256": "d7e53060fe8f04e3132de4ccd2a5bd93ddf4ea835b07408e446e09dfb2c11c12"
+      "source_blob": "a011c9b43b36950ddd25fe7bcfc2798d8940fbbb",
+      "imported_sha256": "93bf1580422de987194eabaf2475d33547a9dbf4c625f6847c5c6354d0916565"
+    },
+    {
+      "public_path": "lab2/process/UI示例数据登记.json",
+      "source_blob": "68522a963abb38554bf2c4108545a343a6868319",
+      "imported_sha256": "9e40962625c8c9fd79438511010f9c5a4c676eb3aae2ed7df296052ccb841d15"
     },
     {
       "public_path": "lab2/process/UI说明.json",
-      "source_blob": "043ad025cd56a23f66b4bca4331cc523f83f835d",
-      "imported_sha256": "e8757a799a3b2e3e0677f2543ffdb6bffb5770946d91bacf28f26d788be30dea"
+      "source_blob": "ed18a664ccda62a89866dc8ef65062d8f7c05d1a",
+      "imported_sha256": "212f7becbf92b5ac34a397c83c3aeeb2a134e8ad0471fd33993bb284148af42d"
+    },
+    {
+      "public_path": "lab2/tools/export_ui_offline.sh",
+      "source_blob": "422d673acc73fc03ebc4cef54b6a04b7dd7b3110",
+      "imported_sha256": "caa457a9a0528d85bfb26e7f00b2f5c8d0c670e3d310bffb5d9fff761fa9cadf"
     },
     {
       "public_path": "lab2/tools/generate_ui.py",
-      "source_blob": "1f2582160e2f935b2d96e432b3368edf2b46b343",
-      "imported_sha256": "ba09b51534c5f78c3a57a06cfc18b7eda6066cafa518235ada097d78ab925c86"
+      "source_blob": "5c97951b8776204ec6189ee34a0a228fb9a4b09c",
+      "imported_sha256": "2a0dd52c88ee0db76ede78ce1e2470ecbb9c2dae0b86c1b24cd66515515405fa"
     },
     {
       "public_path": "lab2/process/initial/UI说明_v1.json",
@@ -227,6 +277,16 @@
       "public_path": "lab2/tools/initial/generate_ui_v1.py",
       "source_blob": "162f55bf4197a500958aef9e8cd97763d252fa39",
       "imported_sha256": "b74e6d3ea4e150573522ed700dd2e0c87a5dc033aeaf2306ee289f40b5ded611"
+    },
+    {
+      "public_path": "lab2/process/UML设计说明.txt",
+      "source_blob": "a1c84e539b3f4b95327c966b35005632cb4c7d18",
+      "imported_sha256": "702188a0eed9fa65b34362b0cfa7811b06cd3d46e675ba500517332273ffaf3b"
+    },
+    {
+      "public_path": "lab2/process/人工审阅记录_待本人填写.txt",
+      "source_blob": "701564b9cc6cde408ef077972a619bddd98cca5c",
+      "imported_sha256": "e2061334b77ba34b3a4c9f638b8c092516969306cf8221114dbf91d87d6ede8b"
     },
     {
       "public_path": "lab2/process/用户原始指令与决策.txt",
@@ -242,6 +302,16 @@
       "public_path": "lab2/process/baseline/requirements-v1.2.md",
       "source_blob": "941745931d19cb14328b84849bf985c6171d5164",
       "imported_sha256": "eb445eae6023a392c343b72a74d25476a8a74a520a49411fe593bbd8437b73d4"
+    },
+    {
+      "public_path": "lab2/process/需求设计追溯.csv",
+      "source_blob": "d91de17afb33381c7ebe7998adca9cecb11906e9",
+      "imported_sha256": "d7fe356d726f74087091041b1ea564073d57507e7802b1565104c73f190d1a87"
+    },
+    {
+      "public_path": "lab2/process/静态复核记录.txt",
+      "source_blob": "9219262adedc1d3f0ff436e26d4032e6b41bc89d",
+      "imported_sha256": "d4b4670880c57d8abd37b667eb4fcc266ff1bd9311c8309455c2db042bd93b06"
     }
   ]
 }

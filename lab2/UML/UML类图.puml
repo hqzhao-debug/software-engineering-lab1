@@ -27,7 +27,7 @@ class "商品 Product" as P {
   +id: UUID
   +sellerId: UUID
   +state: ProductState
-  +currentVersion: int
+  +contentVersion: int
   +rowVersion: int
   +activeRestriction: bool
   +saveDraft(expectedVersion)
@@ -47,7 +47,6 @@ class "已提交版本 SubmittedVersion" as V {
   +price: Decimal
   +description, imageRefs
   +submittedAt: Instant
-  {static} immutable
 }
 class "审核批次 ReviewSubmission" as R {
   +id: UUID
@@ -70,10 +69,9 @@ class "预约 Reservation" as B {
   +cancel(reason) / complete()
 }
 class "预约快照 ReservationSnapshot" as S {
-  +title, condition, description
+  +title, category, condition, description
   +price: Decimal
   +imageRefs, buyerMessage
-  {static} immutable
 }
 A "1" -- "0..*" P : 卖家
 A "1" -- "0..*" B : 买家
@@ -84,6 +82,9 @@ R "0..*" --> "1" V : 审核此版本
 R "0..*" --> "0..1" A : 审核人（管理员）
 P "1" -- "0..*" B : 历史预约
 B "1" *-- "1" S
+note top of V
+  {只读约束} 已提交版本不可原地覆盖。
+end note
 note bottom of P
   一条商品是一件物品；标题可重复。
   每商品至多一条有效预约、至多一笔完成交易。

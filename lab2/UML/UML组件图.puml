@@ -14,34 +14,24 @@ skinparam stateBackgroundColor #F2F8F8
 skinparam stateBorderColor #317B7D
 skinparam noteBackgroundColor #FFF7E6
 skinparam noteBorderColor #D4AD66
-skinparam linetype ortho
+skinparam linetype polyline
 hide empty members
 title UML 组件图：模块化单体与存储边界
-left to right direction
+top to bottom direction
 actor "电脑浏览器用户" as U
-component "浏览器 UI
-公开市场／个人中心／管理后台" as WEB
+component "浏览器 UI\n公开市场／个人中心／管理后台" as WEB
 package "模块化单体应用" {
-  component "认证与访问控制
-会话／角色／对象归属／可见字段" as AUTH
-  component "账号模块
-注册验证／管理员建号" as ACC
-  component "商品模块
-草稿／版本／查询／送审" as GOODS
-  component "交易模块
-预约／确认／拒绝／取消／完成" as TRADE
-  component "管理模块
-审核／违规／封禁与解封" as ADMIN
-  component "审计与统计模块
-历史／日志／成交聚合" as AUDIT
-  component "事务与持久化访问
-幂等／行锁／唯一约束／统一提交" as DATA
+  component "认证与访问控制\n会话／角色／对象归属／可见字段" as AUTH
+  component "M1 账号模块\n注册验证／管理员建号" as ACC
+  component "M2 商品模块\n草稿／版本／查询／送审" as GOODS
+  component "M3 交易模块\n预约／确认／拒绝／取消／完成" as TRADE
+  component "M4 管理模块\n审核／违规／封禁与解封" as ADMIN
+  component "M5 历史与审计模块\n业务历史／操作日志" as AUDIT
+  component "M6 统计模块\n本人／平台成交聚合" as STATS
+  component "事务与持久化访问\n幂等／行锁／唯一约束／统一提交" as DATA
 }
-database "PostgreSQL
-账号、会话、版本、批次、预约
-快照、限制、幂等、日志" as DB
-folder "受控图片存储
-保留被历史引用的图片" as IMG
+database "PostgreSQL\n账号、会话、版本、批次、预约\n快照、限制、幂等、日志" as DB
+folder "受控图片存储\n保留被历史引用的图片" as IMG
 cloud "注册验证邮件服务" as MAIL
 U --> WEB
 WEB --> AUTH : HTTPS 请求
@@ -50,6 +40,7 @@ AUTH --> GOODS
 AUTH --> TRADE
 AUTH --> ADMIN
 AUTH --> AUDIT
+AUTH --> STATS
 ACC --> MAIL : 仅注册验证
 ADMIN --> GOODS : 审核当前批次
 ADMIN --> TRADE : 违规／封禁联动终止
@@ -59,6 +50,7 @@ GOODS --> DATA
 TRADE --> DATA
 ADMIN --> DATA
 AUDIT --> DATA
+STATS --> DATA
 DATA --> DB
 GOODS --> IMG
 note bottom of DATA
