@@ -1,10 +1,10 @@
 {
-  "stage": 2,
-  "source_commit": "4d41cc4510468ff9f36e970f2d5f8dd898f92463",
-  "source_time": "2026-11-07T11:12:05+08:00",
-  "source_subject": "lab2: apply user-selected independent session timeout",
+  "stage": 3,
+  "source_commit": "c42cd5643883103cd53275bdbcc6c78cc829781b",
+  "source_time": "2026-11-07T11:13:55+08:00",
+  "source_subject": "lab2: preserve first generated UI design for review",
   "source_tags_local_only": [
-    "lab2-user-session-decision"
+    "lab2-ui-ai-draft"
   ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
@@ -12,6 +12,171 @@
       "public_path": "lab2/assignment.md",
       "source_blob": "ce23bbdc37560cb2cc80c2a9fb90c4e7a6742454",
       "imported_sha256": "4f45931e55dae0eb27b503a4af298ca73c4203a1ac1f94b6e05a457d1b4315de"
+    },
+    {
+      "public_path": "lab2/UI/校园循物_UI设计.drawio",
+      "source_blob": "8d09a4b11ebea966a4cac28710ae237f8ab80d86",
+      "imported_sha256": "b2fafd05e8275b51cde0db15da582980a93541d9e72490aa1b14585e7ac40c0a"
+    },
+    {
+      "public_path": "lab2/UI/源文件说明.txt",
+      "source_blob": "8f66cf577649766e2b1f549e8ef0b0d702cefd11",
+      "imported_sha256": "2a9994556c301b9377c4096915fc8c0788d376c2ad0e536fd6047c5b5b764181"
+    },
+    {
+      "public_path": "lab2/UI/界面01_登录与校园邮箱注册.png",
+      "source_blob": "70a0080415c0ed93a94e10d8a67f8de3c9d1bfec",
+      "imported_sha256": "5b7e7ba416ac60e2b41d7315079c46816f48b20c3ba1c70413595a1850754999"
+    },
+    {
+      "public_path": "lab2/UI/界面01_登录与校园邮箱注册.svg",
+      "source_blob": "6c62f9765b625d437daeec9e7e1e92c6f99997cc",
+      "imported_sha256": "efd1f44abeb644297e8370a5a1291b7e81551173a0ae64d01ce24723fcfc1b92"
+    },
+    {
+      "public_path": "lab2/UI/界面02_发现校园里的好物.png",
+      "source_blob": "0061e04ceb8127544bd7c07617229fbd6822a5e7",
+      "imported_sha256": "6cebbdeffb47e6df2c52efcb8a3738bc459c9527c51615600ac1726e153e6e0f"
+    },
+    {
+      "public_path": "lab2/UI/界面02_发现校园里的好物.svg",
+      "source_blob": "1133579052578f7a7a45aba4130ffe0165b513d6",
+      "imported_sha256": "7f79e3dbf3b28557fbe38a6353a681e771f4252f3a16dcf8dc1c7534bea978de"
+    },
+    {
+      "public_path": "lab2/UI/界面03_商品详情与预约.png",
+      "source_blob": "9c0f3bd445d5110e8f52913bcef97af691ebeabd",
+      "imported_sha256": "ca897e828c1881795b9c1a8cdb8b58cda5f6e359e983180b1cbd829bda6469eb"
+    },
+    {
+      "public_path": "lab2/UI/界面03_商品详情与预约.svg",
+      "source_blob": "7b9037d3c2fdb0b28d4c0994428c2e434d0a27cc",
+      "imported_sha256": "b8a592427edbd0a6b085024491c01f46cda67a34fd2a2eb82f61a28f676e61a0"
+    },
+    {
+      "public_path": "lab2/UI/界面04_编辑商品草稿.png",
+      "source_blob": "cec51055e7df84887fb526d65e76c24deb76326f",
+      "imported_sha256": "fb8ba8550b19aad9a081bc6dea05744b1100db8329aa8f59658cafcc48db0f91"
+    },
+    {
+      "public_path": "lab2/UI/界面04_编辑商品草稿.svg",
+      "source_blob": "35499ef121915d9d2714af696e0484c5d276e447",
+      "imported_sha256": "f5b9642223cbed62e29378309ceefc28bd4871f1b9163b3cacb51e5a9c04440f"
+    },
+    {
+      "public_path": "lab2/UI/界面05_我的商品.png",
+      "source_blob": "6792c1dd3a31aabaa7cf64b02c9c1b6c0672d7cc",
+      "imported_sha256": "334210ff97565a702eaab19bc7bb5240a75f4ba40233da467997d07a4e19d69f"
+    },
+    {
+      "public_path": "lab2/UI/界面05_我的商品.svg",
+      "source_blob": "a8426950c48a65099ddee78d2fdceddfbc4d2f72",
+      "imported_sha256": "f64f7ede849d86b87254a006b04ea13a8347a8486ca4b2e23e844915308d48bb"
+    },
+    {
+      "public_path": "lab2/UI/界面06_我预约的.png",
+      "source_blob": "308263245ba890b66489f3e9ca0f08e15d5b2b71",
+      "imported_sha256": "0f3adf242936094c79102957b93d7a711cf5ae633b2bb5f266b4dd4db5df880e"
+    },
+    {
+      "public_path": "lab2/UI/界面06_我预约的.svg",
+      "source_blob": "fdd234789f76b5c1330219f2288c881b1fb1b208",
+      "imported_sha256": "44f521e0d74e1fbfaa04218442b9df6ee86d2748c880b4fefc38642590b10c26"
+    },
+    {
+      "public_path": "lab2/UI/界面07_收到的预约.png",
+      "source_blob": "905365e1218b50e235f392b3f8dfb44f4e85b89f",
+      "imported_sha256": "f9d7a033e3785486d558b478d23ea4d936a2b35be31c3bb478747cee9c1ddc86"
+    },
+    {
+      "public_path": "lab2/UI/界面07_收到的预约.svg",
+      "source_blob": "3ae97f59f6904af8204a0c7d1b94b0fedca764a7",
+      "imported_sha256": "f742b7931fc7eb6b9fb81adb8b6ec430de9a88f67419ae20e7b42222e377e691"
+    },
+    {
+      "public_path": "lab2/UI/界面08_商品审核.png",
+      "source_blob": "2b1eb9f3ea2dac7051bb479feb95a36a60a7127a",
+      "imported_sha256": "7cf882b466b86b2df9921c238affb414e611c6e7f535517d09f0b6e9e5f12897"
+    },
+    {
+      "public_path": "lab2/UI/界面08_商品审核.svg",
+      "source_blob": "ecb39a8bf3dc9003f4fb0f2578d10c1eaac57e34",
+      "imported_sha256": "e798ac03779fc8ac0c7097b90b84cc2f04c1ce703617986da68e7ff767db7cda"
+    },
+    {
+      "public_path": "lab2/UI/界面09_违规处理与账号管理.png",
+      "source_blob": "a1938fb8f25e566cf03324b29ed3a2f22675fcd3",
+      "imported_sha256": "41b58b54759916895224284b64cfca4dfcda2cc857d9b3d4ada9f231a81100cb"
+    },
+    {
+      "public_path": "lab2/UI/界面09_违规处理与账号管理.svg",
+      "source_blob": "e22e074ae7655dd5a1da70abefd2ee81e7b15a0d",
+      "imported_sha256": "85950b265fcbea17801ac6ead4c9178166a1e51fb98188e493f4ecf863423f60"
+    },
+    {
+      "public_path": "lab2/UI/界面10_创建管理员账号.png",
+      "source_blob": "a22b98a9fdaefffd9035315b9b6e32a3effb4bb5",
+      "imported_sha256": "61270a15427361df61b95714aa5a5c697cc62f68a53ebecdec1f0acd12b00412"
+    },
+    {
+      "public_path": "lab2/UI/界面10_创建管理员账号.svg",
+      "source_blob": "3a79f0f5bf43745083c1f53721793da9c5fe3f20",
+      "imported_sha256": "6957c21df225364d157abf20e03e9002099ce66387c13b9dec5f75af87ecacbf"
+    },
+    {
+      "public_path": "lab2/UI/界面11_我的分类统计.png",
+      "source_blob": "c25af8dfa1757c728385ecc3dd5c57f5950a8a1a",
+      "imported_sha256": "68be7b48553ad9e1c5ea15ef0b5afd60ccbf7d79a6c9ce69a38ccd7c2d1e77fa"
+    },
+    {
+      "public_path": "lab2/UI/界面11_我的分类统计.svg",
+      "source_blob": "42d7d2d00b066dd32917e649e9a6320b5e63524c",
+      "imported_sha256": "3b748d393ef5e4f6db851237f3ecb82cd7f91fc39ff8b6b7e33a89c8e454e606"
+    },
+    {
+      "public_path": "lab2/UI/界面12_平台成交统计.png",
+      "source_blob": "73c21058824c9f1c53c7e2ad90466f97f32934f1",
+      "imported_sha256": "59291554b1ccbde891b7745fd92a17a1b48716f1bab80aef33930d08a6b4a42b"
+    },
+    {
+      "public_path": "lab2/UI/界面12_平台成交统计.svg",
+      "source_blob": "7810f2105f7cd0f98540356db0fa4277bd22d8e8",
+      "imported_sha256": "5839bbf40502228fd6da2b461ecdd956b109f92e69747994a28d84c2adf29f87"
+    },
+    {
+      "public_path": "lab2/UI/界面13_我的操作历史.png",
+      "source_blob": "89075bcb3730f6f8d6e2d66562d78b24b43cd784",
+      "imported_sha256": "fd64bb4b474344c78530947a15968eeebdff5d64f1b87cd26d9701a24e458168"
+    },
+    {
+      "public_path": "lab2/UI/界面13_我的操作历史.svg",
+      "source_blob": "89cedb98efaf8ad140087bf3eb6fd171921d2b18",
+      "imported_sha256": "9813c46a3ff0202155c6ae8190e5a9c96a6d7fe6ba0509a0dfa0fcc63d204845"
+    },
+    {
+      "public_path": "lab2/UI/界面14_管理操作日志.png",
+      "source_blob": "5203a338691f1dd397b430505f7483c7f773f6e4",
+      "imported_sha256": "c7b9cb63b5082e4797db245cc29f3408f1a057b70c9b9ccecd2bc710a5af5126"
+    },
+    {
+      "public_path": "lab2/UI/界面14_管理操作日志.svg",
+      "source_blob": "4a3c94a75ecf4d27ca1297c230c50b07fdfe7282",
+      "imported_sha256": "f7d48f5beaf2c76b488295cad434a3d9cf39fbc225d019d868cc16c457999d50"
+    },
+    {
+      "public_path": "lab2/process/UI总览.png",
+      "source_blob": "eee263babb71373edd45c2c08900984368e0af20",
+      "imported_sha256": "93b51141b13a243d343d061c17686ad4b2c8baddf37ce46c7794a6812fe9b523"
+    },
+    {
+      "public_path": "lab2/process/UI说明.json",
+      "source_blob": "e4e468a024581d831f07d7ebc98bd86cce117629",
+      "imported_sha256": "d93e91d6f7b48aa8da50b9298f176fc3a46e666f1f4a91f230909b52384affb1"
+    },
+    {
+      "public_path": "lab2/tools/generate_ui.py",
+      "source_blob": "162f55bf4197a500958aef9e8cd97763d252fa39",
+      "imported_sha256": "7846f6ca83a58ed3c30b0be9adf12fd26fb5b4d03298ee5bf8e70fc5a9689479"
     },
     {
       "public_path": "lab2/process/用户原始指令与决策.txt",
