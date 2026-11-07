@@ -1,10 +1,10 @@
 {
-  "stage": 1,
-  "source_commit": "9e8d1ab8f5590a8a56c517fc7d3691d96c9e79ca",
-  "source_time": "2026-11-07T11:11:54+08:00",
-  "source_subject": "lab2: preserve requirements baseline and AI session proposal",
+  "stage": 2,
+  "source_commit": "4d41cc4510468ff9f36e970f2d5f8dd898f92463",
+  "source_time": "2026-11-07T11:12:05+08:00",
+  "source_subject": "lab2: apply user-selected independent session timeout",
   "source_tags_local_only": [
-    "lab2-session-proposal"
+    "lab2-user-session-decision"
   ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
@@ -14,9 +14,14 @@
       "imported_sha256": "4f45931e55dae0eb27b503a4af298ca73c4203a1ac1f94b6e05a457d1b4315de"
     },
     {
+      "public_path": "lab2/process/用户原始指令与决策.txt",
+      "source_blob": "bd2d8fc9632132d578ddc013ff97e40445e32995",
+      "imported_sha256": "4edccf4fa7362265b687d4ba0341f764481c721cfb2ca51a40ef360c9b97011a"
+    },
+    {
       "public_path": "lab2/process/设计决策.txt",
-      "source_blob": "39f23859308acf5bd78c59f9591f72f067d507c6",
-      "imported_sha256": "e3dd8cb635b84828acaa4fe1b3a161db19f2145d549d2e733dd4f1cd2c6aa279"
+      "source_blob": "19ef2397a15e6dbcdab6d59b1c8b65c660ec47de",
+      "imported_sha256": "8e661e8360fe13dfd2de420672e5910af8b367775427abb01c5f904e4e120469"
     },
     {
       "public_path": "lab2/process/baseline/requirements-v1.2.md",
