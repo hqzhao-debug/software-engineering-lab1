@@ -1,10 +1,10 @@
 {
-  "stage": 6,
-  "source_commit": "a1ab846852dff343c2c4e8f8267714a73a1aeadc",
-  "source_time": "2026-11-07T12:54:48+08:00",
-  "source_subject": "lab2: resolve review findings and validate UI with offline drawio",
+  "stage": 7,
+  "source_commit": "b4df20ede45dd5646af6a0e5a139aa678ec089fd",
+  "source_time": "2026-11-07T12:56:39+08:00",
+  "source_subject": "lab2: package reviewed report and traceable design deliverables",
   "source_tags_local_only": [
-    "lab2-ai-reviewed-design"
+    "lab2-reviewable-package"
   ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
