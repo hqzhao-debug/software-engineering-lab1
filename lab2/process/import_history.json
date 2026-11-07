@@ -1,0 +1,100 @@
+{
+  "description": "原独立本地仓库的8个阶段按白名单脱敏重放到实验一原仓库。source_commit只属于本地归档；imported_commit属于本仓库。导入时间使用真实当前时间，未冒充本人编辑。源报告及打包阶段的实名成果保留在本地，本公开快照仅覆盖允许公开的文件。",
+  "original_lab1_final": "fafe54bff2e86f6d8915a13d9692a320560d66b2",
+  "stages": [
+    {
+      "stage": 1,
+      "source_commit": "9e8d1ab8f5590a8a56c517fc7d3691d96c9e79ca",
+      "source_time": "2026-11-07T11:11:54+08:00",
+      "source_subject": "lab2: preserve requirements baseline and AI session proposal",
+      "source_tags_local_only": [
+        "lab2-session-proposal"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "bf8245f445a9ee08f695f07786cb159c45627f03",
+      "file_count": 3
+    },
+    {
+      "stage": 2,
+      "source_commit": "4d41cc4510468ff9f36e970f2d5f8dd898f92463",
+      "source_time": "2026-11-07T11:12:05+08:00",
+      "source_subject": "lab2: apply user-selected independent session timeout",
+      "source_tags_local_only": [
+        "lab2-user-session-decision"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "ac0c431a153b5b9ed15f5ccbb415b91b4a72e605",
+      "file_count": 4
+    },
+    {
+      "stage": 3,
+      "source_commit": "c42cd5643883103cd53275bdbcc6c78cc829781b",
+      "source_time": "2026-11-07T11:13:55+08:00",
+      "source_subject": "lab2: preserve first generated UI design for review",
+      "source_tags_local_only": [
+        "lab2-ui-ai-draft"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "ac7580f94184704a7ae64683859deab16c0fc709",
+      "file_count": 37
+    },
+    {
+      "stage": 4,
+      "source_commit": "1ef31de2d369b0e398ad13d01db48a1bc1885603",
+      "source_time": "2026-11-07T12:48:09+08:00",
+      "source_subject": "lab2: revise UI rules and add report design source",
+      "source_tags_local_only": [],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "645840499ccf20aa865849f51697a7e6062a83a4",
+      "file_count": 40
+    },
+    {
+      "stage": 5,
+      "source_commit": "270c916aecdf67ef66773305ed0ffe3a2f75cd17",
+      "source_time": "2026-11-07T12:48:59+08:00",
+      "source_subject": "lab2: preserve initial PlantUML models",
+      "source_tags_local_only": [
+        "lab2-uml-ai-draft"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "6b790910b7ed554cdd6643ad1c1f7c8edd8742d1",
+      "file_count": 47
+    },
+    {
+      "stage": 6,
+      "source_commit": "a1ab846852dff343c2c4e8f8267714a73a1aeadc",
+      "source_time": "2026-11-07T12:54:48+08:00",
+      "source_subject": "lab2: resolve review findings and validate UI with offline drawio",
+      "source_tags_local_only": [
+        "lab2-ai-reviewed-design"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "47f782e4c7b4229bd224a6821c44ba47f96c3d20",
+      "file_count": 61
+    },
+    {
+      "stage": 7,
+      "source_commit": "b4df20ede45dd5646af6a0e5a139aa678ec089fd",
+      "source_time": "2026-11-07T12:56:39+08:00",
+      "source_subject": "lab2: package reviewed report and traceable design deliverables",
+      "source_tags_local_only": [
+        "lab2-reviewable-package"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "d8e7077a76450031c6a023418d53b82714cf0a51",
+      "file_count": 61
+    },
+    {
+      "stage": 8,
+      "source_commit": "9fcffb4b66391d4f3c717b4e014dae21f924df88",
+      "source_time": "2026-11-07T12:57:00+08:00",
+      "source_subject": "lab2: record archive integrity and final visual checks",
+      "source_tags_local_only": [
+        "lab2-verified-delivery"
+      ],
+      "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
+      "imported_commit": "39670cc5a0dd10bad59882702d1396254493e528",
+      "file_count": 61
+    }
+  ]
+}

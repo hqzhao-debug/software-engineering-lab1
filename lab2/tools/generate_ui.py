@@ -5,6 +5,8 @@ from PIL import Image, ImageDraw, ImageFont
 BASE=Path(__file__).resolve().parents[1]
 OUT=BASE/'UI'
 OUT.mkdir(parents=True,exist_ok=True)
+META=BASE/'process'
+META.mkdir(parents=True,exist_ok=True)
 W,H,S=1440,1000,2
 C={'bg':'#F4F7F8','ink':'#14343F','muted':'#657C84','line':'#DBE5E8','green':'#147D72','mint':'#E6F3EE','white':'#FFFFFF','amber':'#AC6B16','amberbg':'#FFF4DF','red':'#B14E47','redbg':'#FCEDEB','nav':'#102D39','soft':'#EEF3F5','blue':'#356E9C'}
 FONT='/System/Library/Fonts/Hiragino Sans GB.ttc'
@@ -306,9 +308,9 @@ for p in PAGES:
         ET.SubElement(cell,'mxGeometry',x=str(x),y=str(y),width=str(w),height=str(h),**{'as':'geometry'})
 ET.ElementTree(mx).write(OUT/'校园循物_UI设计.drawio',encoding='utf-8',xml_declaration=True)
 meta={'tooling':'AI 程序化构图，生成可在 diagrams.net 打开编辑的多页原生 .drawio 源文件；以相同图元用 Pillow 渲染 PNG，另提供 SVG。未声称在 Figma 或 diagrams.net 中手工绘制。','canvas':{'width':W,'height':H,'png_scale':S},'font':FONT,'pages':[{'id':f'UI-{p.num:02d}','title':p.title,'file':p.name+'.png','requirements':p.req,'description':p.description,'interaction':p.description,'error_states':p.states,'states':p.states} for p in PAGES]}
-(Path(__file__).parent/'UI说明.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
+(META/'UI说明.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
 (OUT/'源文件说明.txt').write_text('本目录含 14 张 PNG 界面设计图、对应 SVG，以及可在 diagrams.net 中打开的多页 .drawio 文件。\n所有图元（包括文字、卡片、输入框和按钮）均为可编辑对象。\n图稿由 AI 根据需求程序化生成，Pillow 按同一组图元渲染 PNG；未声称使用 Figma 手工绘制。\n打开方式：在 diagrams.net 中选择 文件 → 打开 → 从设备，选择 校园循物_UI设计.drawio。\n建议本人逐页核对，在绘图工具中修改至少一处有实质意义的设计并记录修改理由；不能将 AI 生成记录冒充人工设计操作。\n所有数据均为虚构示例，example.invalid 不是实际校园邮箱域名。1440×1000 为本稿画布尺寸，不是新增验收分辨率要求。\n',encoding='utf-8')
 thumb=Image.new('RGB',(720*2,500*7),'#FFFFFF')
 for i,p in enumerate(PAGES):thumb.paste(p.im.resize((720,500)),((i%2)*720,(i//2)*500))
-thumb.save(Path(__file__).parent/'UI总览.png')
-print(json.dumps({'pages':len(PAGES),'png':len(list(OUT.glob('*.png'))),'source':str(OUT/'校园循物_UI设计.drawio'),'overview':str(Path(__file__).parent/'UI总览.png')},ensure_ascii=False))
+thumb.save(META/'UI总览.png')
+print(json.dumps({'pages':len(PAGES),'png':len(list(OUT.glob('*.png'))),'source':str(OUT/'校园循物_UI设计.drawio'),'overview':str(META/'UI总览.png')},ensure_ascii=False))
