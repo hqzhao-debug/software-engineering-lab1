@@ -1,10 +1,10 @@
 {
-  "stage": 7,
-  "source_commit": "b4df20ede45dd5646af6a0e5a139aa678ec089fd",
-  "source_time": "2026-11-07T12:56:39+08:00",
-  "source_subject": "lab2: package reviewed report and traceable design deliverables",
+  "stage": 8,
+  "source_commit": "9fcffb4b66391d4f3c717b4e014dae21f924df88",
+  "source_time": "2026-11-07T12:57:00+08:00",
+  "source_subject": "lab2: record archive integrity and final visual checks",
   "source_tags_local_only": [
-    "lab2-reviewable-package"
+    "lab2-verified-delivery"
   ],
   "import_kind": "selected sanitized content snapshot; current import date; not a human edit",
   "files": [
