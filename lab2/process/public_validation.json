@@ -49,5 +49,14 @@
     "old_history_limitation": "实验一既存路径与提交邮箱保持在旧历史中；本次没有重写旧历史或强推",
     "detailed_report": "本地私用审计报告，不公开身份匹配词或历史命中细节"
   },
-  "human_review": "pending"
+  "human_review_at_original_validation": "pending",
+  "human_review": {
+    "state": "overall_review_no_new_issues_keep_design",
+    "quote": "审阅之后我感觉没什么问题",
+    "reviewed_baseline": "000e4bc170096e3260719fae86564291546a00ea",
+    "reflection": "AI辅助整理、经用户明确认可",
+    "confirmation_quote": "认可，按这个总结记录",
+    "source": "USR-LAB2-REV-01",
+    "scope_limit": "不推定逐图逐条验收、本人手工修改或真实系统测试"
+  }
 }
