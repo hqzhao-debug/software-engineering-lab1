@@ -1,0 +1,16 @@
+{
+  "client_date": "2026-11-25",
+  "test_count": 63,
+  "unit_tests": "PASS",
+  "ruff_check": "PASS",
+  "ruff_format": "PASS",
+  "compile": "PASS",
+  "zipapp_help": "PASS",
+  "zipapp_business_demo": "PASS",
+  "runtime_source_lines": 2303,
+  "human_review_completed": false,
+  "report_written_by_ai": false,
+  "browser_compatibility_tested": false,
+  "real_email_delivery_tested": false,
+  "human_usability_tested": false
+}

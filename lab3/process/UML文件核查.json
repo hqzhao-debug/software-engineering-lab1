@@ -1,0 +1,43 @@
+{
+  "pairs": [
+    {
+      "source": "UML商品状态图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML安全与审计类图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML实现类图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML实现组件图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML用例图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML类图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML组件图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML预约时序图.puml",
+      "png_present": true
+    },
+    {
+      "source": "UML预约活动图.puml",
+      "png_present": true
+    }
+  ],
+  "count": 9,
+  "new_diagrams_visually_reviewed_by": "Codex AI assistant",
+  "human_review_completed": false
+}

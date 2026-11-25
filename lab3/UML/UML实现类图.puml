@@ -40,6 +40,7 @@ class "AccountMixin\naccounts.py" as Account {
 }
 class "ProductMixin\nproducts.py" as Product {
   +save_draft(token, content, id?, version?)
+  +delete_draft(token, id, version)
   +submit_product(token, id, version, key)
   +withdraw_product(token, id, version)
   +off_shelf(token, id, version)
@@ -88,9 +89,12 @@ Market --|> Base
 Admin ..> Trade : 封禁联动释放商品
 Trade ..> Product : 商品关联及版本检查
 Base ..> Error : 拒绝与回滚
-Session ..> Market : CLI 获取令牌后调用
+note right of Session
+  cli.py 从本类取得当前会话令牌，
+  再把令牌作为参数调用 Market。
+end note
 
-note bottom of Market
+note left of Market
   Market 按 Python 多继承组合服务能力。
   UML 概念实体以 SQLite 表与字典承载，未使用 ORM。
   字段与业务关联沿用原交易／安全类图。

@@ -1,0 +1,92 @@
+{
+  "session_date_client": "2026-11-25",
+  "timezone": "Asia/Shanghai",
+  "user_request": "进入作业三文件夹，阅读作业要求，完成作业",
+  "executor": "Codex AI assistant and delegated agents",
+  "scope": [
+    "读取作业三PDF及既有需求和UML",
+    "实现Python命令行与SQLite业务服务",
+    "编写并实际运行自动化测试",
+    "生成实现UML并检查图片",
+    "构建Python zipapp",
+    "准备Git本地及远程管理证据"
+  ],
+  "decisions": [
+    {
+      "decision": "CLI替代浏览器UI，SQLite替代PostgreSQL",
+      "source": "实验三允许实现与设计调整且不强制图形界面；AI实现选择，非本人新确认"
+    },
+    {
+      "decision": "PBKDF2-HMAC-SHA256 600000次，独立随机盐，数据库存随机令牌的SHA256",
+      "source": "AI实现选择"
+    },
+    {
+      "decision": "校园域名默认campus.example，local outbox开发适配器，可配置SMTP",
+      "source": "原需求真实域名尚未给出；未宣称真实邮箱验证验收"
+    },
+    {
+      "decision": "用户提交报告前本人独立审阅并写报告",
+      "source": "作业三要求.pdf第1页逐行检查要求及第2页禁止AI协助报告写作"
+    }
+  ],
+  "observed_issues_and_fixes": [
+    {
+      "issue": "普通用户日志仅按actor过滤，漏掉管理员审核本人商品",
+      "evidence": "初轮test_seller_logs_include_admin_review_of_own_product失败",
+      "fix": "加入本人商品与参与预约范围，保留私稿details隔离",
+      "executor": "AI"
+    },
+    {
+      "issue": "按商品编号筛选日志漏掉以预约编号记录的交易操作",
+      "evidence": "AI交叉审查REQ-026，新增回归用例",
+      "fix": "商品关联预约及审核批次查询",
+      "executor": "AI"
+    },
+    {
+      "issue": "1000商品20并发查询未满足2秒阈值",
+      "evidence": "性能初测原始样本",
+      "executor": "AI",
+      "fix": "数据库内按权限选择可见版本，再组合筛选/排序/分页，只投影当页20条，消除全量N+1查询；添加分页和私稿过滤回归",
+      "verification": {
+        "passed": true,
+        "query": {
+          "samples": 100,
+          "successful": 100,
+          "successful_within_2_seconds": 100,
+          "passes_95_of_100": true,
+          "mean_seconds": 0.159959,
+          "p95_seconds": 0.237549,
+          "max_seconds": 0.244359
+        },
+        "reservation": {
+          "samples": 100,
+          "successful": 100,
+          "successful_within_2_seconds": 100,
+          "passes_95_of_100": true,
+          "mean_seconds": 0.030793,
+          "p95_seconds": 0.158054,
+          "max_seconds": 0.47511
+        }
+      }
+    },
+    {
+      "issue": "关键词合并标题与描述会跨字段误匹配",
+      "evidence": "AI检查优化SQL",
+      "fix": "分别在标题或描述匹配；增加回归断言",
+      "executor": "AI"
+    }
+  ],
+  "human_review": {
+    "completed": false,
+    "note": "当前没有本人逐行审阅或亲自修改的事实，不将AI修复冒称人工修改"
+  },
+  "report": {
+    "generated": false,
+    "note": "课程任务书禁止大模型协助报告写作；仅交付软件文档与机器执行证据"
+  },
+  "environment": {
+    "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+    "sqlite": "3.52.0"
+  }
+}

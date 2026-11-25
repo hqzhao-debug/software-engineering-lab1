@@ -12,8 +12,11 @@ class ProductTests(MarketCase):
         draft = self.market.save_draft(self.tokens["seller"], {"title": "书"})
         self.assertEqual(draft["state"], "DRAFT")
         self.assert_denied(
-            self.market.submit_product, self.tokens["seller"], draft["id"],
-            draft["row_version"], "incomplete",
+            self.market.submit_product,
+            self.tokens["seller"],
+            draft["id"],
+            draft["row_version"],
+            "incomplete",
         )
         updated = self.market.save_draft(
             self.tokens["seller"], self.content(), draft["id"], draft["row_version"]
@@ -21,15 +24,13 @@ class ProductTests(MarketCase):
         self.assertEqual(updated["id"], draft["id"])
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM products"), 1)
         self.assertEqual(
-            self.new_market().get_product(draft["id"], self.tokens["seller"])
-            ["content"]["title"], "软件工程教材",
+            self.new_market().get_product(draft["id"], self.tokens["seller"])["content"]["title"],
+            "软件工程教材",
         )
 
     def test_only_never_submitted_draft_can_be_deleted(self):
         draft = self.draft()
-        self.market.delete_draft(
-            self.tokens["seller"], draft["id"], draft["row_version"]
-        )
+        self.market.delete_draft(self.tokens["seller"], draft["id"], draft["row_version"])
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM products"), 0)
         draft = self.draft()
         self.market.submit_product(
@@ -40,7 +41,9 @@ class ProductTests(MarketCase):
             self.tokens["seller"], draft["id"], current["row_version"]
         )
         self.assert_denied(
-            self.market.delete_draft, self.tokens["seller"], draft["id"],
+            self.market.delete_draft,
+            self.tokens["seller"],
+            draft["id"],
             withdrawn["row_version"],
         )
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM submitted_versions"), 1)
@@ -48,13 +51,18 @@ class ProductTests(MarketCase):
     def test_stale_edit_cannot_overwrite_new_content(self):
         draft = self.draft()
         new = self.market.save_draft(
-            self.tokens["seller"], self.content(title="新版软件教材"),
-            draft["id"], draft["row_version"],
+            self.tokens["seller"],
+            self.content(title="新版软件教材"),
+            draft["id"],
+            draft["row_version"],
         )
         self.assertGreater(new["row_version"], draft["row_version"])
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"],
-            self.content(title="过期页面旧内容"), draft["id"], draft["row_version"],
+            self.market.save_draft,
+            self.tokens["seller"],
+            self.content(title="过期页面旧内容"),
+            draft["id"],
+            draft["row_version"],
         )
         actual = self.market.get_product(draft["id"], self.tokens["seller"])
         self.assertEqual(actual["content"]["title"], "新版软件教材")
@@ -65,9 +73,7 @@ class ProductTests(MarketCase):
             with self.subTest(token=token):
                 self.assert_denied(self.market.get_product, draft["id"], token)
         self.assertEqual(self.market.list_products()["total"], 0)
-        admin_list = self.market.list_products(
-            self.tokens["admin"], scope="admin"
-        )
+        admin_list = self.market.list_products(self.tokens["admin"], scope="admin")
         self.assertNotIn("私人草稿保密内容", json.dumps(admin_list, ensure_ascii=False))
 
     def test_admin_sees_submitted_a_but_not_unsubmitted_b(self):
@@ -82,7 +88,8 @@ class ProductTests(MarketCase):
         updated = self.market.save_draft(
             self.tokens["seller"],
             self.content(title="绝密未提交版本乙", price="7777.77"),
-            draft["id"], withdrawn["row_version"],
+            draft["id"],
+            withdrawn["row_version"],
         )
         for view in (
             self.market.get_product(draft["id"], self.tokens["admin"]),
@@ -93,15 +100,24 @@ class ProductTests(MarketCase):
             serialized = json.dumps(view, ensure_ascii=False)
             self.assertNotIn("绝密未提交版本乙", serialized)
             self.assertNotIn("7777.77", serialized)
+        for filters in ({"keyword": "绝密未提交版本乙"}, {"min_price": "7777.77"}):
+            result = self.market.list_products(self.tokens["admin"], scope="admin", **filters)
+            self.assertEqual(result["total"], 0)
+        submitted = self.market.list_products(
+            self.tokens["admin"],
+            scope="admin",
+            keyword="公开提交版本甲",
+            min_price="12",
+            max_price="12",
+        )
+        self.assertEqual(submitted["total"], 1)
         second = self.market.submit_product(
             self.tokens["seller"], draft["id"], updated["row_version"], "second"
         )
         self.assertNotEqual(first["id"], second["id"])
         visible = self.market.get_product(draft["id"], self.tokens["admin"])
         self.assertEqual(visible["content"]["title"], "绝密未提交版本乙")
-        self.assert_denied(
-            self.market.review, self.tokens["admin"], first["id"], True, "过期审核"
-        )
+        self.assert_denied(self.market.review, self.tokens["admin"], first["id"], True, "过期审核")
         self.assertEqual(
             self.market.get_product(draft["id"], self.tokens["seller"])["state"],
             "REVIEW",
@@ -114,13 +130,19 @@ class ProductTests(MarketCase):
         )
         for decision in (True, False):
             self.assert_denied(
-                self.market.review, self.tokens["admin"], submission["id"],
-                decision, "   ",
+                self.market.review,
+                self.tokens["admin"],
+                submission["id"],
+                decision,
+                "   ",
             )
         current = self.market.get_product(draft["id"], self.tokens["seller"])
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"], self.content(price="6"),
-            draft["id"], current["row_version"],
+            self.market.save_draft,
+            self.tokens["seller"],
+            self.content(price="6"),
+            draft["id"],
+            current["row_version"],
         )
         self.market.review(self.tokens["admin"], submission["id"], False, "描述不符")
         self.assertEqual(
@@ -143,21 +165,25 @@ class ProductTests(MarketCase):
     def test_edit_on_sale_hides_product_and_rejects_stale_reservation(self):
         product = self.published()
         edited = self.market.save_draft(
-            self.tokens["seller"], self.content(price="30"),
-            product["id"], product["row_version"],
+            self.tokens["seller"],
+            self.content(price="30"),
+            product["id"],
+            product["row_version"],
         )
         self.assertEqual(edited["state"], "DRAFT")
         self.assert_denied(self.market.get_product, product["id"])
         self.assert_denied(
-            self.market.reserve, self.tokens["buyer"], product["id"],
-            product["content_version"], "面交", "stale",
+            self.market.reserve,
+            self.tokens["buyer"],
+            product["id"],
+            product["content_version"],
+            "面交",
+            "stale",
         )
 
     def test_off_shelf_requires_new_review_before_publication(self):
         product = self.published()
-        hidden = self.market.off_shelf(
-            self.tokens["seller"], product["id"], product["row_version"]
-        )
+        hidden = self.market.off_shelf(self.tokens["seller"], product["id"], product["row_version"])
         self.assertEqual(hidden["state"], "OFF_SHELF")
         self.assert_denied(self.market.get_product, product["id"])
         submission = self.market.submit_product(
@@ -172,7 +198,10 @@ class ProductTests(MarketCase):
         self.published(title="算法参考书", price="20.00")
         self.published(title="篮球", category="体育器材", price="10.00")
         result = self.market.list_products(
-            keyword="算法", category="教材书籍", min_price="10", max_price="20",
+            keyword="算法",
+            category="教材书籍",
+            min_price="10",
+            max_price="20",
             sort="price_desc",
         )
         self.assertEqual(result["total"], 2)
@@ -183,13 +212,17 @@ class ProductTests(MarketCase):
         )
         self.assert_denied(self.market.list_products, min_price="20", max_price="10")
         self.assertNotIn("@campus.example", json.dumps(result))
+        # A keyword must occur in either field, not across their concatenation.
+        self.assertEqual(self.market.list_products(keyword="材 无")["total"], 0)
 
     def test_image_access_follows_private_public_and_historical_references(self):
         path = self.root / "pixel.png"
-        path.write_bytes(base64.b64decode(
-            "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8"
-            "/x8AAwMCAO+aN1sAAAAASUVORK5CYII="
-        ))
+        path.write_bytes(
+            base64.b64decode(
+                "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8"
+                "/x8AAwMCAO+aN1sAAAAASUVORK5CYII="
+            )
+        )
         image = self.market.upload_image(self.tokens["seller"], path)
         self.assert_denied(self.market.read_image, image["id"])
         self.assert_denied(self.market.read_image, image["id"], self.tokens["admin"])
@@ -200,14 +233,37 @@ class ProductTests(MarketCase):
         self.market.cancel(self.tokens["buyer"], reservation["id"], "cancel")
         current = self.market.get_product(product["id"], self.tokens["seller"])
         self.market.save_draft(
-            self.tokens["seller"], self.content(images=[]),
-            product["id"], current["row_version"],
+            self.tokens["seller"],
+            self.content(images=[]),
+            product["id"],
+            current["row_version"],
         )
         self.assertEqual(
             self.market.read_image(image["id"], self.tokens["buyer"])["data"],
             path.read_bytes(),
         )
         self.assert_denied(self.market.read_image, image["id"], self.tokens["other"])
+
+    def test_price_sort_and_pagination_apply_after_filters(self):
+        for index in range(25):
+            self.published(title=f"分页教材 {index:02d}", price=str(index + 1))
+        first = self.market.list_products(sort="price_asc", page=1)
+        second = self.market.list_products(sort="price_asc", page=2)
+        self.assertEqual(first["total"], 25)
+        self.assertEqual(second["total"], 25)
+        self.assertEqual(len(first["items"]), 20)
+        self.assertEqual(len(second["items"]), 5)
+        self.assertEqual(
+            [item["content"]["price"] for item in second["items"]],
+            ["21.00", "22.00", "23.00", "24.00", "25.00"],
+        )
+        self.assertFalse(
+            {item["id"] for item in first["items"]} & {item["id"] for item in second["items"]}
+        )
+        filtered = self.market.list_products(min_price="10", max_price="22", sort="price_desc")
+        self.assertEqual(filtered["total"], 13)
+        self.assertEqual(filtered["items"][0]["content"]["price"], "22.00")
+        self.assertEqual(filtered["items"][-1]["content"]["price"], "10.00")
 
 
 class InputBoundaryTests(MarketCase):
@@ -225,9 +281,12 @@ class InputBoundaryTests(MarketCase):
             validate_content(self.content(title="字" * length), complete=True)
         validate_content(self.content(description="字" * 500), complete=True)
         for content in (
-            self.content(title="字"), self.content(title="字" * 51),
-            self.content(description="字" * 501), self.content(category="食品饮料"),
-            self.content(condition="六成新"), self.content(price="1.001"),
+            self.content(title="字"),
+            self.content(title="字" * 51),
+            self.content(description="字" * 501),
+            self.content(category="食品饮料"),
+            self.content(condition="六成新"),
+            self.content(price="1.001"),
             self.content(images=["a"] * 6),
         ):
             with self.subTest(content=content):
@@ -238,8 +297,11 @@ class InputBoundaryTests(MarketCase):
         draft = self.draft()
         before = self.business_snapshot()
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"], self.content(price="NaN"),
-            draft["id"], draft["row_version"],
+            self.market.save_draft,
+            self.tokens["seller"],
+            self.content(price="NaN"),
+            draft["id"],
+            draft["row_version"],
         )
         self.assertEqual(self.business_snapshot(), before)
 
@@ -251,6 +313,7 @@ class InputBoundaryTests(MarketCase):
         oversized.write_bytes(b"\x89PNG\r\n\x1a\n" + b"x" * (5 * 1024 * 1024))
         self.assert_denied(self.market.upload_image, self.tokens["seller"], oversized)
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"],
+            self.market.save_draft,
+            self.tokens["seller"],
             self.content(images=["nonexistent-image-id"]),
         )

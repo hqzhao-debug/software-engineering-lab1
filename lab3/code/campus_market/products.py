@@ -5,10 +5,10 @@ copied into ``submitted_versions`` and never updated.  Administrators read the
 latter, including when a seller has subsequently started a new private draft.
 """
 
-from contextlib import contextmanager
-from pathlib import Path
 import sqlite3
 import struct
+from contextlib import contextmanager
+from pathlib import Path
 
 from .models import (
     CATEGORIES,
@@ -19,7 +19,6 @@ from .models import (
     money_cents,
     validate_content,
 )
-
 
 PAGE_SIZE = 20
 MAX_IMAGE_BYTES = 5 * 1024 * 1024
@@ -48,8 +47,7 @@ class ProductMixin:
     @staticmethod
     def _check_no_reservation(conn, product_id):
         occupied = conn.execute(
-            "SELECT id FROM reservations WHERE product_id=? "
-            "AND state IN ('PENDING','CONFIRMED')",
+            "SELECT id FROM reservations WHERE product_id=? AND state IN ('PENDING','CONFIRMED')",
             (product_id,),
         ).fetchone()
         if occupied:
@@ -59,9 +57,7 @@ class ProductMixin:
     def _check_image_ownership(conn, image_ids, owner_id):
         """References are server-issued ids, not arbitrary local or remote paths."""
         for image_id in image_ids:
-            image = conn.execute(
-                "SELECT owner_id FROM images WHERE id=?", (image_id,)
-            ).fetchone()
+            image = conn.execute("SELECT owner_id FROM images WHERE id=?", (image_id,)).fetchone()
             if image is None or image["owner_id"] != owner_id:
                 raise DomainError("INVALID_IMAGE", "图片不存在或不属于当前卖家")
 
@@ -202,9 +198,7 @@ class ProductMixin:
                 raise DomainError("HAS_HISTORY", "已有提交历史的商品不能删除")
             self._check_no_reservation(conn, product_id)
             conn.execute("DELETE FROM products WHERE id=?", (product_id,))
-            self._audit(
-                conn, actor, "delete_draft", product_id, before="DRAFT", after="DELETED"
-            )
+            self._audit(conn, actor, "delete_draft", product_id, before="DRAFT", after="DELETED")
             return {"id": product_id, "deleted": True}
 
     def submit_product(self, token, product_id, expected_version, request_key):
@@ -214,9 +208,7 @@ class ProductMixin:
             conn, actor = pair
             product = self._one(conn, "products", product_id)
             self._check_owner(product, actor)
-            replay = self._idempotent(
-                conn, actor, "submit_product", request_key, payload
-            )
+            replay = self._idempotent(conn, actor, "submit_product", request_key, payload)
             if replay:
                 return self._one(conn, "review_submissions", replay)
             self._check_version(product, expected_version)
@@ -228,8 +220,7 @@ class ProductMixin:
             normalized = validate_content(load_json(product["content_json"]), complete=True)
             self._check_image_ownership(conn, normalized["images"], actor["id"])
             version = conn.execute(
-                "SELECT * FROM submitted_versions "
-                "WHERE product_id=? AND content_version=?",
+                "SELECT * FROM submitted_versions WHERE product_id=? AND content_version=?",
                 (product_id, product["content_version"]),
             ).fetchone()
             now = self._now()
@@ -272,9 +263,7 @@ class ProductMixin:
                 after="REVIEW",
                 details={"submission_id": submission_id, "version_id": version_id},
             )
-            self._remember(
-                conn, actor, "submit_product", request_key, payload, submission_id
-            )
+            self._remember(conn, actor, "submit_product", request_key, payload, submission_id)
             return self._one(conn, "review_submissions", submission_id)
 
     def withdraw_product(self, token, product_id, expected_version):
@@ -286,14 +275,11 @@ class ProductMixin:
             self._check_version(product, expected_version)
             if product["state"] != "REVIEW" or not product["current_submission_id"]:
                 raise DomainError("INVALID_STATE", "当前商品没有待处理的审核批次")
-            submission = self._one(
-                conn, "review_submissions", product["current_submission_id"]
-            )
+            submission = self._one(conn, "review_submissions", product["current_submission_id"])
             if submission["status"] != "PENDING":
                 raise DomainError("INVALID_STATE", "该审核批次已被处理")
             conn.execute(
-                "UPDATE review_submissions SET status='WITHDRAWN',reviewed_at=? "
-                "WHERE id=?",
+                "UPDATE review_submissions SET status='WITHDRAWN',reviewed_at=? WHERE id=?",
                 (self._now(), submission["id"]),
             )
             conn.execute(
@@ -301,9 +287,7 @@ class ProductMixin:
                 "updated_at=? WHERE id=?",
                 (self._now(), product_id),
             )
-            self._audit(
-                conn, actor, "withdraw_product", product_id, before="REVIEW", after="DRAFT"
-            )
+            self._audit(conn, actor, "withdraw_product", product_id, before="REVIEW", after="DRAFT")
             return self._product_dict(self._one(conn, "products", product_id))
 
     def off_shelf(self, token, product_id, expected_version):
@@ -321,9 +305,7 @@ class ProductMixin:
                 "updated_at=? WHERE id=?",
                 (self._now(), product_id),
             )
-            self._audit(
-                conn, actor, "off_shelf", product_id, before="ON_SALE", after="OFF_SHELF"
-            )
+            self._audit(conn, actor, "off_shelf", product_id, before="ON_SALE", after="OFF_SHELF")
             return self._product_dict(self._one(conn, "products", product_id))
 
     def get_product(self, product_id, token=None):
@@ -349,25 +331,37 @@ class ProductMixin:
             raise DomainError("INVALID_INPUT", "最低价格不能大于最高价格")
         return low, high
 
-    def _catalogue_rows(self, conn, actor, scope):
-        """Limit the ownership scope before applying any client-side filters."""
+    @staticmethod
+    def _catalogue_source(actor, scope):
+        """Select the authorized content before SQL filters and pagination.
+
+        The admin source uses an immutable submitted version.  Filtering a
+        seller's current private JSON would reveal draft changes through search
+        matches even if the returned content were redacted afterward.
+        """
         if scope == "public":
-            return conn.execute(
-                "SELECT * FROM products WHERE state='ON_SALE'"
-            ).fetchall()
+            return (
+                "SELECT p.*,p.content_json AS visible_content "
+                "FROM products p WHERE p.state='ON_SALE'",
+                [],
+            )
         if scope == "mine":
             if not actor or actor["role"] != "USER":
                 raise DomainError("FORBIDDEN", "个人商品查询需要普通用户登录")
-            return conn.execute(
-                "SELECT * FROM products WHERE seller_id=?", (actor["id"],)
-            ).fetchall()
+            return (
+                "SELECT p.*,p.content_json AS visible_content FROM products p WHERE p.seller_id=?",
+                [actor["id"]],
+            )
         if scope == "admin":
             if not actor or actor["role"] != "ADMIN":
                 raise DomainError("FORBIDDEN", "管理查询需要管理员登录")
-            return conn.execute(
-                "SELECT p.* FROM products p WHERE EXISTS "
-                "(SELECT 1 FROM submitted_versions v WHERE v.product_id=p.id)"
-            ).fetchall()
+            return (
+                "SELECT p.*,v.content_json AS visible_content FROM products p "
+                "JOIN submitted_versions v ON v.product_id=p.id "
+                "AND v.content_version=(SELECT MAX(latest.content_version) "
+                "FROM submitted_versions latest WHERE latest.product_id=p.id)",
+                [],
+            )
         raise DomainError("INVALID_INPUT", "查询范围应为 public、mine 或 admin")
 
     def list_products(
@@ -388,50 +382,67 @@ class ProductMixin:
         )
         if not isinstance(keyword, str):
             raise DomainError("INVALID_INPUT", "关键词必须是文本")
-        keyword = keyword.strip().casefold()
+        keyword = keyword.strip().lower()
         with self._optional_reader(token) as pair:
             conn, actor = pair
-            rows = self._catalogue_rows(conn, actor, scope)
+            source, parameters = self._catalogue_source(actor, scope)
+            clauses = ["1=1"]
+            if state:
+                clauses.append("state=?")
+                parameters.append(state)
+            if keyword:
+                clauses.append(
+                    "(instr(lower(json_extract(visible_content,'$.title')),?) > 0 OR "
+                    "instr(lower(json_extract(visible_content,'$.description')),?) > 0)"
+                )
+                parameters.extend([keyword, keyword])
+            if category:
+                clauses.append("json_extract(visible_content,'$.category')=?")
+                parameters.append(category)
+            # Persisted money is validated decimal text with exactly two
+            # fractional digits. ROUND removes floating representation noise
+            # during SQL comparison; no submitted input is silently rounded.
+            price_cents = (
+                "CAST(ROUND(CAST(NULLIF(json_extract(visible_content,'$.price'),'') "
+                "AS REAL)*100) AS INTEGER)"
+            )
+            if low is not None:
+                clauses.append(price_cents + ">=?")
+                parameters.append(low)
+            if high is not None:
+                clauses.append(price_cents + "<=?")
+                parameters.append(high)
+            prefix = "WITH visible AS (" + source + ") "
+            where = " WHERE " + " AND ".join(clauses)
+            total = conn.execute(
+                prefix + "SELECT COUNT(*) FROM visible" + where, parameters
+            ).fetchone()[0]
+            orders = {
+                "newest": "COALESCE(published_at,0) DESC,id DESC",
+                "price_asc": "COALESCE(" + price_cents + ",-1) ASC,id ASC",
+                "price_desc": "COALESCE(" + price_cents + ",-1) DESC,id DESC",
+            }
+            rows = conn.execute(
+                prefix
+                + "SELECT * FROM visible"
+                + where
+                + " ORDER BY "
+                + orders[sort]
+                + " LIMIT ? OFFSET ?",
+                [*parameters, PAGE_SIZE, (page - 1) * PAGE_SIZE],
+            ).fetchall()
+            # Public scope deliberately uses guest projection even if the
+            # caller is the owner or an administrator. Only this page's rows
+            # need seller details and structured-content deserialization.
+            viewer = None if scope == "public" else actor
             results = []
             for row in rows:
                 product = dict(row)
-                if state and product["state"] != state:
-                    continue
-                # Even administrators deliberately see only public fields when
-                # they choose the public catalogue scope.
-                viewer = None if scope == "public" else actor
-                visible = self._visible_product(conn, product, viewer)
-                content = visible["content"]
-                text = f"{content['title']} {content['description']}".casefold()
-                if keyword and keyword not in text:
-                    continue
-                if category and content["category"] != category:
-                    continue
-                amount = money_cents(content["price"]) if content["price"] else None
-                if low is not None and (amount is None or amount < low):
-                    continue
-                if high is not None and (amount is None or amount > high):
-                    continue
-                results.append(visible)
-            if sort == "newest":
-                results.sort(
-                    key=lambda item: (item.get("published_at") or 0, item["id"]),
-                    reverse=True,
-                )
-            else:
-                results.sort(
-                    key=lambda item: (
-                        money_cents(item["content"]["price"])
-                        if item["content"]["price"]
-                        else -1,
-                        item["id"],
-                    ),
-                    reverse=sort == "price_desc",
-                )
-            start = (page - 1) * PAGE_SIZE
+                product.pop("visible_content")
+                results.append(self._visible_product(conn, product, viewer))
             return {
-                "items": results[start : start + PAGE_SIZE],
-                "total": len(results),
+                "items": results,
+                "total": total,
                 "page": page,
                 "page_size": PAGE_SIZE,
             }
@@ -444,15 +455,13 @@ class ProductMixin:
             if actor["role"] != "ADMIN" and product["seller_id"] != actor["id"]:
                 raise DomainError("FORBIDDEN", "无权查看该商品审核历史")
             versions = conn.execute(
-                "SELECT * FROM submitted_versions WHERE product_id=? "
-                "ORDER BY content_version",
+                "SELECT * FROM submitted_versions WHERE product_id=? ORDER BY content_version",
                 (product_id,),
             ).fetchall()
             if actor["role"] == "ADMIN" and not versions:
                 raise DomainError("NOT_FOUND", "该商品没有已提交历史")
             submissions = conn.execute(
-                "SELECT * FROM review_submissions WHERE product_id=? "
-                "ORDER BY created_at,id",
+                "SELECT * FROM review_submissions WHERE product_id=? ORDER BY created_at,id",
                 (product_id,),
             ).fetchall()
             visible_versions = []
@@ -524,12 +533,8 @@ class ProductMixin:
         if not actor:
             return False
         if actor["role"] == "ADMIN":
-            submissions = conn.execute(
-                "SELECT content_json FROM submitted_versions"
-            ).fetchall()
-            return any(
-                self._contains_image(row["content_json"], image_id) for row in submissions
-            )
+            submissions = conn.execute("SELECT content_json FROM submitted_versions").fetchall()
+            return any(self._contains_image(row["content_json"], image_id) for row in submissions)
         histories = conn.execute(
             "SELECT snapshot_json FROM reservations WHERE buyer_id=? OR seller_id=?",
             (actor["id"], actor["id"]),

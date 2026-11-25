@@ -14,8 +14,14 @@ from .models import DomainError, json_text, required
 class BaseService:
     """Shared infrastructure for the UML application service modules."""
 
-    def __init__(self, db_path, email_domain="campus.example", clock=time.time,
-                 mail_mode="local", outbox=None):
+    def __init__(
+        self,
+        db_path,
+        email_domain="campus.example",
+        clock=time.time,
+        mail_mode="local",
+        outbox=None,
+    ):
         self.db_path = Path(db_path)
         self.email_domain = email_domain.strip().lower().lstrip("@")
         self.clock = clock
@@ -45,14 +51,19 @@ class BaseService:
     def _one(connection, table, identifier):
         # Table names are internal constants, never accepted from a CLI flag.
         allowed = {
-            "accounts", "products", "submitted_versions", "review_submissions",
-            "reservations", "violations", "bans", "images", "audit_logs",
+            "accounts",
+            "products",
+            "submitted_versions",
+            "review_submissions",
+            "reservations",
+            "violations",
+            "bans",
+            "images",
+            "audit_logs",
         }
         if table not in allowed:
             raise ValueError("Unsupported internal table")
-        row = connection.execute(
-            f"SELECT * FROM {table} WHERE id = ?", (identifier,)
-        ).fetchone()
+        row = connection.execute(f"SELECT * FROM {table} WHERE id = ?", (identifier,)).fetchone()
         if row is None:
             raise DomainError("NOT_FOUND", "记录不存在或不可访问")
         return dict(row)
@@ -85,24 +96,44 @@ class BaseService:
         if not isinstance(token, str) or not token:
             return None
         row = connection.execute(
-            "SELECT a.* FROM accounts a JOIN sessions s ON a.id=s.account_id "
-            "WHERE s.token_hash=?", (self._token_hash(token),)
+            "SELECT a.* FROM accounts a JOIN sessions s ON a.id=s.account_id WHERE s.token_hash=?",
+            (self._token_hash(token),),
         ).fetchone()
         return dict(row) if row else None
 
-    def _audit(self, connection, actor, operation, object_id=None, before=None,
-               after=None, result="SUCCESS", reason="", details=None,
-               private_owner=None):
+    def _audit(
+        self,
+        connection,
+        actor,
+        operation,
+        object_id=None,
+        before=None,
+        after=None,
+        result="SUCCESS",
+        reason="",
+        details=None,
+        private_owner=None,
+    ):
         safe_details = details or {}
         prohibited = {"password", "password_hash", "token", "verification_token"}
         if prohibited.intersection(safe_details):
             raise ValueError("Sensitive fields cannot be audited")
         connection.execute(
             "INSERT INTO audit_logs VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-            (self._new_id(), actor["id"] if actor else None,
-             actor["role"] if actor else None, operation, object_id, before,
-             after, result, reason, json_text(safe_details), private_owner,
-             self._now()),
+            (
+                self._new_id(),
+                actor["id"] if actor else None,
+                actor["role"] if actor else None,
+                operation,
+                object_id,
+                before,
+                after,
+                result,
+                reason,
+                json_text(safe_details),
+                private_owner,
+                self._now(),
+            ),
         )
 
     def _failure(self, token, operation, object_id, error):
@@ -111,8 +142,9 @@ class BaseService:
         try:
             connection.execute("BEGIN IMMEDIATE")
             actor = self._identify(connection, token)
-            self._audit(connection, actor, operation, object_id, result="FAILURE",
-                        reason=error.message)
+            self._audit(
+                connection, actor, operation, object_id, result="FAILURE", reason=error.message
+            )
             connection.commit()
         except sqlite3.Error:
             connection.rollback()
@@ -181,6 +213,5 @@ class BaseService:
     def _remember(self, connection, actor, operation, key, payload, resource_id):
         connection.execute(
             "INSERT INTO idempotency VALUES (?,?,?,?,?,?)",
-            (actor["id"], operation, key.strip(), self._digest(payload),
-             resource_id, self._now()),
+            (actor["id"], operation, key.strip(), self._digest(payload), resource_id, self._now()),
         )

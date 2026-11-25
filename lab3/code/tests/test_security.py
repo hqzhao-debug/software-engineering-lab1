@@ -7,9 +7,7 @@ from tests.helpers import DOMAIN, PASSWORD, MarketCase, verification_token
 
 class AccountSecurityTests(MarketCase):
     def test_registration_requires_verification_and_consumes_token_once(self):
-        registered = self.market.register(
-            "newuser", f"newuser@{DOMAIN}", "NEW-ID", PASSWORD
-        )
+        registered = self.market.register("newuser", f"newuser@{DOMAIN}", "NEW-ID", PASSWORD)
         self.assertEqual(registered["account"]["role"], "USER")
         self.assertNotIn("verification_token", registered)
         self.assert_denied(self.market.login, "newuser", PASSWORD)
@@ -26,9 +24,7 @@ class AccountSecurityTests(MarketCase):
             ("new", f"new@{DOMAIN}", "ID-seller"),
         ):
             with self.subTest(username=username, email=email, campus_id=campus_id):
-                self.assert_denied(
-                    self.market.register, username, email, campus_id, PASSWORD
-                )
+                self.assert_denied(self.market.register, username, email, campus_id, PASSWORD)
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM accounts"), 4)
 
     def test_domain_restriction_and_required_fields(self):
@@ -39,15 +35,17 @@ class AccountSecurityTests(MarketCase):
             ("new", f"new@{DOMAIN}", " ", PASSWORD),
             ("new", f"new@{DOMAIN}", "NEW", ""),
         ):
-            self.assert_denied(
-                self.market.register, username, email, campus_id, password
-            )
+            self.assert_denied(self.market.register, username, email, campus_id, password)
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM accounts"), 4)
 
     def test_admin_creation_requires_admin_and_new_email_verification(self):
         self.assert_denied(
-            self.market.create_admin, self.tokens["buyer"], "admin2",
-            f"admin2@{DOMAIN}", "ADMIN-2", PASSWORD,
+            self.market.create_admin,
+            self.tokens["buyer"],
+            "admin2",
+            f"admin2@{DOMAIN}",
+            "ADMIN-2",
+            PASSWORD,
         )
         result = self.market.create_admin(
             self.tokens["admin"], "admin2", f"admin2@{DOMAIN}", "ADMIN-2", PASSWORD
@@ -65,10 +63,13 @@ class AccountSecurityTests(MarketCase):
         self.assertNotEqual(row["password_hash"], PASSWORD)
         logged_in = self.market.login("seller", PASSWORD)
         self.assert_denied(self.market.login, "seller", "Wrong-Secret-123")
-        outputs = json.dumps([
-            logged_in["account"], self.market.list_accounts(self.tokens["admin"]),
-            self.market.list_logs(self.tokens["admin"]),
-        ])
+        outputs = json.dumps(
+            [
+                logged_in["account"],
+                self.market.list_accounts(self.tokens["admin"]),
+                self.market.list_logs(self.tokens["admin"]),
+            ]
+        )
         for forbidden in (PASSWORD, "Wrong-Secret-123", row["password_hash"], "password_hash"):
             self.assertNotIn(forbidden, outputs)
         raw_logs = json.dumps(self.rows("SELECT * FROM audit_logs"))
@@ -96,9 +97,7 @@ class AccountSecurityTests(MarketCase):
         reset = self.rows("SELECT * FROM accounts WHERE username='buyer'")[0]
         self.assertEqual(reset["failed_count"], 1)
         self.market.login("buyer", PASSWORD)
-        self.assertEqual(
-            self.scalar("SELECT failed_count FROM accounts WHERE username='buyer'"), 0
-        )
+        self.assertEqual(self.scalar("SELECT failed_count FROM accounts WHERE username='buyer'"), 0)
 
     def test_successful_login_clears_prior_failure_count(self):
         self.assert_denied(self.market.login, "seller", "incorrect")
@@ -136,9 +135,15 @@ class AccountSecurityTests(MarketCase):
             self.tokens["seller"], draft["id"], draft["row_version"], "submit-other"
         )
         actions = (
-            (self.market.reserve, (None, product["id"], product["content_version"], "面交", "guest")),
+            (
+                self.market.reserve,
+                (None, product["id"], product["content_version"], "面交", "guest"),
+            ),
             (self.market.cancel, (self.tokens["other"], reservation["id"], "other-cancel")),
-            (self.market.save_draft, (self.tokens["other"], self.content(), product["id"], product["row_version"])),
+            (
+                self.market.save_draft,
+                (self.tokens["other"], self.content(), product["id"], product["row_version"]),
+            ),
             (self.market.review, (self.tokens["buyer"], submission["id"], True, "越权审核")),
         )
         for operation, arguments in actions:

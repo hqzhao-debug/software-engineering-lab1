@@ -11,7 +11,6 @@ from email.message import EmailMessage
 
 from .models import DomainError, json_text, required
 
-
 PASSWORD_ITERATIONS = 600_000
 
 
@@ -68,7 +67,15 @@ class AccountMixin:
             connection.execute(
                 "INSERT INTO accounts (id,username,email,campus_id,password_hash,role,created_at) "
                 "VALUES (?,?,?,?,?,?,?)",
-                (identifier, username, email, campus_id, password_hash(password), role, self._now()),
+                (
+                    identifier,
+                    username,
+                    email,
+                    campus_id,
+                    password_hash(password),
+                    role,
+                    self._now(),
+                ),
             )
         except sqlite3.IntegrityError as error:
             raise DomainError("DUPLICATE", "用户名、邮箱或学号/工号已被使用") from error
@@ -86,8 +93,10 @@ class AccountMixin:
             self.outbox.chmod(0o700)
             destination = self.outbox / f"{account['id']}.json"
             payload = {
-                "account_id": account["id"], "email": account["email"],
-                "verification_token": token, "created_at": self._now(),
+                "account_id": account["id"],
+                "email": account["email"],
+                "verification_token": token,
+                "created_at": self._now(),
                 "mode": "local-development-only",
             }
             descriptor = os.open(destination, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
@@ -105,8 +114,9 @@ class AccountMixin:
         message["Subject"] = "校园循物：注册邮箱验证"
         message.set_content(f"请在校园循物程序中输入以下验证码：\n{token}\n请勿转发此验证码。")
         try:
-            with smtplib.SMTP_SSL(host, int(os.environ.get("CAMPUS_SMTP_PORT", "465")),
-                                  timeout=10) as smtp:
+            with smtplib.SMTP_SSL(
+                host, int(os.environ.get("CAMPUS_SMTP_PORT", "465")), timeout=10
+            ) as smtp:
                 username = os.environ.get("CAMPUS_SMTP_USER")
                 if username:
                     smtp.login(username, os.environ.get("CAMPUS_SMTP_PASSWORD", ""))
@@ -121,7 +131,9 @@ class AccountMixin:
             connection.execute("BEGIN IMMEDIATE")
             if connection.execute("SELECT COUNT(*) FROM accounts").fetchone()[0]:
                 raise DomainError("FORBIDDEN", "仅空数据库允许初始化首个管理员")
-            account, token = self._new_account(connection, username, email, campus_id, password, "ADMIN")
+            account, token = self._new_account(
+                connection, username, email, campus_id, password, "ADMIN"
+            )
             self._audit(connection, None, "bootstrap_admin", account["id"], after="UNVERIFIED")
             self._deliver_verification(account, token)
             connection.commit()
@@ -141,7 +153,9 @@ class AccountMixin:
         connection = self._connect()
         try:
             connection.execute("BEGIN IMMEDIATE")
-            account, token = self._new_account(connection, username, email, campus_id, password, "USER")
+            account, token = self._new_account(
+                connection, username, email, campus_id, password, "USER"
+            )
             self._audit(connection, account, "register", account["id"], after="UNVERIFIED")
             self._deliver_verification(account, token)
             connection.commit()
@@ -180,10 +194,17 @@ class AccountMixin:
                 raise DomainError("VERIFICATION", "验证码无效或已经使用")
             account = self._one(connection, "accounts", record["account_id"])
             connection.execute("UPDATE accounts SET verified=1 WHERE id=?", (account["id"],))
-            connection.execute("UPDATE verification_tokens SET used_at=? WHERE token_hash=?",
-                               (self._now(), digest))
-            self._audit(connection, account, "verify_email", account["id"],
-                        before="UNVERIFIED", after="VERIFIED")
+            connection.execute(
+                "UPDATE verification_tokens SET used_at=? WHERE token_hash=?", (self._now(), digest)
+            )
+            self._audit(
+                connection,
+                account,
+                "verify_email",
+                account["id"],
+                before="UNVERIFIED",
+                after="VERIFIED",
+            )
             connection.commit()
             account["verified"] = 1
             return public_account(account)
@@ -232,7 +253,9 @@ class AccountMixin:
                     )
                     failure = DomainError("CREDENTIALS", "用户名或密码错误")
                 elif not account["verified"]:
-                    connection.execute("UPDATE accounts SET failed_count=0 WHERE id=?", (account["id"],))
+                    connection.execute(
+                        "UPDATE accounts SET failed_count=0 WHERE id=?", (account["id"],)
+                    )
                     failure = DomainError("UNVERIFIED", "请先完成校园邮箱验证")
                 else:
                     connection.execute(
@@ -240,12 +263,19 @@ class AccountMixin:
                         (account["id"],),
                     )
                     token = secrets.token_urlsafe(32)
-                    connection.execute("INSERT INTO sessions VALUES (?,?,?,?,NULL)",
-                                       (self._token_hash(token), account["id"], self._now(), self._now()))
+                    connection.execute(
+                        "INSERT INTO sessions VALUES (?,?,?,?,NULL)",
+                        (self._token_hash(token), account["id"], self._now(), self._now()),
+                    )
                     response = {"token": token, "account": public_account(account)}
-            self._audit(connection, account, "login", account["id"] if account else None,
-                        result="FAILURE" if failure else "SUCCESS",
-                        reason=failure.message if failure else "")
+            self._audit(
+                connection,
+                account,
+                "login",
+                account["id"] if account else None,
+                result="FAILURE" if failure else "SUCCESS",
+                reason=failure.message if failure else "",
+            )
             connection.commit()
         except BaseException:
             connection.rollback()
@@ -259,8 +289,10 @@ class AccountMixin:
     def logout(self, token):
         """Revoke the current session without affecting another device."""
         with self._atomic(token, "logout") as (connection, actor):
-            connection.execute("UPDATE sessions SET revoked_at=? WHERE token_hash=?",
-                               (self._now(), self._token_hash(token)))
+            connection.execute(
+                "UPDATE sessions SET revoked_at=? WHERE token_hash=?",
+                (self._now(), self._token_hash(token)),
+            )
             self._audit(connection, actor, "logout", actor["id"])
             return {"logged_out": True}
 
@@ -272,6 +304,7 @@ class AccountMixin:
     def list_accounts(self, token):
         """Administrative account lookup excludes secrets and current drafts."""
         with self._read(token, role="ADMIN") as (connection, _):
-            return [public_account(dict(row)) for row in connection.execute(
-                "SELECT * FROM accounts ORDER BY created_at,id"
-            )]
+            return [
+                public_account(dict(row))
+                for row in connection.execute("SELECT * FROM accounts ORDER BY created_at,id")
+            ]

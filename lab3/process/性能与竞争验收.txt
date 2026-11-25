@@ -1,0 +1,25 @@
+Prepared 250 / 1000 published items
+Prepared 500 / 1000 published items
+Prepared 750 / 1000 published items
+Prepared 1000 / 1000 published items
+{
+  "query_summary": {
+    "samples": 100,
+    "successful": 100,
+    "successful_within_2_seconds": 100,
+    "passes_95_of_100": true,
+    "mean_seconds": 0.159959,
+    "p95_seconds": 0.237549,
+    "max_seconds": 0.244359
+  },
+  "reservation_summary": {
+    "samples": 100,
+    "successful": 100,
+    "successful_within_2_seconds": 100,
+    "passes_95_of_100": true,
+    "mean_seconds": 0.030793,
+    "p95_seconds": 0.158054,
+    "max_seconds": 0.47511
+  },
+  "passed": true
+}

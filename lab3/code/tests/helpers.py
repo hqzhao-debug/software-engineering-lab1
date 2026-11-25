@@ -1,15 +1,14 @@
 """Isolated, real-database fixtures shared by integration tests."""
 
 import json
-from contextlib import closing
-from pathlib import Path
 import sqlite3
 import tempfile
 import unittest
+from contextlib import closing
+from pathlib import Path
 
 from campus_market.models import DomainError
 from campus_market.service import Market
-
 
 PASSWORD = "Course-Test-2026!"
 DOMAIN = "campus.example"
@@ -47,12 +46,8 @@ class MarketCase(unittest.TestCase):
         seed_root = Path(cls.seed_directory.name)
         cls.seed_db = seed_root / "seed.sqlite3"
         seed_outbox = seed_root / "outbox"
-        seed = Market(
-            cls.seed_db, email_domain=DOMAIN, clock=Clock(), outbox=seed_outbox
-        )
-        initial = seed.bootstrap_admin(
-            "admin", f"admin@{DOMAIN}", "ADMIN-1", PASSWORD
-        )
+        seed = Market(cls.seed_db, email_domain=DOMAIN, clock=Clock(), outbox=seed_outbox)
+        initial = seed.bootstrap_admin("admin", f"admin@{DOMAIN}", "ADMIN-1", PASSWORD)
         seed.verify_email(initial["verification_token"])
         cls.seed_accounts = {}
         cls.seed_tokens = {}
@@ -86,9 +81,7 @@ class MarketCase(unittest.TestCase):
         self.directory.cleanup()
 
     def new_market(self):
-        return Market(
-            self.db_path, email_domain=DOMAIN, clock=self.clock, outbox=self.outbox
-        )
+        return Market(self.db_path, email_domain=DOMAIN, clock=self.clock, outbox=self.outbox)
 
     def rows(self, sql, parameters=()):
         with closing(sqlite3.connect(self.db_path)) as connection:
@@ -117,26 +110,27 @@ class MarketCase(unittest.TestCase):
     def published(self, owner="seller", **changes):
         product = self.draft(owner, **changes)
         submission = self.market.submit_product(
-            self.tokens[owner], product["id"], product["row_version"],
+            self.tokens[owner],
+            product["id"],
+            product["row_version"],
             f"submit-{product['id']}",
         )
-        self.market.review(
-            self.tokens["admin"], submission["id"], True, "资料完整，符合发布规定"
-        )
+        self.market.review(self.tokens["admin"], submission["id"], True, "资料完整，符合发布规定")
         return self.market.get_product(product["id"], self.tokens[owner])
 
     def reservation(self, product=None, buyer="buyer", key="reserve-1"):
         product = product or self.published()
         return self.market.reserve(
-            self.tokens[buyer], product["id"], product["content_version"],
-            "周三下午图书馆门口面交", key,
+            self.tokens[buyer],
+            product["id"],
+            product["content_version"],
+            "周三下午图书馆门口面交",
+            key,
         )
 
     def confirmed(self, product=None):
         reservation = self.reservation(product)
-        return self.market.confirm(
-            self.tokens["seller"], reservation["id"], "confirm-1"
-        )
+        return self.market.confirm(self.tokens["seller"], reservation["id"], "confirm-1")
 
     def assert_denied(self, callable_, *args, **kwargs):
         with self.assertRaises(DomainError):
@@ -147,7 +141,11 @@ class MarketCase(unittest.TestCase):
         return {
             table: self.rows(f"SELECT * FROM {table} ORDER BY id")
             for table in (
-                "products", "submitted_versions", "review_submissions",
-                "reservations", "violations", "bans",
+                "products",
+                "submitted_versions",
+                "review_submissions",
+                "reservations",
+                "violations",
+                "bans",
             )
         }

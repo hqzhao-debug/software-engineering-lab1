@@ -1,0 +1,4980 @@
+{
+  "environment": {
+    "recorded_at_utc": "2026-11-25T12:29:23.287073+00:00",
+    "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "python": "3.14.3",
+    "sqlite": "3.52.0",
+    "mode": "local Python service API; SQLite; fresh connections per operation",
+    "concurrency": 20,
+    "initial_published_products": 1000,
+    "network": "none; in-process service calls",
+    "browser": "not applicable",
+    "limitations": "Does not measure browser/UI/network or human usability acceptance."
+  },
+  "query_summary": {
+    "samples": 100,
+    "successful": 100,
+    "successful_within_2_seconds": 0,
+    "passes_95_of_100": false,
+    "mean_seconds": 4.66723,
+    "p95_seconds": 5.009409,
+    "max_seconds": 5.095356
+  },
+  "reservation_summary": {
+    "samples": 100,
+    "successful": 100,
+    "successful_within_2_seconds": 100,
+    "passes_95_of_100": true,
+    "mean_seconds": 0.021982,
+    "p95_seconds": 0.126749,
+    "max_seconds": 0.268463
+  },
+  "query_samples": [
+    {
+      "index": 0,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.327448+00:00",
+      "elapsed_seconds": 4.414337,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 1,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.327574+00:00",
+      "elapsed_seconds": 4.964706,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 2,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.327678+00:00",
+      "elapsed_seconds": 4.458212,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 3,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.327861+00:00",
+      "elapsed_seconds": 4.769073,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 4,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.327960+00:00",
+      "elapsed_seconds": 4.980955,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 5,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328038+00:00",
+      "elapsed_seconds": 4.827321,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 6,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328118+00:00",
+      "elapsed_seconds": 4.907975,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 7,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328225+00:00",
+      "elapsed_seconds": 4.970928,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 8,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328336+00:00",
+      "elapsed_seconds": 4.926856,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 9,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328451+00:00",
+      "elapsed_seconds": 4.967138,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 10,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328536+00:00",
+      "elapsed_seconds": 4.928624,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 11,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328614+00:00",
+      "elapsed_seconds": 4.881565,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 12,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328689+00:00",
+      "elapsed_seconds": 4.892136,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 13,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.328937+00:00",
+      "elapsed_seconds": 5.031454,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 14,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.329226+00:00",
+      "elapsed_seconds": 4.971633,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 15,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.329807+00:00",
+      "elapsed_seconds": 4.999906,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 16,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.330200+00:00",
+      "elapsed_seconds": 4.945203,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 17,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.330308+00:00",
+      "elapsed_seconds": 4.947429,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 18,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.330414+00:00",
+      "elapsed_seconds": 4.806855,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 19,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:23.330602+00:00",
+      "elapsed_seconds": 5.009409,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 20,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:27.741751+00:00",
+      "elapsed_seconds": 4.860376,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 21,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:27.785841+00:00",
+      "elapsed_seconds": 3.781889,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 22,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.096878+00:00",
+      "elapsed_seconds": 4.959189,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 23,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.137207+00:00",
+      "elapsed_seconds": 4.92828,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 24,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.155299+00:00",
+      "elapsed_seconds": 3.830373,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 25,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.210123+00:00",
+      "elapsed_seconds": 4.623001,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 26,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.220761+00:00",
+      "elapsed_seconds": 5.095356,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 27,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.236028+00:00",
+      "elapsed_seconds": 5.066746,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 28,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.255132+00:00",
+      "elapsed_seconds": 4.782776,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 29,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.257094+00:00",
+      "elapsed_seconds": 4.844875,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 30,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.275340+00:00",
+      "elapsed_seconds": 4.092284,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 31,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.277671+00:00",
+      "elapsed_seconds": 4.348283,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 32,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.292225+00:00",
+      "elapsed_seconds": 3.520928,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 33,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.295523+00:00",
+      "elapsed_seconds": 4.853477,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 34,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.299092+00:00",
+      "elapsed_seconds": 4.878828,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 35,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.300790+00:00",
+      "elapsed_seconds": 4.925843,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 36,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.308851+00:00",
+      "elapsed_seconds": 4.539846,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 37,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.329646+00:00",
+      "elapsed_seconds": 4.243299,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 38,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.339943+00:00",
+      "elapsed_seconds": 4.004758,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 39,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:28.360336+00:00",
+      "elapsed_seconds": 4.743907,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 40,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:31.567708+00:00",
+      "elapsed_seconds": 4.988512,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 41,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:31.813119+00:00",
+      "elapsed_seconds": 4.955525,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 42,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:31.985635+00:00",
+      "elapsed_seconds": 4.812058,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 43,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.344664+00:00",
+      "elapsed_seconds": 4.882223,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 44,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.367579+00:00",
+      "elapsed_seconds": 4.765591,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 45,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.572898+00:00",
+      "elapsed_seconds": 4.940856,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 46,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.602081+00:00",
+      "elapsed_seconds": 4.82625,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 47,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.625906+00:00",
+      "elapsed_seconds": 4.876311,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 48,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.833076+00:00",
+      "elapsed_seconds": 4.889872,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 49,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:32.848645+00:00",
+      "elapsed_seconds": 4.923321,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 50,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.037860+00:00",
+      "elapsed_seconds": 4.821332,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 51,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.056014+00:00",
+      "elapsed_seconds": 4.856186,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 52,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.065439+00:00",
+      "elapsed_seconds": 4.843041,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 53,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.101909+00:00",
+      "elapsed_seconds": 4.877711,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 54,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.104183+00:00",
+      "elapsed_seconds": 4.895134,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 55,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.148948+00:00",
+      "elapsed_seconds": 4.862956,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 56,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.177862+00:00",
+      "elapsed_seconds": 4.893736,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 57,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.226582+00:00",
+      "elapsed_seconds": 4.793713,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 58,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.302712+00:00",
+      "elapsed_seconds": 4.77451,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 59,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:33.316066+00:00",
+      "elapsed_seconds": 4.903092,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 60,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:36.556170+00:00",
+      "elapsed_seconds": 4.845311,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 61,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:36.768594+00:00",
+      "elapsed_seconds": 4.829689,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 62,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:36.797646+00:00",
+      "elapsed_seconds": 4.810932,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 63,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.133119+00:00",
+      "elapsed_seconds": 4.891054,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 64,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.226840+00:00",
+      "elapsed_seconds": 4.920367,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 65,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.428285+00:00",
+      "elapsed_seconds": 4.796997,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 66,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.502170+00:00",
+      "elapsed_seconds": 4.91324,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 67,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.513711+00:00",
+      "elapsed_seconds": 4.888216,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 68,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.722903+00:00",
+      "elapsed_seconds": 4.977872,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 69,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.771919+00:00",
+      "elapsed_seconds": 4.872598,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 70,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.859142+00:00",
+      "elapsed_seconds": 4.786988,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 71,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.908428+00:00",
+      "elapsed_seconds": 4.858646,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 72,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.912154+00:00",
+      "elapsed_seconds": 5.016667,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 73,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.979573+00:00",
+      "elapsed_seconds": 4.922046,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 74,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:37.999257+00:00",
+      "elapsed_seconds": 5.033922,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 75,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:38.011859+00:00",
+      "elapsed_seconds": 4.942105,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 76,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:38.020234+00:00",
+      "elapsed_seconds": 4.899939,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 77,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:38.071543+00:00",
+      "elapsed_seconds": 4.867709,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 78,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:38.077166+00:00",
+      "elapsed_seconds": 4.922651,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 79,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:38.219110+00:00",
+      "elapsed_seconds": 4.897599,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 80,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:41.401439+00:00",
+      "elapsed_seconds": 4.790533,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 81,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:41.598236+00:00",
+      "elapsed_seconds": 4.65128,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 82,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:41.608528+00:00",
+      "elapsed_seconds": 4.807453,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 83,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.024133+00:00",
+      "elapsed_seconds": 4.418412,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 84,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.147164+00:00",
+      "elapsed_seconds": 3.504707,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 85,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.225246+00:00",
+      "elapsed_seconds": 4.455297,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 86,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.401874+00:00",
+      "elapsed_seconds": 4.24978,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 87,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.415364+00:00",
+      "elapsed_seconds": 4.484382,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 88,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.644464+00:00",
+      "elapsed_seconds": 4.346803,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 89,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.646070+00:00",
+      "elapsed_seconds": 4.342043,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 90,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.700731+00:00",
+      "elapsed_seconds": 3.36075,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 91,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.767032+00:00",
+      "elapsed_seconds": 4.165685,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 92,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.901565+00:00",
+      "elapsed_seconds": 4.094178,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 93,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.920111+00:00",
+      "elapsed_seconds": 4.063157,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 94,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.928770+00:00",
+      "elapsed_seconds": 3.860312,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 95,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.939200+00:00",
+      "elapsed_seconds": 4.05734,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 96,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.953906+00:00",
+      "elapsed_seconds": 4.012101,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 97,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:42.999760+00:00",
+      "elapsed_seconds": 3.433965,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 98,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:43.033132+00:00",
+      "elapsed_seconds": 3.944591,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    },
+    {
+      "index": 99,
+      "inputs": {
+        "keyword": "性能",
+        "category": "教材书籍",
+        "min_price": "20",
+        "max_price": "30"
+      },
+      "started_at_utc": "2026-11-25T12:29:43.116658+00:00",
+      "elapsed_seconds": 3.87775,
+      "success": true,
+      "result": {
+        "total": 1000,
+        "returned": 20
+      }
+    }
+  ],
+  "reservation_samples": [
+    {
+      "index": 0,
+      "inputs": {
+        "product_id": "82a8bf954f9c4f6c89841d0584eda607",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-0"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997009+00:00",
+      "elapsed_seconds": 0.044354,
+      "success": true,
+      "result": {
+        "reservation_id": "cb604e0911294bc592dd59195df0caa2",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 1,
+      "inputs": {
+        "product_id": "be85373bc3684aea88ecb91c6bd0c544",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-1"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997092+00:00",
+      "elapsed_seconds": 0.07065,
+      "success": true,
+      "result": {
+        "reservation_id": "8513e7b962eb4389af793bdeab80ad86",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 2,
+      "inputs": {
+        "product_id": "732254db843d411b99406eb141bbac42",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-2"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997170+00:00",
+      "elapsed_seconds": 0.129048,
+      "success": true,
+      "result": {
+        "reservation_id": "4dac942d187f418597cd282b96aaf9fb",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 3,
+      "inputs": {
+        "product_id": "5772e0b7d89a4ed1b98b64c431c73023",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-3"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997225+00:00",
+      "elapsed_seconds": 0.008086,
+      "success": true,
+      "result": {
+        "reservation_id": "e333e5f87fb54ccba1fca29d36e9dd28",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 4,
+      "inputs": {
+        "product_id": "7ec59cbb8aa6432a8befed312a4e58c5",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-4"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997306+00:00",
+      "elapsed_seconds": 0.268463,
+      "success": true,
+      "result": {
+        "reservation_id": "7665e5fc30a14f999fb32188d3aab0bc",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 5,
+      "inputs": {
+        "product_id": "d3278876ec534e279173171b80938159",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-5"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997464+00:00",
+      "elapsed_seconds": 0.010611,
+      "success": true,
+      "result": {
+        "reservation_id": "801fb02f3f8d46ee814fd79bdc235cc1",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 6,
+      "inputs": {
+        "product_id": "69983fa7829f49e292f5745a7d5ace1c",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-6"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997569+00:00",
+      "elapsed_seconds": 0.126168,
+      "success": true,
+      "result": {
+        "reservation_id": "7312dfd8c2684144b3aeacd20aa68720",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 7,
+      "inputs": {
+        "product_id": "89a80d44eb9c4221ba6bdff6dfc36086",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-7"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997666+00:00",
+      "elapsed_seconds": 0.209601,
+      "success": true,
+      "result": {
+        "reservation_id": "2d5e75847eda4777bdeb54eb4b917c79",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 8,
+      "inputs": {
+        "product_id": "2b26c664c02a424184beacb87cc2c834",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-8"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997745+00:00",
+      "elapsed_seconds": 0.097668,
+      "success": true,
+      "result": {
+        "reservation_id": "bfbd80d74d864ecbbd67430a83531582",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 9,
+      "inputs": {
+        "product_id": "e18dbbb0aae647a1a24d983f369e9f17",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-9"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997889+00:00",
+      "elapsed_seconds": 0.100401,
+      "success": true,
+      "result": {
+        "reservation_id": "8a50d58010294e178899bc40b29c3fa6",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 10,
+      "inputs": {
+        "product_id": "c5bf59415fad44ebad528660f3572a6c",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-10"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.997959+00:00",
+      "elapsed_seconds": 0.126749,
+      "success": true,
+      "result": {
+        "reservation_id": "c35573599ae24257b01ae139dca6d307",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 11,
+      "inputs": {
+        "product_id": "29b3dba8be6a46beb9687ea5264e7f17",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-11"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998028+00:00",
+      "elapsed_seconds": 0.008237,
+      "success": true,
+      "result": {
+        "reservation_id": "e526485b18694b5da93220043912f609",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 12,
+      "inputs": {
+        "product_id": "a218593e62854d6b8353a02a89b0188f",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-12"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998128+00:00",
+      "elapsed_seconds": 0.15844,
+      "success": true,
+      "result": {
+        "reservation_id": "d544cc58368f4cb7aeba43e43992cd7f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 13,
+      "inputs": {
+        "product_id": "fff32ede6c32475c8b43657d55da691b",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-13"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998394+00:00",
+      "elapsed_seconds": 0.097686,
+      "success": true,
+      "result": {
+        "reservation_id": "9c4bfacc11d04d63a9c20195404c13cb",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 14,
+      "inputs": {
+        "product_id": "eface9e9000840b9be3f3b4a1fe546f5",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-14"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998505+00:00",
+      "elapsed_seconds": 0.015785,
+      "success": true,
+      "result": {
+        "reservation_id": "128b44106308447b80d8c5e2f1dd6875",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 15,
+      "inputs": {
+        "product_id": "fc52737a59c947a98ee617c7389926f6",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-15"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998697+00:00",
+      "elapsed_seconds": 0.016365,
+      "success": true,
+      "result": {
+        "reservation_id": "738b95d8ee2a4be9a79b28b3bde133a7",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 16,
+      "inputs": {
+        "product_id": "f9b0fc537b1242929bb87f9d710d30ab",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-16"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.998967+00:00",
+      "elapsed_seconds": 0.154845,
+      "success": true,
+      "result": {
+        "reservation_id": "2573bd2438844fcf95cd2ce2c4193938",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 17,
+      "inputs": {
+        "product_id": "c7e47dd6e4194e409ac36dbf792db7ff",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-17"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.999302+00:00",
+      "elapsed_seconds": 0.068959,
+      "success": true,
+      "result": {
+        "reservation_id": "41f65770f982492882f2005923e6d10f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 18,
+      "inputs": {
+        "product_id": "c894ce0fd9164ceab501a3726ec71060",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-18"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.999490+00:00",
+      "elapsed_seconds": 0.009366,
+      "success": true,
+      "result": {
+        "reservation_id": "a1a771f126494a5596e4842504557144",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 19,
+      "inputs": {
+        "product_id": "9a612b26b9cb41a0a7303b9743f399be",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-19"
+      },
+      "started_at_utc": "2026-11-25T12:29:46.999685+00:00",
+      "elapsed_seconds": 0.026615,
+      "success": true,
+      "result": {
+        "reservation_id": "f7107055b0764bfe9b130d44bd05df91",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 20,
+      "inputs": {
+        "product_id": "f269c1efc22042de9acbe4d765476c24",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-20"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.005322+00:00",
+      "elapsed_seconds": 0.088987,
+      "success": true,
+      "result": {
+        "reservation_id": "2c69874e831744ac84b8813971397b24",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 21,
+      "inputs": {
+        "product_id": "5eadae1213b84655951b76c2bf07f975",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-21"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.006274+00:00",
+      "elapsed_seconds": 0.000957,
+      "success": true,
+      "result": {
+        "reservation_id": "5a3eb48e50d645b5800e03756b322964",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 22,
+      "inputs": {
+        "product_id": "da0429c942524d7a9033f7994fe84a1a",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-22"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.007241+00:00",
+      "elapsed_seconds": 0.002313,
+      "success": true,
+      "result": {
+        "reservation_id": "c87e712f4e1341c899e0ecc67a5ef847",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 23,
+      "inputs": {
+        "product_id": "67d0a25c3be94064b135b0667918714d",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-23"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.008084+00:00",
+      "elapsed_seconds": 0.06429,
+      "success": true,
+      "result": {
+        "reservation_id": "aa7c4cc282d848189ac3787547e7e6dc",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 24,
+      "inputs": {
+        "product_id": "3da949ce1e1042c0b4e1581adc9d49a9",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-24"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.008864+00:00",
+      "elapsed_seconds": 0.002162,
+      "success": true,
+      "result": {
+        "reservation_id": "4dd6de10149c46f1b463290393141241",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 25,
+      "inputs": {
+        "product_id": "f8d8f58e38474b44aa9afc5807ab110e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-25"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.009561+00:00",
+      "elapsed_seconds": 0.00072,
+      "success": true,
+      "result": {
+        "reservation_id": "632b5861234140a88ff8efa29250e8d4",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 26,
+      "inputs": {
+        "product_id": "73db77bf6b0c438b9169dbd39418e6bf",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-26"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.010290+00:00",
+      "elapsed_seconds": 0.002344,
+      "success": true,
+      "result": {
+        "reservation_id": "6f47ba7a024645c7af4d273ea92111a7",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 27,
+      "inputs": {
+        "product_id": "d2398e602bf2467bad2bb7d32b846a11",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-27"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.011033+00:00",
+      "elapsed_seconds": 0.000867,
+      "success": true,
+      "result": {
+        "reservation_id": "ea5edf7155574d82bad0a8d983655978",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 28,
+      "inputs": {
+        "product_id": "12f3831afe1b4845a595f6a9156ccb15",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-28"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.011909+00:00",
+      "elapsed_seconds": 0.010904,
+      "success": true,
+      "result": {
+        "reservation_id": "0493ebab299646ec9364819d85b0b9ae",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 29,
+      "inputs": {
+        "product_id": "6a216a0dcf044e9b8a16ee604f729013",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-29"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.012643+00:00",
+      "elapsed_seconds": 0.00079,
+      "success": true,
+      "result": {
+        "reservation_id": "fcc3f7e0bdfe4624acbcf5ce9d2daa58",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 30,
+      "inputs": {
+        "product_id": "53cb906ee4624585bcb297f4e3e616b2",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-30"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.013440+00:00",
+      "elapsed_seconds": 0.041419,
+      "success": true,
+      "result": {
+        "reservation_id": "07c109c0e5674c1a9f255c65087db8b5",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 31,
+      "inputs": {
+        "product_id": "dd3bac228a994981a84519280cfe9fee",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-31"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.014299+00:00",
+      "elapsed_seconds": 0.00229,
+      "success": true,
+      "result": {
+        "reservation_id": "b8e5f8a16c624a93baab8bc0ff558122",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 32,
+      "inputs": {
+        "product_id": "824cfed732994f6ba6c41fd8b4c59c4b",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-32"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.015079+00:00",
+      "elapsed_seconds": 0.000777,
+      "success": true,
+      "result": {
+        "reservation_id": "1f3dca4b34e84ef192916330295df9ab",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 33,
+      "inputs": {
+        "product_id": "1204446500f34c0b995a6faa2a4e9f71",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-33"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.015862+00:00",
+      "elapsed_seconds": 0.004801,
+      "success": true,
+      "result": {
+        "reservation_id": "8a4f9dbeaf444bb482e32dd928e9859d",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 34,
+      "inputs": {
+        "product_id": "089c776208d148a4bb00bfb41b13d44f",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-34"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.016596+00:00",
+      "elapsed_seconds": 0.000638,
+      "success": true,
+      "result": {
+        "reservation_id": "49a2020213094143ab6d4a1efc7dbdc1",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 35,
+      "inputs": {
+        "product_id": "f4233a59f1664c158551b0f759523162",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-35"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.017241+00:00",
+      "elapsed_seconds": 0.000707,
+      "success": true,
+      "result": {
+        "reservation_id": "ae2396454a554598874d119f1c776a17",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 36,
+      "inputs": {
+        "product_id": "607311c9d462400598d128dcf4846456",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-36"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.017957+00:00",
+      "elapsed_seconds": 0.000681,
+      "success": true,
+      "result": {
+        "reservation_id": "559963c0c38d48dc942957045c731f22",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 37,
+      "inputs": {
+        "product_id": "c3a6eb82693f4950921b18f5236c9611",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-37"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.018647+00:00",
+      "elapsed_seconds": 0.000635,
+      "success": true,
+      "result": {
+        "reservation_id": "6caefe2c461a410d9b17afb4ce9008c3",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 38,
+      "inputs": {
+        "product_id": "17aadb726e004554b5feae1454a8a57a",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-38"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.019290+00:00",
+      "elapsed_seconds": 0.000647,
+      "success": true,
+      "result": {
+        "reservation_id": "772d1f86309c4043b2d9e9ee53e29fd1",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 39,
+      "inputs": {
+        "product_id": "3a5161e561774efe9a50bf1fac0a1aff",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-39"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.019943+00:00",
+      "elapsed_seconds": 0.06399,
+      "success": true,
+      "result": {
+        "reservation_id": "de83288a7ce74d55bc190519871f0fc6",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 40,
+      "inputs": {
+        "product_id": "f23fc9dbc748487ea5f1592a7126d928",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-40"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.020672+00:00",
+      "elapsed_seconds": 0.000689,
+      "success": true,
+      "result": {
+        "reservation_id": "ba6bb20ca1a64c2da62b9ef9b4a2fdc0",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 41,
+      "inputs": {
+        "product_id": "82cc780f59f84c0a84ead5c6f1804313",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-41"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.021369+00:00",
+      "elapsed_seconds": 0.000653,
+      "success": true,
+      "result": {
+        "reservation_id": "e8d7293071814474a6823de07ea86f53",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 42,
+      "inputs": {
+        "product_id": "b9512234ce32453890409a144cadeea1",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-42"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.022027+00:00",
+      "elapsed_seconds": 0.004964,
+      "success": true,
+      "result": {
+        "reservation_id": "96ddc5f180994d71bd88237f35a4f1c8",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 43,
+      "inputs": {
+        "product_id": "c86dc9fa2c264a52b7ac48701e92dd74",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-43"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.022823+00:00",
+      "elapsed_seconds": 0.000626,
+      "success": true,
+      "result": {
+        "reservation_id": "90ba7160c9714a37898528fb7e64091c",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 44,
+      "inputs": {
+        "product_id": "a76ce9ce4c9b4fbd8688cdbd59068e74",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-44"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.023455+00:00",
+      "elapsed_seconds": 0.000793,
+      "success": true,
+      "result": {
+        "reservation_id": "745fa01d1f0544daac96ac7e8d530050",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 45,
+      "inputs": {
+        "product_id": "7336057bf85f4c4b90b093df1c0451b2",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-45"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.024258+00:00",
+      "elapsed_seconds": 0.000643,
+      "success": true,
+      "result": {
+        "reservation_id": "39248e84a751479ca21be6ece5349d31",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 46,
+      "inputs": {
+        "product_id": "55aa90bb0f434a399086956e4e5efc2a",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-46"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.024906+00:00",
+      "elapsed_seconds": 0.000715,
+      "success": true,
+      "result": {
+        "reservation_id": "0db5a693b5b44cafb703988cb93fec9b",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 47,
+      "inputs": {
+        "product_id": "3eb6e41ee2864a4eb1a513b16185577b",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-47"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.025627+00:00",
+      "elapsed_seconds": 0.010214,
+      "success": true,
+      "result": {
+        "reservation_id": "dc771efc59f1401cb0cd581709460dc6",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 48,
+      "inputs": {
+        "product_id": "3f16d943b5234f199cd29ea7519a7e75",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-48"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.026306+00:00",
+      "elapsed_seconds": 0.039725,
+      "success": true,
+      "result": {
+        "reservation_id": "538338de40cc428694f75e9a8eb3c525",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 49,
+      "inputs": {
+        "product_id": "07a34b861ef248d5a5fe31cdfe9b8914",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-49"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.026997+00:00",
+      "elapsed_seconds": 0.000661,
+      "success": true,
+      "result": {
+        "reservation_id": "1aa8c163d1f24650aad30ffa5607de6f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 50,
+      "inputs": {
+        "product_id": "25efa16bbb6c46d789b0651c18809658",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-50"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.027666+00:00",
+      "elapsed_seconds": 0.000628,
+      "success": true,
+      "result": {
+        "reservation_id": "c0ff249ee7c84127afc06a52e3872d38",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 51,
+      "inputs": {
+        "product_id": "3c2a56164b06432689753e77ee991e2f",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-51"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.028300+00:00",
+      "elapsed_seconds": 0.000588,
+      "success": true,
+      "result": {
+        "reservation_id": "9494790915a24a5985952906401d656a",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 52,
+      "inputs": {
+        "product_id": "30164589629d4ccaa93dfa3a02fc8a66",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-52"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.028894+00:00",
+      "elapsed_seconds": 0.000594,
+      "success": true,
+      "result": {
+        "reservation_id": "8ae1cf758a9f4b148ef19fe8e988922c",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 53,
+      "inputs": {
+        "product_id": "981e0c3d83f14aa28b9d4320efef5b0d",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-53"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.029494+00:00",
+      "elapsed_seconds": 0.000647,
+      "success": true,
+      "result": {
+        "reservation_id": "b731ceb5a48a4ee0868ee2ab951ca9db",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 54,
+      "inputs": {
+        "product_id": "a36d2b3eff104f78980395944cd62f46",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-54"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.030147+00:00",
+      "elapsed_seconds": 0.000634,
+      "success": true,
+      "result": {
+        "reservation_id": "9bbaa4eb5ba346b0882d970b739b0a9f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 55,
+      "inputs": {
+        "product_id": "f0957295a2544937bea6be8188b36669",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-55"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.030787+00:00",
+      "elapsed_seconds": 0.000632,
+      "success": true,
+      "result": {
+        "reservation_id": "25cdd7b49c44479ca9b322bd01a80559",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 56,
+      "inputs": {
+        "product_id": "1741eb008fab4b8e8ebd8b0e04052d36",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-56"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.031428+00:00",
+      "elapsed_seconds": 0.000618,
+      "success": true,
+      "result": {
+        "reservation_id": "27c0a490b5d14e93b3aa8949738582d8",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 57,
+      "inputs": {
+        "product_id": "4c9908ea0f9b4befa5b723d2080a89a7",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-57"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.032052+00:00",
+      "elapsed_seconds": 0.000616,
+      "success": true,
+      "result": {
+        "reservation_id": "489545a97e334662bc716464ba602e7f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 58,
+      "inputs": {
+        "product_id": "8ef5bfc79b004da6b44906c454817c71",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-58"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.032676+00:00",
+      "elapsed_seconds": 0.000667,
+      "success": true,
+      "result": {
+        "reservation_id": "6b4e12e6ede94fad870f3c61fd5d42de",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 59,
+      "inputs": {
+        "product_id": "1237ad91110e41d39cc24086fd07f13e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-59"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.033352+00:00",
+      "elapsed_seconds": 0.000629,
+      "success": true,
+      "result": {
+        "reservation_id": "74af7c7c12934e429eec18d2982941c2",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 60,
+      "inputs": {
+        "product_id": "05f39eb42b7a4ad3aa7bcb88ff91d34e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-60"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.033987+00:00",
+      "elapsed_seconds": 0.000601,
+      "success": true,
+      "result": {
+        "reservation_id": "27c4fd7f33bb4a0d86051793f40ca974",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 61,
+      "inputs": {
+        "product_id": "36344e50fbf541ccbf5dbc245132c643",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-61"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.034593+00:00",
+      "elapsed_seconds": 0.000595,
+      "success": true,
+      "result": {
+        "reservation_id": "e5bffe822ad24274a4a34a2bafc53f43",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 62,
+      "inputs": {
+        "product_id": "afe3e2240b5b43b190f3cbf63f4334e2",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-62"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.035194+00:00",
+      "elapsed_seconds": 0.004532,
+      "success": true,
+      "result": {
+        "reservation_id": "d0ef4f2b50a44fe88909afe2f8ebec81",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 63,
+      "inputs": {
+        "product_id": "88a3c842545c49c091bcfd18d9b53d7f",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-63"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.035847+00:00",
+      "elapsed_seconds": 0.000611,
+      "success": true,
+      "result": {
+        "reservation_id": "02a070c49a9e41cd83051490724eab1b",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 64,
+      "inputs": {
+        "product_id": "60423023491e437191e30266720b1914",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-64"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.036464+00:00",
+      "elapsed_seconds": 0.000641,
+      "success": true,
+      "result": {
+        "reservation_id": "70e0c302cd1540dbb009bfeb37d001ec",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 65,
+      "inputs": {
+        "product_id": "5205b14e9fa645a0862bbf7593c00a15",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-65"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.037113+00:00",
+      "elapsed_seconds": 0.000609,
+      "success": true,
+      "result": {
+        "reservation_id": "bb7423be7ecb4a2b84fa0bb927b1664c",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 66,
+      "inputs": {
+        "product_id": "f56e2ac6414746adb53f75048f38c98e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-66"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.037727+00:00",
+      "elapsed_seconds": 0.000613,
+      "success": true,
+      "result": {
+        "reservation_id": "439cfe8c77d94bd097626da92bbac9ff",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 67,
+      "inputs": {
+        "product_id": "e381d4270ea04c50b0bd5b5cf60ed211",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-67"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.038347+00:00",
+      "elapsed_seconds": 0.000649,
+      "success": true,
+      "result": {
+        "reservation_id": "8036dce5a5ca48cc8655253b9aeb623a",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 68,
+      "inputs": {
+        "product_id": "e53680f6d7c84680b574fdba5114c7ea",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-68"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.039001+00:00",
+      "elapsed_seconds": 0.009513,
+      "success": true,
+      "result": {
+        "reservation_id": "ba3f16d0755b4eb0906f6d9d55f39670",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 69,
+      "inputs": {
+        "product_id": "499ab5006d7e41448c070efc7e780b13",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-69"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.039735+00:00",
+      "elapsed_seconds": 0.00088,
+      "success": true,
+      "result": {
+        "reservation_id": "1af0706244a44ecfa2e9254c002959ff",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 70,
+      "inputs": {
+        "product_id": "ebcee21029c64f4e89b29b7591060a38",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-70"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.040622+00:00",
+      "elapsed_seconds": 0.00271,
+      "success": true,
+      "result": {
+        "reservation_id": "0756951fbc8a42eda3c38453b5ec34b2",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 71,
+      "inputs": {
+        "product_id": "f7b4d560a2de40179f018020d87f81ab",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-71"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.041377+00:00",
+      "elapsed_seconds": 0.001382,
+      "success": true,
+      "result": {
+        "reservation_id": "fd4ada74ad184285b67b3a8cc3374e36",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 72,
+      "inputs": {
+        "product_id": "ad95b99c0696445ba1fcec714ecc34bb",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-72"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.042765+00:00",
+      "elapsed_seconds": 0.010772,
+      "success": true,
+      "result": {
+        "reservation_id": "892a9602b90f45a1b2de98c104e50e39",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 73,
+      "inputs": {
+        "product_id": "ada40609ff684773a55e5005a04b9fe2",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-73"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.043338+00:00",
+      "elapsed_seconds": 0.000686,
+      "success": true,
+      "result": {
+        "reservation_id": "ac46d49dee1a46f2a2f7b395f30941a1",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 74,
+      "inputs": {
+        "product_id": "8320091ceb2347e687988d926262679e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-74"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.044030+00:00",
+      "elapsed_seconds": 0.000684,
+      "success": true,
+      "result": {
+        "reservation_id": "1b2fac6a5de94c33bcece6e0187a5ee2",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 75,
+      "inputs": {
+        "product_id": "69815287a8bc40e4b7cb9290424408eb",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-75"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.044728+00:00",
+      "elapsed_seconds": 0.000618,
+      "success": true,
+      "result": {
+        "reservation_id": "b64169ea3da84ebabaddd1cf341d2a9d",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 76,
+      "inputs": {
+        "product_id": "3dae5821c4f44cab826c26dbb6907bf0",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-76"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.045352+00:00",
+      "elapsed_seconds": 0.000577,
+      "success": true,
+      "result": {
+        "reservation_id": "fa93392a9df94c01a455fc3f4ecfb029",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 77,
+      "inputs": {
+        "product_id": "da4d212fc0d64fde995be446d54f58cc",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-77"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.045936+00:00",
+      "elapsed_seconds": 0.000587,
+      "success": true,
+      "result": {
+        "reservation_id": "2c237d8054bf427a9559de49fbe18ef8",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 78,
+      "inputs": {
+        "product_id": "2c6ea5f0a44e4d4fbe0a311961948c10",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-78"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.046529+00:00",
+      "elapsed_seconds": 0.000621,
+      "success": true,
+      "result": {
+        "reservation_id": "18f5d61163244d16be7d54d66d37d969",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 79,
+      "inputs": {
+        "product_id": "54ff084e4e0e4fcfba924e719613bb6d",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-79"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.047155+00:00",
+      "elapsed_seconds": 0.000615,
+      "success": true,
+      "result": {
+        "reservation_id": "e0d88daacff144ad9dd803e70520ea67",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 80,
+      "inputs": {
+        "product_id": "2e47a5a6e4424d96907375f75411946e",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-80"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.047776+00:00",
+      "elapsed_seconds": 0.022876,
+      "success": true,
+      "result": {
+        "reservation_id": "9cd90f53db664dc1b8d2284a5b827b8e",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 81,
+      "inputs": {
+        "product_id": "a029491e7c0447c8900540ab503e10ad",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-81"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.048523+00:00",
+      "elapsed_seconds": 0.000671,
+      "success": true,
+      "result": {
+        "reservation_id": "b15e2abccd034cbd8e02825ceb14d9c7",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 82,
+      "inputs": {
+        "product_id": "4eb30013b4984cf4bc01e5c4baa207fe",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-82"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.049205+00:00",
+      "elapsed_seconds": 0.000696,
+      "success": true,
+      "result": {
+        "reservation_id": "da1eac2535a643e9943b69158bd242f5",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 83,
+      "inputs": {
+        "product_id": "f809fe3e6df74fa7a1d48ee7f1d7a709",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-83"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.049909+00:00",
+      "elapsed_seconds": 0.000614,
+      "success": true,
+      "result": {
+        "reservation_id": "f634f4e8ff24414d8f244848b1382653",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 84,
+      "inputs": {
+        "product_id": "8d227e68cc724eae863cc5fcfaa3f1ad",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-84"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.050531+00:00",
+      "elapsed_seconds": 0.000618,
+      "success": true,
+      "result": {
+        "reservation_id": "4c7c9bf3f47545f2906625c5756a12fb",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 85,
+      "inputs": {
+        "product_id": "d0712beb789b4269a027991bfe9e502a",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-85"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.051154+00:00",
+      "elapsed_seconds": 0.00059,
+      "success": true,
+      "result": {
+        "reservation_id": "2c968d75ce5f4a2e9365b95bd9b3250f",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 86,
+      "inputs": {
+        "product_id": "8bd4b6ad886a4e178d14629726f21beb",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-86"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.051751+00:00",
+      "elapsed_seconds": 0.000583,
+      "success": true,
+      "result": {
+        "reservation_id": "7701224f0d3c41cf95d10ec976b3a0a1",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 87,
+      "inputs": {
+        "product_id": "96289a3e43bf4f8d9cd9e7ba2f768957",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-87"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.052342+00:00",
+      "elapsed_seconds": 0.000586,
+      "success": true,
+      "result": {
+        "reservation_id": "232a77138bd641829d4a1b939141976e",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 88,
+      "inputs": {
+        "product_id": "8248b9dda9604836a5053f40cb07a172",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-88"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.052936+00:00",
+      "elapsed_seconds": 0.010751,
+      "success": true,
+      "result": {
+        "reservation_id": "776803343c2646f19505c2e6b46992d7",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 89,
+      "inputs": {
+        "product_id": "f0e01c15badd4e9eab7fc7d802cae5f6",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-89"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.053545+00:00",
+      "elapsed_seconds": 0.000644,
+      "success": true,
+      "result": {
+        "reservation_id": "e2a4d50e150c43ce96dc02837c7f1217",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 90,
+      "inputs": {
+        "product_id": "d6bd1ee5ea3b4e3990fab23fceaff9bd",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-90"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.054196+00:00",
+      "elapsed_seconds": 0.010847,
+      "success": true,
+      "result": {
+        "reservation_id": "2c1d51d6fdac4755a4e8df728007dfe3",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 91,
+      "inputs": {
+        "product_id": "0dc60acc21a84bc6b85cdfb86fa4364c",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-91"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.054867+00:00",
+      "elapsed_seconds": 0.000586,
+      "success": true,
+      "result": {
+        "reservation_id": "ebe1f98a34ee40679c75d489abb3a221",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 92,
+      "inputs": {
+        "product_id": "71712f6d387b4e94b7d1c2ca96905d57",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-92"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.055459+00:00",
+      "elapsed_seconds": 0.000613,
+      "success": true,
+      "result": {
+        "reservation_id": "32795eb9cb16412c9a1f951f7cfb87ca",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 93,
+      "inputs": {
+        "product_id": "b75f335100cd4efcbfe77ff9c34261ba",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-93"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.056078+00:00",
+      "elapsed_seconds": 0.000583,
+      "success": true,
+      "result": {
+        "reservation_id": "e655d3cd1ed74636884dbeae199b1ae6",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 94,
+      "inputs": {
+        "product_id": "2b829f30d6bc4599a2aa3e5863de0ebb",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-94"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.056673+00:00",
+      "elapsed_seconds": 0.000574,
+      "success": true,
+      "result": {
+        "reservation_id": "56ad95c00ca144309e3fc38a6ecc04c0",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 95,
+      "inputs": {
+        "product_id": "8fa1d46284774e7394547f2cd1996970",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-95"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.057256+00:00",
+      "elapsed_seconds": 0.000557,
+      "success": true,
+      "result": {
+        "reservation_id": "defc11d2a16941f9ad989a14246d2308",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 96,
+      "inputs": {
+        "product_id": "04dce70f8a08443b97c87a9bd13a49fe",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-96"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.057818+00:00",
+      "elapsed_seconds": 0.000605,
+      "success": true,
+      "result": {
+        "reservation_id": "3b3e8d30aea44694978457c2849efa86",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 97,
+      "inputs": {
+        "product_id": "f1ce67e8358048959649afd5f8227f70",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-97"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.058431+00:00",
+      "elapsed_seconds": 0.000587,
+      "success": true,
+      "result": {
+        "reservation_id": "afb1c691bd774ec5bc0cbb1c5b2f409d",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 98,
+      "inputs": {
+        "product_id": "d13a02bf3e8a4fa0a06bf6b5514db675",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-98"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.059023+00:00",
+      "elapsed_seconds": 0.000592,
+      "success": true,
+      "result": {
+        "reservation_id": "6eb3eea26bf54b398b9775ebd4715ecf",
+        "state": "PENDING"
+      }
+    },
+    {
+      "index": 99,
+      "inputs": {
+        "product_id": "ef52c3952b5a4d45a7dc5b006e4efd2c",
+        "content_version": 1,
+        "message": "周三下午校园面交",
+        "request_key": "load-99"
+      },
+      "started_at_utc": "2026-11-25T12:29:47.059623+00:00",
+      "elapsed_seconds": 0.000614,
+      "success": true,
+      "result": {
+        "reservation_id": "ee9d699d91774bf999aed1a64c560507",
+        "state": "PENDING"
+      }
+    }
+  ],
+  "buyer_contention_rounds": [
+    {
+      "round": 1,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-0"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.271948+00:00",
+          "elapsed_seconds": 0.004667,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-0"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.271853+00:00",
+          "elapsed_seconds": 0.002729,
+          "success": true,
+          "result": {
+            "id": "15e65a15644c40d287f7a9cb9b4f7026",
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2733572,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0100"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-0"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.276749+00:00",
+          "elapsed_seconds": 0.002163,
+          "success": true,
+          "result": {
+            "id": "15e65a15644c40d287f7a9cb9b4f7026",
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2733572,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0100"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-0"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.278925+00:00",
+          "elapsed_seconds": 0.001866,
+          "success": true,
+          "result": {
+            "id": "15e65a15644c40d287f7a9cb9b4f7026",
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2733572,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0100"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-0"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.280800+00:00",
+          "elapsed_seconds": 0.001707,
+          "success": true,
+          "result": {
+            "id": "15e65a15644c40d287f7a9cb9b4f7026",
+            "product_id": "39b53316750a45b985750eda90ffad8b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2733572,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0100"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 2,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-1"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.283774+00:00",
+          "elapsed_seconds": 0.003435,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-1"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.283743+00:00",
+          "elapsed_seconds": 0.001706,
+          "success": true,
+          "result": {
+            "id": "44aff42ceb0542d89f1ff155c916e8d6",
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.284668,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0101"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-1"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.287311+00:00",
+          "elapsed_seconds": 0.001491,
+          "success": true,
+          "result": {
+            "id": "44aff42ceb0542d89f1ff155c916e8d6",
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.284668,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0101"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-1"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.288809+00:00",
+          "elapsed_seconds": 0.001563,
+          "success": true,
+          "result": {
+            "id": "44aff42ceb0542d89f1ff155c916e8d6",
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.284668,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0101"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-1"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.290377+00:00",
+          "elapsed_seconds": 0.001435,
+          "success": true,
+          "result": {
+            "id": "44aff42ceb0542d89f1ff155c916e8d6",
+            "product_id": "706d82d66a45457b808ac22055e0f26d",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.284668,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0101"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 3,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-2"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.292864+00:00",
+          "elapsed_seconds": 0.002197,
+          "success": true,
+          "result": {
+            "id": "24fe0b4ef94842deac0b6e18b14b4440",
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2937999,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0102"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-2"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.292841+00:00",
+          "elapsed_seconds": 0.00382,
+          "success": false,
+          "error": "INVALID_STATE"
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-2"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.296756+00:00",
+          "elapsed_seconds": 0.001441,
+          "success": true,
+          "result": {
+            "id": "24fe0b4ef94842deac0b6e18b14b4440",
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2937999,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0102"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-2"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.298205+00:00",
+          "elapsed_seconds": 0.001439,
+          "success": true,
+          "result": {
+            "id": "24fe0b4ef94842deac0b6e18b14b4440",
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2937999,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0102"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-2"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.299648+00:00",
+          "elapsed_seconds": 0.00136,
+          "success": true,
+          "result": {
+            "id": "24fe0b4ef94842deac0b6e18b14b4440",
+            "product_id": "c6deb2b50c7541dcb8af8e5d2f3c458b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.2937999,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0102"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 4,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-3"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.301977+00:00",
+          "elapsed_seconds": 0.00353,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-3"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.301956+00:00",
+          "elapsed_seconds": 0.002127,
+          "success": true,
+          "result": {
+            "id": "e21792e50dc34a0398537a579faa9374",
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.303259,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0103"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-3"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.305581+00:00",
+          "elapsed_seconds": 0.001226,
+          "success": true,
+          "result": {
+            "id": "e21792e50dc34a0398537a579faa9374",
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.303259,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0103"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-3"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.306814+00:00",
+          "elapsed_seconds": 0.001422,
+          "success": true,
+          "result": {
+            "id": "e21792e50dc34a0398537a579faa9374",
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.303259,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0103"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-3"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.308242+00:00",
+          "elapsed_seconds": 0.001319,
+          "success": true,
+          "result": {
+            "id": "e21792e50dc34a0398537a579faa9374",
+            "product_id": "d93740d900074e43a0cdf65d4c85d6d8",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.303259,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0103"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 5,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-4"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.310406+00:00",
+          "elapsed_seconds": 0.001758,
+          "success": true,
+          "result": {
+            "id": "b30c19e5a9944b8f9c12217af7c7dfa4",
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.311501,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0104"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-4"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.310381+00:00",
+          "elapsed_seconds": 0.003247,
+          "success": false,
+          "error": "INVALID_STATE"
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-4"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.313707+00:00",
+          "elapsed_seconds": 0.001077,
+          "success": true,
+          "result": {
+            "id": "b30c19e5a9944b8f9c12217af7c7dfa4",
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.311501,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0104"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-4"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.314789+00:00",
+          "elapsed_seconds": 0.00105,
+          "success": true,
+          "result": {
+            "id": "b30c19e5a9944b8f9c12217af7c7dfa4",
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.311501,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0104"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-4"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.315843+00:00",
+          "elapsed_seconds": 0.001015,
+          "success": true,
+          "result": {
+            "id": "b30c19e5a9944b8f9c12217af7c7dfa4",
+            "product_id": "1bf04710556c430899dd94a2e6c40b6b",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.311501,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0104"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 6,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-5"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.317577+00:00",
+          "elapsed_seconds": 0.001388,
+          "success": true,
+          "result": {
+            "id": "3c252f87f6a246d6942a7ad12080f1cd",
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.31843,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0105"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-5"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.317557+00:00",
+          "elapsed_seconds": 0.003012,
+          "success": false,
+          "error": "INVALID_STATE"
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-5"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.320642+00:00",
+          "elapsed_seconds": 0.001137,
+          "success": true,
+          "result": {
+            "id": "3c252f87f6a246d6942a7ad12080f1cd",
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.31843,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0105"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-5"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.321784+00:00",
+          "elapsed_seconds": 0.001077,
+          "success": true,
+          "result": {
+            "id": "3c252f87f6a246d6942a7ad12080f1cd",
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.31843,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0105"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-5"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.322865+00:00",
+          "elapsed_seconds": 0.001,
+          "success": true,
+          "result": {
+            "id": "3c252f87f6a246d6942a7ad12080f1cd",
+            "product_id": "0d12db532a7d46faa07b0d0bc79d6270",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.31843,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0105"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 7,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-6"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.324539+00:00",
+          "elapsed_seconds": 0.002992,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-6"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.324520+00:00",
+          "elapsed_seconds": 0.001443,
+          "success": true,
+          "result": {
+            "id": "6984c2e001f44cc5a0f6d5ee3d950039",
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.32546,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0106"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-6"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.327593+00:00",
+          "elapsed_seconds": 0.000995,
+          "success": true,
+          "result": {
+            "id": "6984c2e001f44cc5a0f6d5ee3d950039",
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.32546,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0106"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-6"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.328592+00:00",
+          "elapsed_seconds": 0.001026,
+          "success": true,
+          "result": {
+            "id": "6984c2e001f44cc5a0f6d5ee3d950039",
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.32546,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0106"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-6"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.329622+00:00",
+          "elapsed_seconds": 0.000958,
+          "success": true,
+          "result": {
+            "id": "6984c2e001f44cc5a0f6d5ee3d950039",
+            "product_id": "e6edddea7e1945fe8ade48926fcaf4e1",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.32546,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0106"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 8,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-7"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.331243+00:00",
+          "elapsed_seconds": 0.001374,
+          "success": true,
+          "result": {
+            "id": "c5bcb85921464c369965d79b4a1e6d91",
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.332083,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0107"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-7"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.331222+00:00",
+          "elapsed_seconds": 0.002908,
+          "success": false,
+          "error": "INVALID_STATE"
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-7"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.334181+00:00",
+          "elapsed_seconds": 0.00098,
+          "success": true,
+          "result": {
+            "id": "c5bcb85921464c369965d79b4a1e6d91",
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.332083,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0107"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-7"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.335166+00:00",
+          "elapsed_seconds": 0.001099,
+          "success": true,
+          "result": {
+            "id": "c5bcb85921464c369965d79b4a1e6d91",
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.332083,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0107"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-7"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.336270+00:00",
+          "elapsed_seconds": 0.001065,
+          "success": true,
+          "result": {
+            "id": "c5bcb85921464c369965d79b4a1e6d91",
+            "product_id": "a1a69d9e45194c6d8c724676eddde6a4",
+            "buyer_id": "0c00dd57a6a0479daec23cba7d8e3cac",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.332083,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0107"
+            },
+            "buyer_username": "buyer",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 9,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-8"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.338073+00:00",
+          "elapsed_seconds": 0.002665,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-8"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.338053+00:00",
+          "elapsed_seconds": 0.001042,
+          "success": true,
+          "result": {
+            "id": "412a2d9da1884695acd965bbafb195e3",
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.338602,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0108"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-8"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.340809+00:00",
+          "elapsed_seconds": 0.001116,
+          "success": true,
+          "result": {
+            "id": "412a2d9da1884695acd965bbafb195e3",
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.338602,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0108"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-8"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.341931+00:00",
+          "elapsed_seconds": 0.000934,
+          "success": true,
+          "result": {
+            "id": "412a2d9da1884695acd965bbafb195e3",
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.338602,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0108"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-8"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.342869+00:00",
+          "elapsed_seconds": 0.001094,
+          "success": true,
+          "result": {
+            "id": "412a2d9da1884695acd965bbafb195e3",
+            "product_id": "4fa2e59e02ed4923b8230d1e1a576c78",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.338602,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0108"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    },
+    {
+      "round": 10,
+      "requests": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-9"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.344663+00:00",
+          "elapsed_seconds": 0.002551,
+          "success": false,
+          "error": "INVALID_STATE"
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-9"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.344646+00:00",
+          "elapsed_seconds": 0.001161,
+          "success": true,
+          "result": {
+            "id": "2dfdc931e0744d5c920bb9ae5ba85468",
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.34523,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0109"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "winner_retries": [
+        {
+          "index": 0,
+          "inputs": {
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-9"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.347273+00:00",
+          "elapsed_seconds": 0.000923,
+          "success": true,
+          "result": {
+            "id": "2dfdc931e0744d5c920bb9ae5ba85468",
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.34523,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0109"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 1,
+          "inputs": {
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-9"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.348200+00:00",
+          "elapsed_seconds": 0.00089,
+          "success": true,
+          "result": {
+            "id": "2dfdc931e0744d5c920bb9ae5ba85468",
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.34523,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0109"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        },
+        {
+          "index": 2,
+          "inputs": {
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "content_version": 1,
+            "message": "双买家竞争测试",
+            "request_key": "race-9"
+          },
+          "started_at_utc": "2026-11-25T12:29:47.349093+00:00",
+          "elapsed_seconds": 0.00092,
+          "success": true,
+          "result": {
+            "id": "2dfdc931e0744d5c920bb9ae5ba85468",
+            "product_id": "f00bcdedca97402f8ea18f8e1df1eb0b",
+            "buyer_id": "1b8d30f9dfa7428ba93da805b8e57dcc",
+            "seller_id": "8e7d8535e3764476a7b00b95f343cc3d",
+            "state": "PENDING",
+            "message": "双买家竞争测试",
+            "created_at": 1795609787.34523,
+            "confirmed_at": null,
+            "closed_at": null,
+            "completed_at": null,
+            "closed_by": null,
+            "close_reason": "",
+            "snapshot": {
+              "buyer_message": "双买家竞争测试",
+              "category": "教材书籍",
+              "condition": "九成新",
+              "description": "校园面交测试样本",
+              "images": [],
+              "price": "25.50",
+              "title": "性能教材 0109"
+            },
+            "buyer_username": "other",
+            "seller_username": "seller",
+            "counterparty_email": "seller@campus.example"
+          }
+        }
+      ],
+      "product_state": "PENDING",
+      "passed": true
+    }
+  ],
+  "passed": false
+}

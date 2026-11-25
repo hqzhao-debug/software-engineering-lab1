@@ -16,20 +16,24 @@ class TradeTests(MarketCase):
         )
         self.assert_denied(self.market.get_product, product["id"])
         self.market.confirm(self.tokens["seller"], reservation["id"], "confirm")
-        completed = self.market.complete(
-            self.tokens["seller"], reservation["id"], "complete"
-        )
+        completed = self.market.complete(self.tokens["seller"], reservation["id"], "complete")
         self.assertEqual(completed["state"], "COMPLETED")
         sold = self.market.get_product(product["id"], self.tokens["seller"])
         self.assertEqual(sold["state"], "SOLD")
         self.assertIsNotNone(completed["completed_at"])
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"], self.content(),
-            product["id"], sold["row_version"],
+            self.market.save_draft,
+            self.tokens["seller"],
+            self.content(),
+            product["id"],
+            sold["row_version"],
         )
         self.assert_denied(
-            self.market.cancel, self.tokens["buyer"], reservation["id"],
-            "new-cancel", "已完成不可取消",
+            self.market.cancel,
+            self.tokens["buyer"],
+            reservation["id"],
+            "new-cancel",
+            "已完成不可取消",
         )
 
     def test_self_reservation_admin_reservation_and_empty_message_rejected(self):
@@ -37,8 +41,12 @@ class TradeTests(MarketCase):
         for actor, message in (("seller", "面交"), ("admin", "面交"), ("buyer", " ")):
             with self.subTest(actor=actor, message=message):
                 self.assert_denied(
-                    self.market.reserve, self.tokens[actor], product["id"],
-                    product["content_version"], message, f"bad-{actor}",
+                    self.market.reserve,
+                    self.tokens[actor],
+                    product["id"],
+                    product["content_version"],
+                    message,
+                    f"bad-{actor}",
                 )
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM reservations"), 0)
 
@@ -48,38 +56,30 @@ class TradeTests(MarketCase):
             for operation in (self.market.confirm, self.market.reject, self.market.complete):
                 with self.subTest(actor=actor, operation=operation.__name__):
                     self.assert_denied(
-                        operation, self.tokens[actor], reservation["id"],
+                        operation,
+                        self.tokens[actor],
+                        reservation["id"],
                         f"unauthorized-{actor}-{operation.__name__}",
                     )
-        self.assert_denied(
-            self.market.complete, self.tokens["seller"], reservation["id"], "early"
-        )
+        self.assert_denied(self.market.complete, self.tokens["seller"], reservation["id"], "early")
         self.assertEqual(
-            self.market.get_reservation(self.tokens["buyer"], reservation["id"])
-            ["state"], "PENDING",
+            self.market.get_reservation(self.tokens["buyer"], reservation["id"])["state"],
+            "PENDING",
         )
 
     def test_pending_buyer_cancel_requires_no_reason_and_releases(self):
         product = self.published()
         reservation = self.reservation(product)
-        cancelled = self.market.cancel(
-            self.tokens["buyer"], reservation["id"], "cancel"
-        )
+        cancelled = self.market.cancel(self.tokens["buyer"], reservation["id"], "cancel")
         self.assertEqual(cancelled["state"], "CANCELLED")
         self.assertEqual(self.market.get_product(product["id"])["state"], "ON_SALE")
-        self.assert_denied(
-            self.market.confirm, self.tokens["seller"], reservation["id"], "late"
-        )
+        self.assert_denied(self.market.confirm, self.tokens["seller"], reservation["id"], "late")
 
     def test_pending_seller_uses_reject_not_cancel(self):
         product = self.published()
         reservation = self.reservation(product)
-        self.assert_denied(
-            self.market.cancel, self.tokens["seller"], reservation["id"], "cancel"
-        )
-        rejected = self.market.reject(
-            self.tokens["seller"], reservation["id"], "reject"
-        )
+        self.assert_denied(self.market.cancel, self.tokens["seller"], reservation["id"], "cancel")
+        rejected = self.market.reject(self.tokens["seller"], reservation["id"], "reject")
         self.assertEqual(rejected["state"], "REJECTED")
         self.assertEqual(self.market.get_product(product["id"])["state"], "ON_SALE")
 
@@ -87,7 +87,9 @@ class TradeTests(MarketCase):
         reservation = self.confirmed()
         for actor in ("buyer", "seller"):
             self.assert_denied(
-                self.market.cancel, self.tokens[actor], reservation["id"],
+                self.market.cancel,
+                self.tokens[actor],
+                reservation["id"],
                 f"missing-reason-{actor}",
             )
         current = self.market.get_reservation(self.tokens["buyer"], reservation["id"])
@@ -104,11 +106,16 @@ class TradeTests(MarketCase):
         current = self.market.get_product(product["id"], self.tokens["seller"])
         before = self.business_snapshot()
         self.assert_denied(
-            self.market.save_draft, self.tokens["seller"], self.content(price="1"),
-            product["id"], current["row_version"],
+            self.market.save_draft,
+            self.tokens["seller"],
+            self.content(price="1"),
+            product["id"],
+            current["row_version"],
         )
         self.assert_denied(
-            self.market.off_shelf, self.tokens["seller"], product["id"],
+            self.market.off_shelf,
+            self.tokens["seller"],
+            product["id"],
             current["row_version"],
         )
         self.assertEqual(self.business_snapshot(), before)
@@ -130,8 +137,12 @@ class TradeTests(MarketCase):
         self.reservation(product)
         before = self.business_snapshot()
         self.assert_denied(
-            self.market.reserve, self.tokens["buyer"], product["id"],
-            product["content_version"], "不同留言", "reserve-1",
+            self.market.reserve,
+            self.tokens["buyer"],
+            product["id"],
+            product["content_version"],
+            "不同留言",
+            "reserve-1",
         )
         self.assertEqual(self.business_snapshot(), before)
 
@@ -150,9 +161,7 @@ class TradeTests(MarketCase):
         reservation = self.confirmed()
         self.market.complete(self.tokens["seller"], reservation["id"], "complete")
         before = self.market.statistics(self.tokens["admin"])
-        replay = self.market.complete(
-            self.tokens["seller"], reservation["id"], "complete"
-        )
+        replay = self.market.complete(self.tokens["seller"], reservation["id"], "complete")
         self.assertEqual(replay["state"], "COMPLETED")
         self.assertEqual(self.market.statistics(self.tokens["admin"]), before)
         self.assertEqual(
@@ -166,9 +175,7 @@ class TradeTests(MarketCase):
         self.assertEqual(buyer_view["counterparty_email"], "seller@campus.example")
         self.assertEqual(seller_view["counterparty_email"], "buyer@campus.example")
         self.assertNotIn("@", json.dumps(buyer_view["snapshot"]))
-        self.assert_denied(
-            self.market.get_reservation, self.tokens["other"], reservation["id"]
-        )
+        self.assert_denied(self.market.get_reservation, self.tokens["other"], reservation["id"])
         self.market.cancel(self.tokens["buyer"], reservation["id"], "cancel")
         closed = self.market.get_reservation(self.tokens["buyer"], reservation["id"])
         self.assertNotIn("seller@campus.example", json.dumps(closed))
@@ -181,7 +188,9 @@ class TradeTests(MarketCase):
         self.market.cancel(self.tokens["buyer"], old["id"], "cancel")
         current = self.market.get_product(product["id"], self.tokens["seller"])
         draft = self.market.save_draft(
-            self.tokens["seller"], self.content(price="30"), product["id"],
+            self.tokens["seller"],
+            self.content(price="30"),
+            product["id"],
             current["row_version"],
         )
         submission = self.market.submit_product(

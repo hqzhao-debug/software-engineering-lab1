@@ -1,0 +1,182 @@
+[
+  {
+    "path": "UML/UML商品状态图.png",
+    "sha256": "06efdd03b44cd78796872242ba5a8e81c4c36baa5f22b01ceb7021679d97057f"
+  },
+  {
+    "path": "UML/UML商品状态图.puml",
+    "sha256": "201c8a1a8896a075b1a83122e7781f04e85e74aab9606cdd2153d4939af130a1"
+  },
+  {
+    "path": "UML/UML安全与审计类图.png",
+    "sha256": "77d9106fd8a792881a585b56ae7108ce0673506df5ca1f7bc572fef565ce2960"
+  },
+  {
+    "path": "UML/UML安全与审计类图.puml",
+    "sha256": "a607c7a3484f4971f4fc23c5c6322f215e405d5334a03091b4770bc539fd8a0a"
+  },
+  {
+    "path": "UML/UML实现类图.png",
+    "sha256": "bf541692875bfa81503101fe3e309dff5207c7d1e22286e345d4b193ed76c90d"
+  },
+  {
+    "path": "UML/UML实现类图.puml",
+    "sha256": "d68bda420fba25239d489711f26f1800ce19cb4dc2c9366fdc631b5ae9da5372"
+  },
+  {
+    "path": "UML/UML实现组件图.png",
+    "sha256": "19738b197f6a3cfe2cd038b6c63efb410699b4bb1fab998609c34c74e998d8cf"
+  },
+  {
+    "path": "UML/UML实现组件图.puml",
+    "sha256": "eb154fbc16abd3f4c7b9213fb9afa0f91ba5a248c2f9b42985ae96da32e94760"
+  },
+  {
+    "path": "UML/UML用例图.png",
+    "sha256": "5e1bbb0953949506ddcde05ab67b6fd464c0ef872b9651cdca209bd7d501affa"
+  },
+  {
+    "path": "UML/UML用例图.puml",
+    "sha256": "eaf87e3e5a740717977416d128249b120b2bca26476123b257f962b1cde9009d"
+  },
+  {
+    "path": "UML/UML类图.png",
+    "sha256": "1644a885e334232c58cb31e332fbe8a6f21bf8acf7722d45ba65a30d8a234905"
+  },
+  {
+    "path": "UML/UML类图.puml",
+    "sha256": "26f3bf3c5096840e152500f9987ed4d2e14490b361cc4c9b6c5d040a45f8d698"
+  },
+  {
+    "path": "UML/UML组件图.png",
+    "sha256": "7bcc33bd949cdef45d1b83e5e952875b5ca25afd3c3f5edddf9accd8aa0d9d24"
+  },
+  {
+    "path": "UML/UML组件图.puml",
+    "sha256": "29be0a7aaf82ef8124f679431ab1e71ca02ea83a7d1efc90f7b42559b943e3fb"
+  },
+  {
+    "path": "UML/UML预约时序图.png",
+    "sha256": "b4db040fb08324cbce2305ec098ddc818165a220dc437d42014207568eb792a6"
+  },
+  {
+    "path": "UML/UML预约时序图.puml",
+    "sha256": "e0a28bcedb00481e7fe1975b4ae30c31a3fc0ceb92440ff1dce524535eb581db"
+  },
+  {
+    "path": "UML/UML预约活动图.png",
+    "sha256": "388f74e0ff2fc4b89599272003358b7239b0e472277e05985b535c7213324933"
+  },
+  {
+    "path": "UML/UML预约活动图.puml",
+    "sha256": "861383e51402578e4bf18a416d30678fbca9242ce71fff63d8dfe498984dd924"
+  },
+  {
+    "path": "code/Makefile",
+    "sha256": "caea91354eaf335d33865f0f8eaa61440fcb2fe96495c0f8c3a6a73b3dd62d06"
+  },
+  {
+    "path": "code/README.md",
+    "sha256": "561a1887fecd28ee8eabac27314a98db0856dc6dbd0d24f900dcf48fcf20e31a"
+  },
+  {
+    "path": "code/campus_market/__init__.py",
+    "sha256": "0e73bfe2ee2e556f390c6adc477080b05e9ee0747a087d949f2a3479ec0765da"
+  },
+  {
+    "path": "code/campus_market/__main__.py",
+    "sha256": "d541b0580a04e9faa2821197f9ebac7cf137eba3915c7b462f0834c5881abf26"
+  },
+  {
+    "path": "code/campus_market/accounts.py",
+    "sha256": "703eaae9cc9c1d3eb5bee6a72dd30d4aa4e71d8a9c585c63d422f4cc173c098f"
+  },
+  {
+    "path": "code/campus_market/admin.py",
+    "sha256": "89d9a38a7db56c098a9613828ab98f6c12a5090d6a4e8db0dca4af7f3e005df9"
+  },
+  {
+    "path": "code/campus_market/base.py",
+    "sha256": "5a44d6136f75de70e45d176414e2ae63d2376e1448339166e3624bdb153f27d0"
+  },
+  {
+    "path": "code/campus_market/cli.py",
+    "sha256": "b90e9178fd942582af0aa08b85fbdaaf29255a78ca8566699a27c8c14ba7d23a"
+  },
+  {
+    "path": "code/campus_market/db.py",
+    "sha256": "df14c027f290c0cad979e25d133b4ff5ef3ae35887fbd861e5b2e5712c98f4c0"
+  },
+  {
+    "path": "code/campus_market/demo.py",
+    "sha256": "1a02d4ea8c4805faafa61613e3cc1590dbf7a4df4e1a6f8ec121f861dfcc9c54"
+  },
+  {
+    "path": "code/campus_market/models.py",
+    "sha256": "efbafd564f3e48d3f5eae8d0a4246dbc6bfd1aa4f949b7750f7bc2b859c98453"
+  },
+  {
+    "path": "code/campus_market/products.py",
+    "sha256": "ccea506413d1cc6175767e4d154c08ca758a64e4511fa9e9005acd02f884a180"
+  },
+  {
+    "path": "code/campus_market/service.py",
+    "sha256": "9229aaf5e161cd1ef02716575e992eb94263c5c326ce7fa96262f9687df8dd3c"
+  },
+  {
+    "path": "code/campus_market/trades.py",
+    "sha256": "6cd6b7ed18a6d7bab56814b1a9d36ca406bbf09afdbb9654b1af2da3cf16a807"
+  },
+  {
+    "path": "code/pyproject.toml",
+    "sha256": "300d963e4f267b5a22a21259ce0af27a3f91cc75992606ea6e6618422699168a"
+  },
+  {
+    "path": "code/requirements-dev.txt",
+    "sha256": "d7cdcf228099f8ad8e4cdab13f0b83fff9f0f79110434bac5b4da5462cf1740f"
+  },
+  {
+    "path": "code/tests/__init__.py",
+    "sha256": "fa3b0f10ee410c53db565a94b68421a72a7d62e8845cc43337b967d62ea1166c"
+  },
+  {
+    "path": "code/tests/helpers.py",
+    "sha256": "6e8579b5fd667000184a3dcdee72bba5324deaaacaeec33cf7fd293544aadabd"
+  },
+  {
+    "path": "code/tests/test_management.py",
+    "sha256": "8101d2571ab7156af6a11d653e25d37c5cc8ea6e5ae7429fbd49fa4df0f2978d"
+  },
+  {
+    "path": "code/tests/test_products.py",
+    "sha256": "d980dd02d44e3eac6f55fcefeeba62ea4eef8435ce697158439611662c206d9d"
+  },
+  {
+    "path": "code/tests/test_reliability.py",
+    "sha256": "b5a981c95521f56e84ce448e0b919b48914b9517f98981eac9e4b5215082317a"
+  },
+  {
+    "path": "code/tests/test_security.py",
+    "sha256": "6e704ebd67cfb320504091e8dfa78832ac7628a045a29d12d4ecec07b153eb08"
+  },
+  {
+    "path": "code/tests/test_trades.py",
+    "sha256": "238c2979b08e669405bf73c515eaaf552b1b102f4621fc65d0031c4f6f0bd934"
+  },
+  {
+    "path": "code/tools/acceptance.py",
+    "sha256": "418489c01a2c75c86509b5e2865ab305a643a129af600a03837264463287e3d8"
+  },
+  {
+    "path": "code/tools/build.py",
+    "sha256": "eecd26531eafe9258c093a21e5d6dfed8db11929a476bd17c7f7949d79a74b1e"
+  },
+  {
+    "path": "code/tools/metrics.py",
+    "sha256": "0b62951921962ec0af900e3cdee0ef7295cf426effb15bf632698f26f9167b95"
+  },
+  {
+    "path": "code/技术说明.txt",
+    "sha256": "61a11bdf9df1bec37af36f396a15cdc62ff42e4d887049e479d5953013735c29"
+  }
+]

@@ -21,12 +21,19 @@ def main():
     destination.parent.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="campus-build-") as temporary:
         staging = Path(temporary)
-        shutil.copytree(source, staging / "campus_market",
-                        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-        zipapp.create_archive(staging, destination, interpreter="/usr/bin/env python3",
-                              main="campus_market.cli:main", compressed=True)
-    subprocess.run([sys.executable, str(destination), "--help"], check=True,
-                   stdout=subprocess.DEVNULL)
+        shutil.copytree(
+            source, staging / "campus_market", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        zipapp.create_archive(
+            staging,
+            destination,
+            interpreter="/usr/bin/env python3",
+            main="campus_market.cli:main",
+            compressed=True,
+        )
+    subprocess.run(
+        [sys.executable, str(destination), "--help"], check=True, stdout=subprocess.DEVNULL
+    )
     result = {
         "artifact": str(destination.relative_to(root)),
         "sha256": hashlib.sha256(destination.read_bytes()).hexdigest(),

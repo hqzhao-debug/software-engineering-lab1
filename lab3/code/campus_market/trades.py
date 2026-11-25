@@ -5,8 +5,7 @@ reading permissions or state.  SQLite serializes competing writers; partial
 unique indexes provide an independent guard against double booking/completion.
 """
 
-from .models import DomainError, RESERVATION_STATES, json_text, load_json, required
-
+from .models import RESERVATION_STATES, DomainError, json_text, load_json, required
 
 ACTIVE_STATES = {"PENDING", "CONFIRMED"}
 CONTACT_STATES = {"PENDING", "CONFIRMED", "COMPLETED"}
@@ -40,8 +39,7 @@ class TradeMixin:
         if product["state"] != reservation["state"]:
             raise DomainError("INCONSISTENT", "商品与预约的当前状态不一致")
         active = conn.execute(
-            "SELECT id FROM reservations WHERE product_id=? "
-            "AND state IN ('PENDING','CONFIRMED')",
+            "SELECT id FROM reservations WHERE product_id=? AND state IN ('PENDING','CONFIRMED')",
             (product["id"],),
         ).fetchall()
         if len(active) != 1 or active[0]["id"] != reservation["id"]:
@@ -60,9 +58,7 @@ class TradeMixin:
 
     def _reservation_view(self, conn, reservation, actor):
         """Contact access is computed from current state, not stored snapshots."""
-        is_participant = actor["id"] in {
-            reservation["buyer_id"], reservation["seller_id"]
-        }
+        is_participant = actor["id"] in {reservation["buyer_id"], reservation["seller_id"]}
         if not is_participant and actor["role"] != "ADMIN":
             raise DomainError("FORBIDDEN", "无权查看该预约")
         result = dict(reservation)
@@ -102,11 +98,7 @@ class TradeMixin:
         seller = self._one(conn, "accounts", product["seller_id"])
         if product["active_restriction"]:
             state = "VIOLATION"
-        elif (
-            product["ban_restriction"]
-            or seller["status"] != "NORMAL"
-            or not seller["verified"]
-        ):
+        elif product["ban_restriction"] or seller["status"] != "NORMAL" or not seller["verified"]:
             state = "OFF_SHELF"
         else:
             submission = conn.execute(
@@ -150,9 +142,7 @@ class TradeMixin:
                 # A second device can obtain the same active reservation even
                 # with a different request key.  A closed reservation never
                 # follows this path and cannot be resurrected.
-                self._remember(
-                    conn, actor, "reserve", request_key, payload, existing["id"]
-                )
+                self._remember(conn, actor, "reserve", request_key, payload, existing["id"])
                 self._audit(
                     conn,
                     actor,
@@ -176,11 +166,7 @@ class TradeMixin:
             if product["active_restriction"] or product["ban_restriction"]:
                 raise DomainError("RESTRICTED", "商品当前受到发布限制")
             seller = self._one(conn, "accounts", product["seller_id"])
-            if (
-                seller["status"] != "NORMAL"
-                or seller["role"] != "USER"
-                or not seller["verified"]
-            ):
+            if seller["status"] != "NORMAL" or seller["role"] != "USER" or not seller["verified"]:
                 raise DomainError("RESTRICTED", "卖家当前不可交易")
             submission = conn.execute(
                 "SELECT r.status,v.content_version FROM review_submissions r "
@@ -278,8 +264,7 @@ class TradeMixin:
     def _close_trade(self, conn, actor, reservation, product, state, reason, operation):
         """Apply the common closed-state data and release logic in one transaction."""
         conn.execute(
-            "UPDATE reservations SET state=?,closed_at=?,closed_by=?,close_reason=? "
-            "WHERE id=?",
+            "UPDATE reservations SET state=?,closed_at=?,closed_by=?,close_reason=? WHERE id=?",
             (state, self._now(), actor["id"], reason, reservation["id"]),
         )
         product_state = self._release_product(conn, product)
@@ -315,9 +300,7 @@ class TradeMixin:
                 raise DomainError("INVALID_STATE", "只能拒绝待确认预约，已确认请使用取消")
             product = self._one(conn, "products", reservation["product_id"])
             self._check_trade_consistency(conn, product, reservation)
-            self._close_trade(
-                conn, actor, reservation, product, "REJECTED", reason, "reject"
-            )
+            self._close_trade(conn, actor, reservation, product, "REJECTED", reason, "reject")
             self._remember(conn, actor, "reject", request_key, payload, reservation_id)
             return self._current_reservation(conn, reservation_id, actor)
 
@@ -346,9 +329,7 @@ class TradeMixin:
                 raise DomainError("INVALID_STATE", "预约已结束，不能取消")
             product = self._one(conn, "products", reservation["product_id"])
             self._check_trade_consistency(conn, product, reservation)
-            self._close_trade(
-                conn, actor, reservation, product, "CANCELLED", reason, "cancel"
-            )
+            self._close_trade(conn, actor, reservation, product, "CANCELLED", reason, "cancel")
             self._remember(conn, actor, "cancel", request_key, payload, reservation_id)
             return self._current_reservation(conn, reservation_id, actor)
 
@@ -427,11 +408,10 @@ class TradeMixin:
                 clauses.append("state=?")
                 args.append(state)
             where = " WHERE " + " AND ".join(clauses) if clauses else ""
-            total = conn.execute(
-                "SELECT COUNT(*) FROM reservations" + where, args
-            ).fetchone()[0]
+            total = conn.execute("SELECT COUNT(*) FROM reservations" + where, args).fetchone()[0]
             rows = conn.execute(
-                "SELECT * FROM reservations" + where
+                "SELECT * FROM reservations"
+                + where
                 + " ORDER BY created_at DESC,id DESC LIMIT ? OFFSET ?",
                 [*args, PAGE_SIZE, (page - 1) * PAGE_SIZE],
             ).fetchall()

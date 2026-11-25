@@ -3,7 +3,6 @@
 import sqlite3
 from pathlib import Path
 
-
 SCHEMA_VERSION = 1
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS accounts (

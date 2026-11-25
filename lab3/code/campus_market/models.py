@@ -4,7 +4,6 @@ import json
 from decimal import Decimal, InvalidOperation
 from enum import StrEnum
 
-
 CATEGORIES = ("教材书籍", "数码电子", "生活用品", "体育器材", "乐器", "文具", "其他")
 CONDITIONS = ("全新", "九成新", "八成新", "七成新及以下")
 

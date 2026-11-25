@@ -15,12 +15,17 @@ class ManagementTests(MarketCase):
         self.assertEqual(closed["state"], "CANCELLED")
         self.assertIn("违规", closed["close_reason"])
         self.assert_denied(
-            self.market.cancel, self.tokens["buyer"], reservation["id"],
-            "late-cancel", "已被管理处理",
+            self.market.cancel,
+            self.tokens["buyer"],
+            reservation["id"],
+            "late-cancel",
+            "已被管理处理",
         )
         draft = self.market.save_draft(
-            self.tokens["seller"], self.content(description="已补充全部缺陷说明"),
-            product["id"], blocked["row_version"],
+            self.tokens["seller"],
+            self.content(description="已补充全部缺陷说明"),
+            product["id"],
+            blocked["row_version"],
         )
         self.assertTrue(draft["active_restriction"])
         submission = self.market.submit_product(
@@ -32,8 +37,8 @@ class ManagementTests(MarketCase):
         owner_view = self.market.get_product(product["id"], self.tokens["seller"])
         self.assertFalse(owner_view["active_restriction"])
         self.assertEqual(
-            self.market.get_reservation(self.tokens["buyer"], reservation["id"])
-            ["state"], "CANCELLED",
+            self.market.get_reservation(self.tokens["buyer"], reservation["id"])["state"],
+            "CANCELLED",
         )
         self.assertEqual(self.scalar("SELECT COUNT(*) FROM violations"), 1)
 
@@ -42,14 +47,12 @@ class ManagementTests(MarketCase):
         reservation = self.confirmed(product)
         self.market.complete(self.tokens["seller"], reservation["id"], "complete")
         before = self.market.statistics(self.tokens["admin"])
-        marked = self.market.mark_violation(
-            self.tokens["admin"], product["id"], "成交后发现侵权"
-        )
+        marked = self.market.mark_violation(self.tokens["admin"], product["id"], "成交后发现侵权")
         self.assertEqual(marked["state"], "SOLD")
         self.assertEqual(self.market.statistics(self.tokens["admin"]), before)
         self.assertEqual(
-            self.market.get_reservation(self.tokens["buyer"], reservation["id"])
-            ["state"], "COMPLETED",
+            self.market.get_reservation(self.tokens["buyer"], reservation["id"])["state"],
+            "COMPLETED",
         )
 
     def test_ban_seller_revokes_all_sessions_and_unban_does_not_restore(self):
@@ -69,12 +72,10 @@ class ManagementTests(MarketCase):
         self.assertEqual(states[free["id"]], "OFF_SHELF")
         self.assertEqual(states[occupied["id"]], "OFF_SHELF")
         self.assertEqual(
-            self.market.get_reservation(self.tokens["buyer"], reservation["id"])
-            ["state"], "CANCELLED",
+            self.market.get_reservation(self.tokens["buyer"], reservation["id"])["state"],
+            "CANCELLED",
         )
-        self.market.unban_account(
-            self.tokens["admin"], self.accounts["seller"]["id"], "复核后解除"
-        )
+        self.market.unban_account(self.tokens["admin"], self.accounts["seller"]["id"], "复核后解除")
         self.tokens["seller"] = self.market.login("seller", PASSWORD)["token"]
         self.assertEqual(self.market.list_products()["total"], 0)
         self.assertEqual(
@@ -86,9 +87,7 @@ class ManagementTests(MarketCase):
     def test_ban_buyer_releases_other_normal_sellers_product(self):
         product = self.published()
         reservation = self.reservation(product)
-        self.market.ban_account(
-            self.tokens["admin"], self.accounts["buyer"]["id"], "违约处理"
-        )
+        self.market.ban_account(self.tokens["admin"], self.accounts["buyer"]["id"], "违约处理")
         self.assertEqual(self.market.get_product(product["id"])["state"], "ON_SALE")
         closed = self.market.get_reservation(self.tokens["seller"], reservation["id"])
         self.assertEqual(closed["state"], "CANCELLED")
@@ -100,18 +99,20 @@ class ManagementTests(MarketCase):
             self.market.mark_violation, self.tokens["admin"], private["id"], "私人内容"
         )
         self.assert_denied(
-            self.market.ban_account, self.tokens["admin"],
-            self.accounts["admin"]["id"], "无权操作",
+            self.market.ban_account,
+            self.tokens["admin"],
+            self.accounts["admin"]["id"],
+            "无权操作",
         )
 
     def test_management_reasons_are_required(self):
         product = self.published()
+        self.assert_denied(self.market.mark_violation, self.tokens["admin"], product["id"], " ")
         self.assert_denied(
-            self.market.mark_violation, self.tokens["admin"], product["id"], " "
-        )
-        self.assert_denied(
-            self.market.ban_account, self.tokens["admin"],
-            self.accounts["buyer"]["id"], " ",
+            self.market.ban_account,
+            self.tokens["admin"],
+            self.accounts["buyer"]["id"],
+            " ",
         )
 
     def test_statistics_change_only_for_completed_snapshot(self):
@@ -123,9 +124,7 @@ class ManagementTests(MarketCase):
         completed_at = self.clock()
         complete = self.market.statistics(self.tokens["admin"])
         self.assertNotEqual(complete, pending)
-        exact = self.market.statistics(
-            self.tokens["admin"], start=completed_at, end=completed_at
-        )
+        exact = self.market.statistics(self.tokens["admin"], start=completed_at, end=completed_at)
         self.assertEqual(exact["completed"], 1)
         self.assertEqual(exact["amount_cents"], 1234)
         self.assertEqual(exact["categories"], complete["categories"])
@@ -133,21 +132,20 @@ class ManagementTests(MarketCase):
         self.assertEqual(excluded["completed"], 0)
         self.assertEqual(excluded["amount_cents"], 0)
         self.assert_denied(
-            self.market.statistics, self.tokens["admin"],
-            start=completed_at + 1, end=completed_at,
+            self.market.statistics,
+            self.tokens["admin"],
+            start=completed_at + 1,
+            end=completed_at,
         )
-        actual = self.scalar(
-            "SELECT snapshot_json FROM reservations WHERE state='COMPLETED'"
-        )
+        actual = self.scalar("SELECT snapshot_json FROM reservations WHERE state='COMPLETED'")
         self.assertIn("12.34", actual)
 
     def test_seller_logs_include_admin_review_of_own_product(self):
         product = self.published()
         own = self.market.list_logs(self.tokens["seller"], object_id=product["id"])
-        self.assertTrue(any(
-            entry["actor_id"] == self.accounts["admin"]["id"]
-            for entry in own["items"]
-        ))
+        self.assertTrue(
+            any(entry["actor_id"] == self.accounts["admin"]["id"] for entry in own["items"])
+        )
         unrelated = self.market.list_logs(self.tokens["other"], object_id=product["id"])
         self.assertEqual(unrelated["total"], 0)
 
@@ -156,9 +154,12 @@ class ManagementTests(MarketCase):
         self.clock.advance(10)
         self.market.mark_violation(self.tokens["admin"], product["id"], "违规内容")
         filters = {
-            "operation": "mark_violation", "object_id": product["id"],
-            "result": "SUCCESS", "actor_id": self.accounts["admin"]["id"],
-            "start": self.clock(), "end": self.clock(),
+            "operation": "mark_violation",
+            "object_id": product["id"],
+            "result": "SUCCESS",
+            "actor_id": self.accounts["admin"]["id"],
+            "start": self.clock(),
+            "end": self.clock(),
         }
         filtered = self.market.list_logs(self.tokens["admin"], **filters)
         self.assertEqual(filtered["total"], 1)
@@ -166,6 +167,19 @@ class ManagementTests(MarketCase):
         filters["end"] = self.clock() - 1
         self.assert_denied(self.market.list_logs, self.tokens["admin"], **filters)
         self.assert_denied(
-            self.market.list_logs, self.tokens["buyer"],
+            self.market.list_logs,
+            self.tokens["buyer"],
             actor_id=self.accounts["other"]["id"],
         )
+
+    def test_product_id_log_query_traces_reservation_lifecycle(self):
+        product = self.published()
+        reservation = self.confirmed(product)
+        self.market.complete(self.tokens["seller"], reservation["id"], "complete")
+        for actor in ("seller", "admin"):
+            with self.subTest(actor=actor):
+                result = self.market.list_logs(self.tokens[actor], object_id=product["id"])
+                operations = {entry["operation"] for entry in result["items"]}
+                self.assertTrue({"reserve", "confirm", "complete"} <= operations)
+        unrelated = self.market.list_logs(self.tokens["other"], object_id=product["id"])
+        self.assertEqual(unrelated["total"], 0)
