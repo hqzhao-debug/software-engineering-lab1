@@ -1,0 +1,9 @@
+test_demo_launch_opens_browser_and_closes_server_on_interrupt (tests.test_gui_launch.GraphicalLaunchTests.test_demo_launch_opens_browser_and_closes_server_on_interrupt) ... ok
+test_no_browser_launch_preserves_explicit_headless_option (tests.test_gui_launch.GraphicalLaunchTests.test_no_browser_launch_preserves_explicit_headless_option) ... ok
+test_shared_entry_forwards_gui_arguments_without_changing_them (tests.test_gui_launch.GraphicalLaunchTests.test_shared_entry_forwards_gui_arguments_without_changing_them) ... ok
+test_shared_entry_preserves_existing_cli_commands_and_return_code (tests.test_gui_launch.GraphicalLaunchTests.test_shared_entry_preserves_existing_cli_commands_and_return_code) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "artifact": "dist/campus-market.pyz",
+  "sha256": "05ae587d9db498d7e256adea6276b46dc3729851737ccebfe2404ee359e3dc25",
+  "bytes": 68485,
+  "python": "3.14.3",
+  "compile": "PASS",
+  "packaged_help": "PASS",
+  "packaged_error_exit_code": "PASS"
+}

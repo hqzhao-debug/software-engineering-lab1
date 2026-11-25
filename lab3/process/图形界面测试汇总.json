@@ -1,0 +1,21 @@
+{
+  "previous_full_suite": {
+    "tests": 81,
+    "result": "PASS",
+    "evidence": "图形界面新增后完整测试.txt"
+  },
+  "added_launch_regression": {
+    "tests": 4,
+    "result": "PASS",
+    "evidence": "启动入口回归测试.txt"
+  },
+  "total_tests": 85,
+  "all_passed": true,
+  "full_suite_rerun_after_launch_tests": false,
+  "note": "新增启动入口测试仅模拟浏览器打开和服务器生命周期；真实浏览器操作验证另由主代理记录。",
+  "final_full_suite": {
+    "count": 85,
+    "passed": true,
+    "evidence": "图形界面最终完整测试.txt"
+  }
+}

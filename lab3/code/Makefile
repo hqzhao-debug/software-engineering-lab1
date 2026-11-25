@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: build test lint format demo metrics check
+.PHONY: build test lint format demo gui metrics check
 
 build:
 	$(PYTHON) tools/build.py
@@ -18,6 +18,9 @@ format:
 
 demo:
 	$(PYTHON) -m campus_market.demo
+
+gui:
+	$(PYTHON) -m campus_market gui --demo
 
 metrics:
 	$(PYTHON) tools/metrics.py

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>校园循物 · 让闲置继续发光</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="校园循物首页"><span class="brand-mark">循</span><span>校园循物<small>CAMPUS MARKET</small></span></a>
+      <div class="sidebar-label">校园生活 · 循环好物</div>
+      <nav id="navigation" aria-label="主导航"></nav>
+      <div class="sidebar-bottom"><div class="leaf-symbol">↻</div><strong>一件闲置，一份新价值</strong><p>校园内当面交易<br>让每一件好物继续被珍惜</p></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="topbar-left"><span class="location-icon">⌂</span><span>我的校园</span><span class="demo-tag" id="mode-tag">正在连接</span></div><div id="account-menu" class="account-menu"></div></header>
+      <div id="demo-bar" class="demo-bar" hidden></div>
+      <main id="main" tabindex="-1"><div class="loading">正在打开校园循物…</div></main>
+      <footer>校园循物 · 校内面交，让闲置物品遇见新的主人</footer>
+    </div>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-body"></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

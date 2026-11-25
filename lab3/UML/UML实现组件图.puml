@@ -11,10 +11,12 @@ skinparam ArrowColor #526878
 skinparam noteBackgroundColor #FFF7E6
 skinparam noteBorderColor #D4AD66
 skinparam linetype polyline
-title 实验三实现组件图：本地 Python 命令行应用
+title 实验三实现组件图：浏览器图形界面与 Python 服务
 top to bottom direction
 
 actor "本机操作者\n游客／普通用户／管理员" as User
+component "浏览器图形界面 web/\n商品卡片／表单／交易／管理" as GUI
+component "本地 HTTP 适配 webapp.py\n127.0.0.1／Origin／CSRF／HttpOnly Cookie" as HTTP
 component "命令行界面 cli.py\nargparse 命令、中文提示、JSON 输出" as CLI
 component "会话文件 SessionStore\n令牌保存为仅本人可读文件" as Session
 component "Market 服务入口\nservice.py" as Market
@@ -32,6 +34,9 @@ cloud "SMTP_SSL 注册验证邮件\n需显式配置并实际部署验证" as SMT
 component "unittest 自动化测试\n临时数据库／受控时钟／并发连接" as Tests
 
 User --> CLI
+User --> GUI
+GUI --> HTTP : 同源 JSON 请求与图片
+HTTP --> Market : Cookie 身份 + 已校验参数
 CLI --> Session : 读取本角色令牌
 CLI --> Market : 当前身份 + 命令参数
 Market --> Account
@@ -54,10 +59,10 @@ note right of DB
   不可变已提交版本、预约快照、审计日志：
   由数据库触发器额外保护。
 end note
-note bottom of CLI
-  实现调整：原浏览器 UI 改为命令行；
+note bottom of HTTP
+  图形界面与命令行复用同一业务服务。
   原 PostgreSQL 改为本地 SQLite。
-  不主张通过浏览器兼容或真实多人易用性验收。
+  独立演示数据；不替代真实多人易用性验收。
   本机文件访问者属于可信部署边界。
 end note
 note bottom of Outbox

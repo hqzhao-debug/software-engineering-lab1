@@ -1,0 +1,8 @@
+{
+  "artifact": "dist/campus-market.pyz",
+  "gui_entry": "PASS",
+  "context": "PASS",
+  "html": "PASS",
+  "javascript": "PASS",
+  "isolated_temporary_database": true
+}

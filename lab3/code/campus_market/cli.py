@@ -118,7 +118,7 @@ def parser_for_cli() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m campus_market",
         description="校园循物：单件物品发布、审核、预约与线下成交管理",
-        epilog="全局选项应放在子命令前；任意子命令后加 --help 查看参数。",
+        epilog="图形界面：python3 -m campus_market gui --demo。全局选项应放在子命令前；子命令后加 --help 查看参数。",
     )
     parser.add_argument("--db", default="data/market.sqlite3", help="SQLite 数据库路径")
     parser.add_argument(

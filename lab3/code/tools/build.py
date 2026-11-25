@@ -28,12 +28,28 @@ def main():
             staging,
             destination,
             interpreter="/usr/bin/env python3",
-            main="campus_market.cli:main",
+            main="campus_market.entry:run",
             compressed=True,
         )
     subprocess.run(
         [sys.executable, str(destination), "--help"], check=True, stdout=subprocess.DEVNULL
     )
+    with tempfile.TemporaryDirectory(prefix="campus-exit-check-") as temporary:
+        denied = subprocess.run(
+            [
+                sys.executable,
+                str(destination),
+                "--db",
+                str(Path(temporary) / "test.sqlite3"),
+                "--session-file",
+                str(Path(temporary) / "missing.json"),
+                "me",
+            ],
+            capture_output=True,
+            check=False,
+        )
+        if denied.returncode != 2:
+            raise SystemExit("打包程序未保留业务错误退出码")
     result = {
         "artifact": str(destination.relative_to(root)),
         "sha256": hashlib.sha256(destination.read_bytes()).hexdigest(),
@@ -41,6 +57,7 @@ def main():
         "python": sys.version.split()[0],
         "compile": "PASS",
         "packaged_help": "PASS",
+        "packaged_error_exit_code": "PASS",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

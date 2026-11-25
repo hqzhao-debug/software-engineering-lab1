@@ -1,5 +1,5 @@
-"""Launch the campus marketplace command-line interface."""
+"""Launch the campus marketplace browser interface or CLI commands."""
 
-from .cli import main
+from .entry import main
 
 raise SystemExit(main())

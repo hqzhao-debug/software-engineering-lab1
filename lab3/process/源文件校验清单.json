@@ -1,5 +1,161 @@
 [
   {
+    "path": "code/.DS_Store",
+    "sha256": "7e573930fc1903ab98056d5a4ab5f0c856c6dd2388fbb7e7ed2731c95f6dce78"
+  },
+  {
+    "path": "code/.gitignore",
+    "sha256": "71c54274aef23fbe0f3b8ebb11ee77b56d3ea660a94c34c30dcbf1b0a52eebd2"
+  },
+  {
+    "path": "code/Makefile",
+    "sha256": "11031086be3bb84110d11c52f203acd48d7ed7080d72697599732d3c9269069d"
+  },
+  {
+    "path": "code/README.md",
+    "sha256": "09d824726606ff9b2083df0efe89f8bd997b043b8a69eaed53cced5b1a6f903d"
+  },
+  {
+    "path": "code/campus_market/__init__.py",
+    "sha256": "e98b4a518cfc21943c589c2c73aa0d2729b00631c101c8fa0ba39fed5e4e12d8"
+  },
+  {
+    "path": "code/campus_market/__main__.py",
+    "sha256": "8ddceb81085f968ea05f0b4d08ec914e48175d6af5c33f6b98ed0ed94250db42"
+  },
+  {
+    "path": "code/campus_market/accounts.py",
+    "sha256": "703eaae9cc9c1d3eb5bee6a72dd30d4aa4e71d8a9c585c63d422f4cc173c098f"
+  },
+  {
+    "path": "code/campus_market/admin.py",
+    "sha256": "89d9a38a7db56c098a9613828ab98f6c12a5090d6a4e8db0dca4af7f3e005df9"
+  },
+  {
+    "path": "code/campus_market/base.py",
+    "sha256": "5a44d6136f75de70e45d176414e2ae63d2376e1448339166e3624bdb153f27d0"
+  },
+  {
+    "path": "code/campus_market/cli.py",
+    "sha256": "f2bbd6c8e863f1ca07423ce8cc0e044ca96659586f5dd2086767562badd42a1c"
+  },
+  {
+    "path": "code/campus_market/db.py",
+    "sha256": "df14c027f290c0cad979e25d133b4ff5ef3ae35887fbd861e5b2e5712c98f4c0"
+  },
+  {
+    "path": "code/campus_market/demo.py",
+    "sha256": "1a02d4ea8c4805faafa61613e3cc1590dbf7a4df4e1a6f8ec121f861dfcc9c54"
+  },
+  {
+    "path": "code/campus_market/entry.py",
+    "sha256": "155b6ec77fd144ff6d3381186d7691d180af7e1f99063fc60cdb1dda5c96d99d"
+  },
+  {
+    "path": "code/campus_market/models.py",
+    "sha256": "efbafd564f3e48d3f5eae8d0a4246dbc6bfd1aa4f949b7750f7bc2b859c98453"
+  },
+  {
+    "path": "code/campus_market/products.py",
+    "sha256": "ccea506413d1cc6175767e4d154c08ca758a64e4511fa9e9005acd02f884a180"
+  },
+  {
+    "path": "code/campus_market/service.py",
+    "sha256": "9229aaf5e161cd1ef02716575e992eb94263c5c326ce7fa96262f9687df8dd3c"
+  },
+  {
+    "path": "code/campus_market/trades.py",
+    "sha256": "6cd6b7ed18a6d7bab56814b1a9d36ca406bbf09afdbb9654b1af2da3cf16a807"
+  },
+  {
+    "path": "code/campus_market/web/app.js",
+    "sha256": "07e73ddc9855bf950b2e0f8fe708fe50316fcf7e8d3da9aea6418152076d7284"
+  },
+  {
+    "path": "code/campus_market/web/index.html",
+    "sha256": "ced598614bf6d1cba33c9557f5644e982b155c5aec0833fe1bbc50ffce95314f"
+  },
+  {
+    "path": "code/campus_market/web/styles.css",
+    "sha256": "3212a3891ee005d47618ba640f4a9476104740ad4de6fe4414dba54851a15346"
+  },
+  {
+    "path": "code/campus_market/web_seed.py",
+    "sha256": "82030ed5cbfac87010fa44fd0d545474e537c9df61d047b520a61e3a694df553"
+  },
+  {
+    "path": "code/campus_market/webapp.py",
+    "sha256": "0165539d804c747051761a0447b8bbca6a33c68c2b95105fdd0dda6af1cb4950"
+  },
+  {
+    "path": "code/pyproject.toml",
+    "sha256": "7b9fa2c9b314de3cf7ccd666e9a2e9e41b09805afc2de8c7b7240092679100d9"
+  },
+  {
+    "path": "code/requirements-dev.txt",
+    "sha256": "d7cdcf228099f8ad8e4cdab13f0b83fff9f0f79110434bac5b4da5462cf1740f"
+  },
+  {
+    "path": "code/tests/__init__.py",
+    "sha256": "fa3b0f10ee410c53db565a94b68421a72a7d62e8845cc43337b967d62ea1166c"
+  },
+  {
+    "path": "code/tests/helpers.py",
+    "sha256": "6e8579b5fd667000184a3dcdee72bba5324deaaacaeec33cf7fd293544aadabd"
+  },
+  {
+    "path": "code/tests/test_gui_launch.py",
+    "sha256": "e353d55ed35d106483698b4baac57aa59be43f47970dcc27c01717cb193dde87"
+  },
+  {
+    "path": "code/tests/test_management.py",
+    "sha256": "8101d2571ab7156af6a11d653e25d37c5cc8ea6e5ae7429fbd49fa4df0f2978d"
+  },
+  {
+    "path": "code/tests/test_products.py",
+    "sha256": "d980dd02d44e3eac6f55fcefeeba62ea4eef8435ce697158439611662c206d9d"
+  },
+  {
+    "path": "code/tests/test_reliability.py",
+    "sha256": "b5a981c95521f56e84ce448e0b919b48914b9517f98981eac9e4b5215082317a"
+  },
+  {
+    "path": "code/tests/test_security.py",
+    "sha256": "6e704ebd67cfb320504091e8dfa78832ac7628a045a29d12d4ecec07b153eb08"
+  },
+  {
+    "path": "code/tests/test_trades.py",
+    "sha256": "238c2979b08e669405bf73c515eaaf552b1b102f4621fc65d0031c4f6f0bd934"
+  },
+  {
+    "path": "code/tests/test_web_seed.py",
+    "sha256": "ee9e10d926038a6f5d23eb5c5783532646011445939d731fe315c67605f6274e"
+  },
+  {
+    "path": "code/tests/test_webapp.py",
+    "sha256": "383f9e454ab5edb3db4e31c299edf3e86d586ffe7aecb64bf752c7814b28d547"
+  },
+  {
+    "path": "code/tools/acceptance.py",
+    "sha256": "418489c01a2c75c86509b5e2865ab305a643a129af600a03837264463287e3d8"
+  },
+  {
+    "path": "code/tools/build.py",
+    "sha256": "19f5aabfd42e7854c0588302de9295db76315e7a389629da0ce717d8b95086a3"
+  },
+  {
+    "path": "code/tools/metrics.py",
+    "sha256": "0b62951921962ec0af900e3cdee0ef7295cf426effb15bf632698f26f9167b95"
+  },
+  {
+    "path": "code/启动图形界面.command",
+    "sha256": "3d37c25ec9cda4b738cdb37b3186c6ff01171617c5f06296c39fd45219e6f240"
+  },
+  {
+    "path": "code/技术说明.txt",
+    "sha256": "c6992ceb6daa90ba81fd7032123e9e3d780db46c1440d6e1abbdc84be54f4548"
+  },
+  {
     "path": "UML/UML商品状态图.png",
     "sha256": "06efdd03b44cd78796872242ba5a8e81c4c36baa5f22b01ceb7021679d97057f"
   },
@@ -17,19 +173,19 @@
   },
   {
     "path": "UML/UML实现类图.png",
-    "sha256": "bf541692875bfa81503101fe3e309dff5207c7d1e22286e345d4b193ed76c90d"
+    "sha256": "c5f0980b590b316617eefd2f85f8fdfdb81d759639b03a1d3a31cef878d8d7b9"
   },
   {
     "path": "UML/UML实现类图.puml",
-    "sha256": "d68bda420fba25239d489711f26f1800ce19cb4dc2c9366fdc631b5ae9da5372"
+    "sha256": "7c016bbf87e73bf5676986a3272c2d536be346b9cc9438c119db91ec92327ac3"
   },
   {
     "path": "UML/UML实现组件图.png",
-    "sha256": "19738b197f6a3cfe2cd038b6c63efb410699b4bb1fab998609c34c74e998d8cf"
+    "sha256": "3f353d128f486d3bd2427cff53c2699031b1e2d59def85c7de665772b04d48f3"
   },
   {
     "path": "UML/UML实现组件图.puml",
-    "sha256": "eb154fbc16abd3f4c7b9213fb9afa0f91ba5a248c2f9b42985ae96da32e94760"
+    "sha256": "d3f60aade2d20be4f08b57bf7d08b5b68bb8cb7017ba52ed0d9dfb3d62077cdf"
   },
   {
     "path": "UML/UML用例图.png",
@@ -70,113 +226,5 @@
   {
     "path": "UML/UML预约活动图.puml",
     "sha256": "861383e51402578e4bf18a416d30678fbca9242ce71fff63d8dfe498984dd924"
-  },
-  {
-    "path": "code/Makefile",
-    "sha256": "caea91354eaf335d33865f0f8eaa61440fcb2fe96495c0f8c3a6a73b3dd62d06"
-  },
-  {
-    "path": "code/README.md",
-    "sha256": "561a1887fecd28ee8eabac27314a98db0856dc6dbd0d24f900dcf48fcf20e31a"
-  },
-  {
-    "path": "code/campus_market/__init__.py",
-    "sha256": "0e73bfe2ee2e556f390c6adc477080b05e9ee0747a087d949f2a3479ec0765da"
-  },
-  {
-    "path": "code/campus_market/__main__.py",
-    "sha256": "d541b0580a04e9faa2821197f9ebac7cf137eba3915c7b462f0834c5881abf26"
-  },
-  {
-    "path": "code/campus_market/accounts.py",
-    "sha256": "703eaae9cc9c1d3eb5bee6a72dd30d4aa4e71d8a9c585c63d422f4cc173c098f"
-  },
-  {
-    "path": "code/campus_market/admin.py",
-    "sha256": "89d9a38a7db56c098a9613828ab98f6c12a5090d6a4e8db0dca4af7f3e005df9"
-  },
-  {
-    "path": "code/campus_market/base.py",
-    "sha256": "5a44d6136f75de70e45d176414e2ae63d2376e1448339166e3624bdb153f27d0"
-  },
-  {
-    "path": "code/campus_market/cli.py",
-    "sha256": "b90e9178fd942582af0aa08b85fbdaaf29255a78ca8566699a27c8c14ba7d23a"
-  },
-  {
-    "path": "code/campus_market/db.py",
-    "sha256": "df14c027f290c0cad979e25d133b4ff5ef3ae35887fbd861e5b2e5712c98f4c0"
-  },
-  {
-    "path": "code/campus_market/demo.py",
-    "sha256": "1a02d4ea8c4805faafa61613e3cc1590dbf7a4df4e1a6f8ec121f861dfcc9c54"
-  },
-  {
-    "path": "code/campus_market/models.py",
-    "sha256": "efbafd564f3e48d3f5eae8d0a4246dbc6bfd1aa4f949b7750f7bc2b859c98453"
-  },
-  {
-    "path": "code/campus_market/products.py",
-    "sha256": "ccea506413d1cc6175767e4d154c08ca758a64e4511fa9e9005acd02f884a180"
-  },
-  {
-    "path": "code/campus_market/service.py",
-    "sha256": "9229aaf5e161cd1ef02716575e992eb94263c5c326ce7fa96262f9687df8dd3c"
-  },
-  {
-    "path": "code/campus_market/trades.py",
-    "sha256": "6cd6b7ed18a6d7bab56814b1a9d36ca406bbf09afdbb9654b1af2da3cf16a807"
-  },
-  {
-    "path": "code/pyproject.toml",
-    "sha256": "300d963e4f267b5a22a21259ce0af27a3f91cc75992606ea6e6618422699168a"
-  },
-  {
-    "path": "code/requirements-dev.txt",
-    "sha256": "d7cdcf228099f8ad8e4cdab13f0b83fff9f0f79110434bac5b4da5462cf1740f"
-  },
-  {
-    "path": "code/tests/__init__.py",
-    "sha256": "fa3b0f10ee410c53db565a94b68421a72a7d62e8845cc43337b967d62ea1166c"
-  },
-  {
-    "path": "code/tests/helpers.py",
-    "sha256": "6e8579b5fd667000184a3dcdee72bba5324deaaacaeec33cf7fd293544aadabd"
-  },
-  {
-    "path": "code/tests/test_management.py",
-    "sha256": "8101d2571ab7156af6a11d653e25d37c5cc8ea6e5ae7429fbd49fa4df0f2978d"
-  },
-  {
-    "path": "code/tests/test_products.py",
-    "sha256": "d980dd02d44e3eac6f55fcefeeba62ea4eef8435ce697158439611662c206d9d"
-  },
-  {
-    "path": "code/tests/test_reliability.py",
-    "sha256": "b5a981c95521f56e84ce448e0b919b48914b9517f98981eac9e4b5215082317a"
-  },
-  {
-    "path": "code/tests/test_security.py",
-    "sha256": "6e704ebd67cfb320504091e8dfa78832ac7628a045a29d12d4ecec07b153eb08"
-  },
-  {
-    "path": "code/tests/test_trades.py",
-    "sha256": "238c2979b08e669405bf73c515eaaf552b1b102f4621fc65d0031c4f6f0bd934"
-  },
-  {
-    "path": "code/tools/acceptance.py",
-    "sha256": "418489c01a2c75c86509b5e2865ab305a643a129af600a03837264463287e3d8"
-  },
-  {
-    "path": "code/tools/build.py",
-    "sha256": "eecd26531eafe9258c093a21e5d6dfed8db11929a476bd17c7f7949d79a74b1e"
-  },
-  {
-    "path": "code/tools/metrics.py",
-    "sha256": "0b62951921962ec0af900e3cdee0ef7295cf426effb15bf632698f26f9167b95"
-  },
-  {
-    "path": "code/技术说明.txt",
-    "sha256": "61a11bdf9df1bec37af36f396a15cdc62ff42e4d887049e479d5953013735c29"
   }
 ]

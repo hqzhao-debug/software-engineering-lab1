@@ -1,0 +1,38 @@
+{
+  "date_client": "2026-11-25",
+  "user_feedback": "我直接双击一键演示.command没有跳出UI啊，一直在terminal里面",
+  "cause": "原启动器调用命令行自动演示campus_market.demo，未提供图形界面",
+  "changes": [
+    "新增仅监听127.0.0.1的标准库HTTP适配层，复用Market业务授权",
+    "新增浏览器HTML/CSS/JavaScript图形界面",
+    "一键启动改为自动打开默认浏览器",
+    "独立持久化演示目录，虚构角色切换，保留原CLI自检",
+    "补HTTP与演示数据回归测试，更新实际实现UML",
+    "修复zipapp入口丢失业务错误退出码"
+  ],
+  "security": [
+    "Host与Origin校验",
+    "CSRF请求校验",
+    "HttpOnly且SameSite=Strict的按端口独立会话Cookie",
+    "demo邮箱验证绑定发起注册的浏览器",
+    "静态文件白名单与图片大小限制"
+  ],
+  "human_review_completed": false,
+  "ui_browser_verification": {
+    "passed": true,
+    "browser": "installed Google Chrome, isolated headless profile",
+    "flows": [
+      "guest market",
+      "demo buyer reservation",
+      "seller confirmation",
+      "seller completion",
+      "seller publish draft",
+      "submit review",
+      "admin approval",
+      "completed price statistics",
+      "market search"
+    ],
+    "page_errors": []
+  },
+  "executor": "Codex AI assistant and delegated agents"
+}

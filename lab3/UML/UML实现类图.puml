@@ -18,6 +18,18 @@ top to bottom direction
 class "Market\nservice.py" as Market {
   +所有业务方法的统一入口
 }
+class "MarketHTTPServer\nwebapp.py" as Server {
+  +market: Market
+  +base_url: str
+  +csrf: str
+  +serve_forever()
+}
+class "MarketHandler\nwebapp.py" as Handler {
+  +do_GET()
+  +do_POST()
+  -_check_mutation()
+  -_action(action, data)
+}
 class "BaseService\nbase.py" as Base {
   +db_path: Path
   +email_domain: str
@@ -82,6 +94,9 @@ class "SessionStore\ncli.py" as Session {
 }
 
 Market --|> Product
+Server o-- Market
+Server o-- Handler
+Handler ..> Market : 校验请求后调用服务
 Market --|> Trade
 Market --|> Admin
 Market --|> Account

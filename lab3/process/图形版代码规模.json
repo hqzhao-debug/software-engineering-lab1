@@ -1,0 +1,100 @@
+{
+  "scope": "campus_market/*.py excluding demo.py; excludes tests, tools, UML, build artifacts",
+  "method": "physical lines minus blanks, comment-only lines, and AST docstrings; includes embedded SQL",
+  "files": [
+    {
+      "file": "__init__.py",
+      "physical": 3,
+      "nonblank": 2,
+      "excluding_blank_comment_docstring": 1
+    },
+    {
+      "file": "__main__.py",
+      "physical": 5,
+      "nonblank": 3,
+      "excluding_blank_comment_docstring": 2
+    },
+    {
+      "file": "accounts.py",
+      "physical": 310,
+      "nonblank": 288,
+      "excluding_blank_comment_docstring": 274
+    },
+    {
+      "file": "admin.py",
+      "physical": 314,
+      "nonblank": 303,
+      "excluding_blank_comment_docstring": 294
+    },
+    {
+      "file": "base.py",
+      "physical": 217,
+      "nonblank": 198,
+      "excluding_blank_comment_docstring": 192
+    },
+    {
+      "file": "cli.py",
+      "physical": 488,
+      "nonblank": 446,
+      "excluding_blank_comment_docstring": 423
+    },
+    {
+      "file": "db.py",
+      "physical": 186,
+      "nonblank": 180,
+      "excluding_blank_comment_docstring": 177
+    },
+    {
+      "file": "demo.py",
+      "physical": 248,
+      "nonblank": 224,
+      "excluding_blank_comment_docstring": 214
+    },
+    {
+      "file": "entry.py",
+      "physical": 20,
+      "nonblank": 13,
+      "excluding_blank_comment_docstring": 10
+    },
+    {
+      "file": "models.py",
+      "physical": 128,
+      "nonblank": 102,
+      "excluding_blank_comment_docstring": 91
+    },
+    {
+      "file": "products.py",
+      "physical": 551,
+      "nonblank": 519,
+      "excluding_blank_comment_docstring": 474
+    },
+    {
+      "file": "service.py",
+      "physical": 11,
+      "nonblank": 8,
+      "excluding_blank_comment_docstring": 6
+    },
+    {
+      "file": "trades.py",
+      "physical": 423,
+      "nonblank": 400,
+      "excluding_blank_comment_docstring": 369
+    },
+    {
+      "file": "web_seed.py",
+      "physical": 245,
+      "nonblank": 224,
+      "excluding_blank_comment_docstring": 216
+    },
+    {
+      "file": "webapp.py",
+      "physical": 382,
+      "nonblank": 348,
+      "excluding_blank_comment_docstring": 339
+    }
+  ],
+  "physical_total": 3283,
+  "source_total": 2868,
+  "requirement_gt_1500": true,
+  "gui_generated_lines": 0
+}

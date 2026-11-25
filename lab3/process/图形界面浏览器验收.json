@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "browser": "installed Google Chrome, isolated headless profile",
+  "flows": [
+    "guest market",
+    "demo buyer reservation",
+    "seller confirmation",
+    "seller completion",
+    "seller publish draft",
+    "submit review",
+    "admin approval",
+    "completed price statistics",
+    "market search"
+  ],
+  "page_errors": []
+}
