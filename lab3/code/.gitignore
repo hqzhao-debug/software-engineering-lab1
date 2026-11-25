@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.venv/
+dist/
+data/
+outbox/
+*.sqlite*
+*.db*
+*.session.json
+.env
+.DS_Store

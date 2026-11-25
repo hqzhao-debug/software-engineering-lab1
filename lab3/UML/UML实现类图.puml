@@ -1,0 +1,108 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 16
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam classBackgroundColor #F1F8F8
+skinparam classBorderColor #347E80
+skinparam ArrowColor #526878
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype ortho
+hide empty members
+title 实验三实现类图：Python 服务组合与持久化映射
+top to bottom direction
+
+class "Market\nservice.py" as Market {
+  +所有业务方法的统一入口
+}
+class "BaseService\nbase.py" as Base {
+  +db_path: Path
+  +email_domain: str
+  +clock: Callable
+  +_atomic(token, operation, role)
+  +_read(token, role, active)
+  +_authenticate(connection, token)
+  +_audit(connection, actor, operation)
+  +_idempotent(...): resource_id?
+  +_remember(...)
+}
+class "AccountMixin\naccounts.py" as Account {
+  +bootstrap_admin(...)
+  +register(...)
+  +create_admin(token, ...)
+  +verify_email(code)
+  +login(identifier, password)
+  +logout(token)
+  +whoami(token, active)
+}
+class "ProductMixin\nproducts.py" as Product {
+  +save_draft(token, content, id?, version?)
+  +submit_product(token, id, version, key)
+  +withdraw_product(token, id, version)
+  +off_shelf(token, id, version)
+  +get_product(id, token?)
+  +list_products(...)
+  +product_history(token, id)
+  +upload_image(token, path)
+  +read_image(id, token?)
+}
+class "TradeMixin\ntrades.py" as Trade {
+  +reserve(token, id, version, message, key)
+  +confirm(token, id, key)
+  +reject(token, id, key, reason?)
+  +cancel(token, id, key, reason?)
+  +complete(token, id, key)
+  +get_reservation(token, id)
+  +list_reservations(...)
+  +_release_product(connection, product)
+}
+class "AdminMixin\nadmin.py" as Admin {
+  +review(token, batch, approve, reason)
+  +mark_violation(token, id, reason)
+  +ban_account(token, id, reason)
+  +unban_account(token, id, reason)
+  +statistics(token, start?, end?)
+  +list_logs(...)
+}
+class "DomainError\nmodels.py" as Error {
+  +code: str
+  +message: str
+  +as_dict(): dict
+}
+class "SessionStore\ncli.py" as Session {
+  +path: Path
+  +database: str
+  +token(required): str?
+  +save(result)
+  +clear()
+}
+
+Market --|> Product
+Market --|> Trade
+Market --|> Admin
+Market --|> Account
+Market --|> Base
+Admin ..> Trade : 封禁联动释放商品
+Trade ..> Product : 商品关联及版本检查
+Base ..> Error : 拒绝与回滚
+Session ..> Market : CLI 获取令牌后调用
+
+note bottom of Market
+  Market 按 Python 多继承组合服务能力。
+  UML 概念实体以 SQLite 表与字典承载，未使用 ORM。
+  字段与业务关联沿用原交易／安全类图。
+end note
+note bottom of Base
+  每次调用独立数据库连接；写事务 BEGIN IMMEDIATE。
+  业务状态、成功日志、幂等记录共同提交。
+  当前身份在事务内验证；失败回滚后另记日志。
+end note
+note bottom of Product
+  products.content_json：卖家当前私人内容。
+  submitted_versions：不可修改的已提交内容。
+  管理员读取后者；预约使用独立不可变快照。
+end note
+@enduml

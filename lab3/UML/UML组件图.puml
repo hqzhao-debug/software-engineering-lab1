@@ -1,0 +1,70 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "PingFang SC"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam ArrowColor #526878
+skinparam classBackgroundColor #F2F8F8
+skinparam classBorderColor #317B7D
+skinparam componentBackgroundColor #F2F8F8
+skinparam componentBorderColor #317B7D
+skinparam stateBackgroundColor #F2F8F8
+skinparam stateBorderColor #317B7D
+skinparam noteBackgroundColor #FFF7E6
+skinparam noteBorderColor #D4AD66
+skinparam linetype polyline
+hide empty members
+title UML 组件图：模块化单体与存储边界
+top to bottom direction
+actor "电脑浏览器用户" as U
+component "浏览器 UI\n公开市场／个人中心／管理后台" as WEB
+package "模块化单体应用" {
+  component "认证与访问控制\n会话／角色／对象归属／可见字段" as AUTH
+  component "M1 账号模块\n注册验证／管理员建号" as ACC
+  component "M2 商品模块\n草稿／版本／查询／送审" as GOODS
+  component "M3 交易模块\n预约／确认／拒绝／取消／完成" as TRADE
+  component "M4 管理模块\n审核／违规／封禁与解封" as ADMIN
+  component "M5 历史与审计模块\n业务历史／操作日志" as AUDIT
+  component "M6 统计模块\n本人／平台成交聚合" as STATS
+  component "事务与持久化访问\n幂等／行锁／唯一约束／统一提交" as DATA
+}
+database "PostgreSQL\n账号、会话、版本、批次、预约\n快照、限制、幂等、日志" as DB
+folder "受控图片存储\n保留被历史引用的图片" as IMG
+cloud "注册验证邮件服务" as MAIL
+U --> WEB
+WEB --> AUTH : HTTPS 请求
+AUTH --> ACC
+AUTH --> GOODS
+AUTH --> TRADE
+AUTH --> ADMIN
+AUTH --> AUDIT
+AUTH --> STATS
+ACC --> MAIL : 仅注册验证
+ADMIN --> GOODS : 审核当前批次
+ADMIN --> TRADE : 违规／封禁联动终止
+TRADE --> GOODS : 校验并联动商品状态
+ACC --> DATA
+GOODS --> DATA
+TRADE --> DATA
+ADMIN --> DATA
+AUDIT --> DATA
+STATS --> DATA
+DATA --> DB
+GOODS --> IMG
+note bottom of DATA
+  同一事务保存预约、商品、成功日志和幂等结果。
+  管理联动也通过事务执行，不允许部分成功。
+  统计基于已完成预约快照，提交后读取最新数据。
+end note
+note bottom of AUTH
+  每次请求在服务器校验当前身份和权限。
+  查询先限可见范围，再筛选、排序、分页。
+  管理员不可读取当前未提交草稿。
+end note
+note bottom of MAIL
+  不提供业务邮件／推送／消息中心。
+  业务结果在相关页面查询。
+end note
+@enduml

@@ -4,6 +4,7 @@
 !/requirements.md
 !/chat.txt
 !/lab2/
+!/lab3/
 
 **/.DS_Store
 **/__pycache__/
@@ -12,3 +13,8 @@
 *.zip
 *.bundle
 /lab2/local-build/
+
+/lab3/code/dist/
+/lab3/code/data/
+/lab3/code/outbox/
+/lab3/code/.ruff_cache/
